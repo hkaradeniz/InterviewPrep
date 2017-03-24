@@ -11,5 +11,10 @@ namespace InterviewPrep
         static void Main(string[] args)
         {
         }
+
+        static void FindFirstNonRepeatedChar(string s)
+        {
+
+        }
     }
 }
