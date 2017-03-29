@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace InterviewPrep
 {
@@ -10,11 +7,45 @@ namespace InterviewPrep
     {
         static void Main(string[] args)
         {
+            //FindFirstNonRepeatedChar("teeters");
+
+            Console.Read();
         }
 
+
+        /*
+         Write an efficient method to find the first non-repeated character in a string. 
+         Example: the first non-repeated character in “teeters” is “r”.   
+         */
         static void FindFirstNonRepeatedChar(string s)
         {
-            //sd
+            // Solution
+
+            Dictionary<char, int> dictSolution = new Dictionary<char, int>();
+
+            int length = s.Length;
+
+            for (int i = 0; i < length; i++)
+            {
+                if (dictSolution.ContainsKey(s[i]))
+                {
+                    dictSolution[s[i]]++;
+                }
+                else
+                {
+                    dictSolution.Add(s[i], 1);
+                }
+            }
+
+            foreach (var item in dictSolution)
+            {
+                if (item.Value == 1)
+                {
+                    Console.WriteLine(item.Key);
+                    break;
+                }
+            }
+
         }
     }
 }
