@@ -28,7 +28,7 @@ namespace InterviewPrep.Sorting
         }
     }
 }
-    // Complexity
+    // Time Complexity
     // Best: (n log (n))
     // Average: (n log (n))
     // Worst: (n^2)
