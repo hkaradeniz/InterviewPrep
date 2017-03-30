@@ -43,6 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FirstNonRepeatedChar.cs" />
+    <Compile Include="FloydsCycleFindingAlgorithm.cs" />
+    <Compile Include="MyLinkedList\MyLinkedList.cs" />
+    <Compile Include="MyLinkedList\Node.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
