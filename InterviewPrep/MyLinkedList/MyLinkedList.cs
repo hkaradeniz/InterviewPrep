@@ -223,7 +223,36 @@ namespace InterviewPrep.MyLinkedList
 
         public void RemoveDuplicatesWithoutBuffer()
         {
-            
+            /*
+            Node current = Head;
+            Node previous = current;
+            Node pointer = current;
+
+            while (current != null)
+            {
+                pointer = Head;
+                bool isDuplicate = false;
+
+                while (pointer != null)
+                {
+                    if (pointer.Value == current.Value)
+                    {
+                        isDuplicate = true;
+                        break;
+                    }
+                    else
+                    {
+                        pointer = pointer.Next;
+                    }
+                }
+
+                if (isDuplicate)
+                {
+                    previous.Next = previous.Next.Next;
+                    current = current.Next;
+                }
+            }
+            */
         }
     }
 }
