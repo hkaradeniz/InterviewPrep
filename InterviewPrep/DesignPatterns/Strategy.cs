@@ -4,6 +4,7 @@ namespace InterviewPrep.DesignPatterns
 {
 
     /// <summary>
+    /// Strategy Pattern
     /// Behavioral Pattern
     /// </summary>
     ///

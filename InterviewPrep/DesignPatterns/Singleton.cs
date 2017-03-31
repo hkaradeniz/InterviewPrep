@@ -1,6 +1,7 @@
 ﻿namespace InterviewPrep.DesignPatterns
 {
     /// <summary>
+    /// Singleton Pattern
     /// Creational Pattern
     /// </summary>
     /// 
