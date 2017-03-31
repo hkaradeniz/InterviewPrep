@@ -1,5 +1,10 @@
 ﻿namespace InterviewPrep.DesignPatterns
 {
+    /// <summary>
+    /// Creational Pattern
+    /// </summary>
+    /// 
+
     class Singleton
     {
         private static Singleton instance;
@@ -20,6 +25,15 @@
 }
 
 /*
+             // Constructor is protected -- cannot use new
+            Singleton s1 = Singleton.Instance();
+            Singleton s2 = Singleton.Instance();
+
+            if (s1 == s2)
+            {
+                Console.WriteLine("Objects are the same instance!");
+            }
+
  SINGLETON PATTERN:
 
     Creational Pattern
@@ -35,4 +49,4 @@
     dependencies of your application in your code, instead of exposing them through the 
     interfaces. Making something global to avoid passing it around is a code smell.
 
-*/ 
+*/
