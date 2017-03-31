@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BinarySearch.cs" />
     <Compile Include="Factorial.cs" />
     <Compile Include="FirstNonRepeatedChar.cs" />
     <Compile Include="FloydsCycleFindingAlgorithm.cs" />
