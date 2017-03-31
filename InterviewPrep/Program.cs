@@ -10,8 +10,6 @@ namespace InterviewPrep
 
         static void Main(string[] args)
         {
-            // FindFirstNonRepeatedChar("teeters");
-
             Console.Read();
         }
 
