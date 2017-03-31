@@ -47,6 +47,7 @@
     <Compile Include="BinarySearch.cs" />
     <Compile Include="CharToAscii.cs" />
     <Compile Include="DesignPatterns\Factory.cs" />
+    <Compile Include="DesignPatterns\Prototype.cs" />
     <Compile Include="DesignPatterns\Singleton.cs" />
     <Compile Include="DesignPatterns\Strategy.cs" />
     <Compile Include="Factorial.cs" />
