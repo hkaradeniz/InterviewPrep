@@ -9,7 +9,10 @@ namespace InterviewPrep
         //! http://www.geeksforgeeks.org/top-10-algorithms-in-interview-questions/
 
         static void Main(string[] args)
-        {
+        { 
+            RotateArray r = new RotateArray();
+            r.RotateLeft();
+
             Console.Read();
         }
 

@@ -36,7 +36,7 @@ namespace InterviewPrep
         {
             int[] arr = { 1, 2, 3, 4, 5, 6 };
             int[] shiftedArray = new int[arr.Length];
-            int numberOfShifts = 4;
+            int numberOfShifts = 5;
 
             int length = arr.Length;
 
