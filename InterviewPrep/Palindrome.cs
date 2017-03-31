@@ -33,5 +33,39 @@ namespace InterviewPrep
 
             return false;
         }
+
+        public bool IsBinaryPalindrome(int x)
+        {
+
+            // Convert int to binary string
+            var binary = Convert.ToString(x, 2);
+            string str = binary.ToString();
+
+            if (!String.IsNullOrEmpty(str))
+            {
+                // Removing leading 0's
+                str = str.TrimStart(new Char[] { '0' });
+
+                int head = 0;
+                int tail = str.Length - 1;
+
+                while (head < tail)
+                {
+                    if (str[head] == str[tail])
+                    {
+                        head++;
+                        tail--;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+
+            return false;
+        }
     }
 }
