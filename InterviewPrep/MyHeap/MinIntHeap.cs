@@ -139,5 +139,8 @@ namespace InterviewPrep.MyHeap
                 index = smallerChildIndex;
             }
         }
+
+        // Complexity
+        // Heapsort Ω(n log(n))	Θ(n log(n))	O(n log(n))	
     }
 }
