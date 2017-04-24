@@ -10,6 +10,8 @@ namespace InterviewPrep
 
         static void Main(string[] args)
         {
+            ReduceTheLargestPowerOfTwo r = new ReduceTheLargestPowerOfTwo();
+            Console.WriteLine(r.Reduce(32));
             Console.Read();
         }
 
