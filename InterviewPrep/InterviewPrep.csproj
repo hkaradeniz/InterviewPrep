@@ -75,6 +75,7 @@
     <Compile Include="Sorting\InsertionSort.cs" />
     <Compile Include="Sorting\MergeSort.cs" />
     <Compile Include="StackWithQueue.cs" />
+    <Compile Include="SubarrayWithGivenSum.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

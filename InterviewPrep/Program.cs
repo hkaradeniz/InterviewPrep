@@ -10,8 +10,8 @@ namespace InterviewPrep
 
         static void Main(string[] args)
         {
-            ReduceTheLargestPowerOfTwo r = new ReduceTheLargestPowerOfTwo();
-            Console.WriteLine(r.Reduce(32));
+            SubarrayWithGivenSum s = new SubarrayWithGivenSum();
+            s.FindSubarrayWithGivenSum();
             Console.Read();
         }
 
