@@ -10,8 +10,8 @@ namespace InterviewPrep
 
         static void Main(string[] args)
         {
-            SubarrayWithGivenSum s = new SubarrayWithGivenSum();
-            s.FindSubarrayWithGivenSum();
+            LongestIncreasingSubarray s = new LongestIncreasingSubarray();
+            s.SolveLongestIncreasingSubarray();
             Console.Read();
         }
 

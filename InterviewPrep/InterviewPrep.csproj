@@ -55,6 +55,7 @@
     <Compile Include="Factorial.cs" />
     <Compile Include="FirstNonRepeatedChar.cs" />
     <Compile Include="FloydsCycleFindingAlgorithm.cs" />
+    <Compile Include="LongestIncreasingSubarray.cs" />
     <Compile Include="LongestSubstringWORepeating.cs" />
     <Compile Include="MergeOverlappingIntervals\Interval.cs" />
     <Compile Include="MergeOverlappingIntervals\MergeOverlappingIntervals.cs" />
