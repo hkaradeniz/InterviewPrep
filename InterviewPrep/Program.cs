@@ -10,8 +10,6 @@ namespace InterviewPrep
 
         static void Main(string[] args)
         {
-            LongestIncreasingSubarray s = new LongestIncreasingSubarray();
-            s.SolveLongestIncreasingSubarray();
             Console.Read();
         }
 

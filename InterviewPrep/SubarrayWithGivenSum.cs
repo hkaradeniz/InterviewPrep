@@ -14,9 +14,9 @@ namespace InterviewPrep
              Once the current sum equals to S, we found the target.
             */
 
-            // int[] arr = { 1, 5, 7, 9, 12, 15, 16, 18, 26 };
-            //int[] arr = { 1, 16, 18, 26, 40 };
-             int[] arr = { 1 };
+            //int[] arr = { 1, 5, 7, 9, 12, 15, 16, 18, 26 };
+            int[] arr = { 1, 16, 18, 26, 40 };
+            //int[] arr = { 1 };
             int sum = 60;
 
             int start = 0;
@@ -43,7 +43,6 @@ namespace InterviewPrep
             }
           
             Console.WriteLine("No subarray!");
-            
         }
     }
 }
