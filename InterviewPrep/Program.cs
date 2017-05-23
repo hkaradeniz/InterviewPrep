@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using InterviewPrep.Sorting;
 
 namespace InterviewPrep
 {
@@ -10,6 +11,8 @@ namespace InterviewPrep
 
         static void Main(string[] args)
         {
+            _3WayQuickSort s = new _3WayQuickSort();
+            s.Run3WayQuickSort();
             Console.Read();
         }
 
