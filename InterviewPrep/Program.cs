@@ -10,6 +10,18 @@ namespace InterviewPrep
 
         static void Main(string[] args)
         {
+            int[] arr1 = new int[2];
+            int[] arr2 = new int[3];
+            arr1[0] = 1;
+            arr1[1] = 2;
+            arr2[0] = 3;
+            arr2[1] = 4;
+            arr2[2] = 5;
+            arr1 = arr2;
+            foreach (var item in arr1)
+            {
+                Console.WriteLine(item);
+            }
             Console.Read();
         }
 
