@@ -11,8 +11,6 @@ namespace InterviewPrep
 
         static void Main(string[] args)
         {
-            _3WayQuickSort s = new _3WayQuickSort();
-            s.Run3WayQuickSort();
             Console.Read();
         }
 
