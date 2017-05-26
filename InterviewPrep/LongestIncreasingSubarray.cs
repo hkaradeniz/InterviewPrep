@@ -37,6 +37,9 @@ namespace InterviewPrep
                     {
                         longest = numberOfElements;
 
+                        // (currentHead / (n - 1) - 1) : if this is 0
+                        // that means we are at the end of the list
+                        // if it is -1, that means the ,
                         longestHead = currentHead + (currentHead / (n - 1) - 1);
                         longestTail = currentTail;
                         currentTail = currentHead;
