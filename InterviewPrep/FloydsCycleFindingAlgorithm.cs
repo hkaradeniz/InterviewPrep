@@ -35,4 +35,26 @@ namespace InterviewPrep
             }
         }
     }
+
+    /*
+        Alternative:
+        bool hasCycle(Node head)
+        {
+            if(head==null) return false;
+
+            Node faster = head.Next;
+            Node slower = head;
+
+            while(fast!=null && slow!=null && fast.Next!=null)
+            {
+                if(fast==slow)
+                    return true;
+                
+                fast = fast.Next.Next;
+                slow = slow.Next;
+            }
+
+            return false;
+        }
+    */
 }
