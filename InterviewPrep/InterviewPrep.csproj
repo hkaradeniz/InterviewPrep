@@ -81,6 +81,7 @@
     <Compile Include="Sorting\MergeSort.cs" />
     <Compile Include="StackWithQueue.cs" />
     <Compile Include="SubarrayWithGivenSum.cs" />
+    <Compile Include="WeightedRandomNumbers.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
