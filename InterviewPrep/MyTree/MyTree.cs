@@ -6,6 +6,7 @@ namespace InterviewPrep.MyTree
     class MyTree
     {
         public TreeNode Root;
+        int numberOfVisitedNodes = 0;
 
         public MyTree()
         {
@@ -102,6 +103,30 @@ namespace InterviewPrep.MyTree
                 }
             }
 
+        }
+
+        public void FindKthLargestElement(int k)
+        {
+            FindKthLargestElement(Root, k);
+        }
+
+        public void FindKthLargestElement(TreeNode node, int k)
+        {
+            if (node == null || numberOfVisitedNodes >= k)
+                return;
+
+            FindKthLargestElement(node.RightChild, k);
+
+            numberOfVisitedNodes++;
+
+            if (numberOfVisitedNodes == k)
+            {
+                Console.Write(node.ValueInt);
+                return;
+            }
+
+
+            FindKthLargestElement(node.LeftChild, k);
         }
 
         #region Traveling
