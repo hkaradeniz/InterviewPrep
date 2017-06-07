@@ -76,6 +76,7 @@
     <Compile Include="ReverseWords.cs" />
     <Compile Include="RotateArray.cs" />
     <Compile Include="RotateMatrix.cs" />
+    <Compile Include="SearchRotatedArray.cs" />
     <Compile Include="Sorting\3WayQuickSort.cs" />
     <Compile Include="Sorting\InsertionSort.cs" />
     <Compile Include="Sorting\MergeSort.cs" />
