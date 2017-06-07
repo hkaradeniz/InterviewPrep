@@ -107,6 +107,7 @@ namespace InterviewPrep.MyTree
 
         public void FindKthLargestElement(int k)
         {
+            numberOfVisitedNodes = 0;
             FindKthLargestElement(Root, k);
         }
 
@@ -124,7 +125,6 @@ namespace InterviewPrep.MyTree
                 Console.Write(node.ValueInt);
                 return;
             }
-
 
             FindKthLargestElement(node.LeftChild, k);
         }
