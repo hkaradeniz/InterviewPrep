@@ -105,6 +105,14 @@ namespace InterviewPrep.MyTree
 
         }
 
+        /*
+         *  k-th largest element of the BST
+         * http://blog.gainlo.co/index.php/2016/06/03/second-largest-element-of-a-binary-search-tree/
+           * You don’t need to store all the visited elements into an array and find the k-th element. Instead, use a global variable i to record the index of visited elements. Inside the traversal function, every time when you visit an element, just increment i by one and when i == k, output the current element.
+           * Be careful about cases where there are less than k elements in the BST.
+           * You should handle empty tree as well.
+           * Don’t forget to check if left and right are null when traversing the tree.
+         */
         public void FindKthLargestElement(int k)
         {
             numberOfVisitedNodes = 0;
