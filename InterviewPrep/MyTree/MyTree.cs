@@ -5,8 +5,23 @@ namespace InterviewPrep.MyTree
 {
     class MyTree
     {
+        /* Create BST
+          MyTree mt = new MyTree();
+            mt.Add(400);
+            mt.Add(200);
+            mt.Add(100);
+            mt.Add(120);
+            mt.Add(160);
+            mt.Add(220);
+            mt.Add(300);
+            mt.Add(500);
+            mt.Add(450);
+         */
+
         public TreeNode Root;
         int numberOfVisitedNodes = 0;
+        int maxLevel = -1;
+        int maxLevelResult = -1;
 
         public MyTree()
         {
@@ -105,14 +120,16 @@ namespace InterviewPrep.MyTree
 
         }
 
-        /*
-         *  k-th largest element of the BST
+        /*  k-th largest element of the BST
+         *  
          * http://blog.gainlo.co/index.php/2016/06/03/second-largest-element-of-a-binary-search-tree/
            * You don’t need to store all the visited elements into an array and find the k-th element. Instead, use a global variable i to record the index of visited elements. Inside the traversal function, every time when you visit an element, just increment i by one and when i == k, output the current element.
            * Be careful about cases where there are less than k elements in the BST.
            * You should handle empty tree as well.
            * Don’t forget to check if left and right are null when traversing the tree.
          */
+
+        // Second Largest Element of a Binary Search Tree
         public void FindKthLargestElement(int k)
         {
             numberOfVisitedNodes = 0;
@@ -135,6 +152,37 @@ namespace InterviewPrep.MyTree
             }
 
             FindKthLargestElement(node.LeftChild, k);
+        }
+
+        // Deepest Node In a Tree
+        // Find the height of a tree. This can also be solved both recursively or non-recursively.
+        // Find the longest path from the root to leaf in a tree.
+        // Find the deepest left leaf of a tree.
+        // http://blog.gainlo.co/index.php/2016/04/26/deepest-node-in-a-tree/
+
+        public int FindDeepestNode()
+        {
+            maxLevel = -1;
+            maxLevelResult = -1;
+
+            DeepestNode(Root, 0);
+            return maxLevelResult;
+        }
+
+        private void DeepestNode(TreeNode node, int currentLevel)
+        {
+            if (node != null)
+            {
+                DeepestNode(node.LeftChild, ++currentLevel);
+
+                if (currentLevel > maxLevel)
+                {
+                    maxLevel = currentLevel;
+                    maxLevelResult = node.ValueInt;
+                }
+
+                DeepestNode(node.RightChild, currentLevel);
+            }
         }
 
         #region Traveling
