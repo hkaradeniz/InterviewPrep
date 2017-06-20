@@ -14,7 +14,7 @@ namespace InterviewPrep
             // http://blog.gainlo.co/index.php/2016/07/19/3sum/
          */
 
-        // Brute Force Algorithm 
+        // Brute Force Algorithm  
         // O(N^3) Cubic
         // Not acceptable
         public void Solve3SumBruteForce(int[] arr)
