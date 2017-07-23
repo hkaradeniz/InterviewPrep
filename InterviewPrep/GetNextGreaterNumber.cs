@@ -89,6 +89,8 @@ namespace InterviewPrep
                             break;
                         }
                     }
+
+                    break;
                 }
             }
 
