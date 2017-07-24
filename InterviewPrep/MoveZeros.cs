@@ -5,6 +5,9 @@ namespace InterviewPrep
     class MoveZeros
     {
         /*
+         // Uber Interview Questions – Move Zeroes
+         // http://blog.gainlo.co/index.php/2016/11/18/uber-interview-question-move-zeroes/
+
          Problem: Modify the array by moving all the zeros to the end (right side). The order of other elements doesn’t matter.
          Let’s have an example. For array [1, 2, 0, 3, 0, 1, 2], the program can output [1, 2, 3, 1, 2, 0, 0].
 
@@ -18,15 +21,25 @@ namespace InterviewPrep
          */
         public void SolveMoveZeros(int[] arr)
         {
-            int start = 0;
+            //int start = 0;
             int end = arr.Length - 1;
 
-            while (end > start)
+            for (int start = 0; start < end; start++)
             {
-                if (arr[end] == 0)
+                while (end > start)
+                {
+                    if (arr[end] == 0)
+                        end--;
+                    else
+                        break;
+                }
+
+                if (arr[start] == 0)
+                {
+                    arr[start] = arr[end];
+                    arr[end] = 0;
                     end--;
-                else
-                    break;
+                }
             }
 
             // [1, 2, 0, 3, 0, 1, 2]
@@ -38,18 +51,6 @@ namespace InterviewPrep
             //   4       5 -> swap
             //   5       4 -> break;   
 
-
-            while (start < end)
-            {
-                if (arr[start] == 0)
-                {
-                    arr[start] = arr[end];
-                    arr[end] = 0;
-                    end--;
-                }
-
-                start++;
-            }
 
             foreach (var item in arr)
             {
