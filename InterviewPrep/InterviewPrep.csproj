@@ -62,6 +62,7 @@
     <Compile Include="FirstNonRepeatedChar.cs" />
     <Compile Include="FloydsCycleFindingAlgorithm.cs" />
     <Compile Include="GetNextGreaterNumber.cs" />
+    <Compile Include="GroupAnagrams.cs" />
     <Compile Include="LongestIncreasingSubarray.cs" />
     <Compile Include="LongestSubstringWORepeating.cs" />
     <Compile Include="MakeAnagram.cs" />
