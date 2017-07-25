@@ -254,5 +254,30 @@ namespace InterviewPrep.MyTree
             }
         }
         #endregion
+
+        // Check if the Binary Tree is a BST or not 
+        /*
+         The recursive call makes sure that subtree nodes are within the range of its ancestors, 
+         which is important. The running time complexity will be O(n) since every node is examined once.
+
+         The other solution would be to do an inorder traversal and check if the sequence is sorted, 
+         especially since you already know that a binary tree is provided as an input. 
+        */
+        public bool IsBST()
+        {
+            return IsValidBST(Root, Int32.MinValue, Int32.MaxValue);
+        }
+
+        private bool IsValidBST(TreeNode node, int min, int max)
+        {
+            if (node == null) return true;
+
+            if (node.ValueInt > min && node.ValueInt < max
+                && IsValidBST(node.LeftChild, min, node.ValueInt)
+                && IsValidBST(node.RightChild, node.ValueInt, max))
+                return true;
+            else
+                return false;
+        }
     }
 }
