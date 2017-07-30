@@ -33,6 +33,104 @@ namespace InterviewPrep.MyTree
             get { return Root; }
         }
 
+        // Insert Recursively
+        public void Insert(int value)
+        {
+            Root = InsertElement(Root, value);
+        }
+
+        private TreeNode InsertElement(TreeNode node, int value)
+        {
+            if (node == null)
+            {
+                node = new TreeNode(value);
+                return node;
+            }
+
+            if (value < node.ValueInt)
+                node.LeftChild = InsertElement(node.LeftChild, value);
+            else if (value > node.ValueInt)
+                node.RightChild = InsertElement(node.RightChild, value);
+
+            return node;
+        }
+
+        /*
+        *** BST DELETE SCENARIOS ***
+
+        1) Node to be deleted is leaf: Simply remove from the tree.
+
+             50                             50
+           /     \         delete(20)      /   \
+          30      70       --------->    30     70 
+         /  \    /  \                     \    /  \ 
+       20   40  60   80                   40  60   80
+
+
+        2) Node to be deleted has only one child: Copy the child to the node and delete the child
+             50                             50
+           /     \         delete(30)      /   \
+          30      70       --------->    40     70 
+            \    /  \                          /  \ 
+            40  60   80                       60   80
+
+
+        3) Node to be deleted has two children: Find inorder successor of the node. 
+        Copy contents of the inorder successor to the node and delete the inorder successor. 
+        Note that inorder predecessor can also be used.
+             50                             60
+           /     \         delete(50)      /   \
+          40      70       --------->    40    70 
+                 /  \                            \ 
+                60   80                           80
+            
+        */
+        // Delete Recursively
+        public void Delete(int value)
+        {
+            Root = DeleteElement(Root, value); 
+        }
+
+        private TreeNode DeleteElement(TreeNode node, int value)
+        {
+            /* Base Case: If the tree is empty */
+            if (node == null)
+                return node;
+
+            /* Otherwise, recur down the tree */
+            if (value < node.ValueInt)
+                node = DeleteElement(node.LeftChild, value);
+            else if (value > node.ValueInt)
+                node = DeleteElement(node.RightChild, value);
+
+            // if key is same as node's key, then This is the node
+            // to be deleted
+            else
+            {
+                // node with only one child or no child
+                if (node.LeftChild == null)
+                    return node.RightChild;
+                else if (node.RightChild == null)
+                    return node.LeftChild;
+
+                // node with two children: Get the smallest in the right subtree
+                node.ValueInt = MinValue(node).ValueInt;
+
+                // Delete the smallest in the right subtree
+                node.RightChild = DeleteElement(node.RightChild, node.ValueInt);
+            }
+
+            return node;
+        }
+
+        private TreeNode MinValue(TreeNode node)
+        {
+            if (node.LeftChild != null)
+                return MinValue(node.LeftChild);
+            else
+                return node;
+        }
+
         public void InsertNumber(int value)
         {
             TreeNode newNode = new TreeNode(value);
