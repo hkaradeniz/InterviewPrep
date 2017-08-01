@@ -25,16 +25,16 @@ namespace InterviewPrep
             { graph.Add(v, new LinkedList<int>()); graph[v].AddLast(w); }
         }
 
-        public void DFS(int v)
+        public void DepthFirstSearch(int v)
         {
             // Boolean array to mark if the vertex is visited
             bool[] visited = new bool[V];
 
             // Call the recursive helper function to print DFS traversal
-            DFSUtil(v, visited);
+            DepthFirstSearchUtil(v, visited);
         }
 
-        private void DFSUtil(int v, bool[] visited)
+        private void DepthFirstSearchUtil(int v, bool[] visited)
         {
             // Mark the node as visited and display it
             visited[v] = true;
@@ -49,7 +49,7 @@ namespace InterviewPrep
                 foreach (var edge in edges)
                 {
                     if (!visited[edge])
-                        DFSUtil(edge, visited);
+                        DepthFirstSearchUtil(edge, visited);
                 }
             }
         }
