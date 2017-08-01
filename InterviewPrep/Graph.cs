@@ -41,6 +41,8 @@ namespace InterviewPrep
             Console.WriteLine("Following is Depth First Traversal - starting from vertex 2");
  
             g.DepthFirstSearch(2);   
+
+            // Output: 2 0 1 3
         */
         public void DepthFirstSearch(int v)
        {
@@ -71,23 +73,24 @@ namespace InterviewPrep
            }
         }
 
-       /*
-        * Breadth First Search
-        * Test Data
-           // Create a graph given in the above diagram 
-           Graph g = new Graph(4);
+        /*
+         * Breadth First Search
+         * Test Data
+            // Create a graph given in the above diagram 
+            Graph g = new Graph(4);
 
-           g.AddEdge(0, 1);
-           g.AddEdge(0, 2);
-           g.AddEdge(1, 2);
-           g.AddEdge(2, 0);
-           g.AddEdge(2, 3);
-           g.AddEdge(3, 3);
+            g.AddEdge(0, 1);
+            g.AddEdge(0, 2);
+            g.AddEdge(1, 2);
+            g.AddEdge(2, 0);
+            g.AddEdge(2, 3);
+            g.AddEdge(3, 3);
 
-           Console.WriteLine("Following is Breadth First Traversal - starting from vertex 2");
+            Console.WriteLine("Following is Breadth First Traversal - starting from vertex 2");
 
-           g.BreadthFirstSearch(2);
-        */
+            g.BreadthFirstSearch(2);
+            // Output: 2 0 3 1
+         */
         // prints BFS traversal from a given source v
         public void BreadthFirstSearch(int v)
         {
@@ -133,6 +136,8 @@ namespace InterviewPrep
 
             Console.WriteLine("Following is a Topological sort of the given graph");
             g.TopologicalSort();
+
+            // Output: 4 5 0 2 3 1
          */
         public void TopologicalSort()
         {
