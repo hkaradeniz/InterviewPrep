@@ -70,9 +70,9 @@ namespace InterviewPrep
                 LinkedList<int> edgeList = graph[vertex];
                 Console.Write($"{vertex} - ");
 
-                // Get all adjacent vertices of the dequeued vertex s
-                // If a adjacent has not been visited, then mark it
-                // visited and enqueue it
+                // Get all adjacent vertices of the dequeued vertex v
+                // If an adjacent has not been visited yet, then mark it
+                // visited and put it in the queue.
                 foreach (var item in edgeList)
                 {
                     if (!visited[item])
