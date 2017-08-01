@@ -179,5 +179,75 @@ namespace InterviewPrep
             // Push current vertex to stack
             stack.Push(v);
         }
+
+
+        // Returns true if the graph contains a cycle, else false.
+        /*
+         * Returns true if the graph contains a cycle, else false.
+         * Test Data
+          // Create a graph given in the above diagram
+            Graph g = new Graph(4);
+            g.AddEdge(0, 1);
+            g.AddEdge(0, 2);
+            g.AddEdge(1, 2);
+            g.AddEdge(2, 0);
+            g.AddEdge(2, 3);
+            g.AddEdge(3, 3);
+ 
+            if(g.IsCyclic())
+                Console.WriteLine("Graph contains cycle");
+            else
+                Console.WriteLine("Graph doesn't contain cycle");
+
+           0 ------> 1
+            Ʌ       /
+             \     /
+              \   /        ___
+               V V         \ /
+                2 --------> 3     
+
+         */
+        public bool IsCyclic()
+        {
+            bool[] visited = new bool[V];
+            bool[] recursionStack = new bool[V];
+
+            int[] vertices = graph.Keys.ToArray();
+
+            foreach (var vertex in vertices)
+            {
+                if (IsCyclicUtil(vertex, visited, recursionStack))
+                    return true;
+            }
+
+            return false;
+        }
+
+        private bool IsCyclicUtil(int v, bool[] visited, bool[] recursionStack)
+        {
+            if (!visited[v])
+            {
+                visited[v] = true;
+                recursionStack[v] = true;
+                LinkedList<int> edgesList = new LinkedList<int>();
+
+                if (graph.ContainsKey(v))
+                    edgesList = graph[v];
+
+                // Recur for all the vertices adjacent to this vertex
+                foreach (var edge in edgesList)
+                {
+                    if (!visited[edge] && IsCyclicUtil(edge, visited, recursionStack))
+                        return true;
+                    else if (recursionStack[edge])
+                        return true;
+                }
+
+            }
+
+            // remove the vertex from the recursionStack
+            recursionStack[v] = false;
+            return false;
+        }
     }
 }
