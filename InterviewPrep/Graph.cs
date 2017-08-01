@@ -20,10 +20,28 @@ namespace InterviewPrep
 
         public void AddEdge(int v, int w)
         {
+            // Directed Graph
             if (graph.ContainsKey(v))
                 graph[v].AddLast(w);
             else
             { graph.Add(v, new LinkedList<int>()); graph[v].AddLast(w); }
+
+
+            /*
+            // Indirected Graphs
+            // Add v
+            if (graph.ContainsKey(v))
+                graph[v].AddLast(w);
+            else
+            { graph.Add(v, new LinkedList<int>()); graph[v].AddLast(w); }
+
+            // Add w
+            if (graph.ContainsKey(w))
+                graph[w].AddLast(v);
+            else
+            { graph.Add(w, new LinkedList<int>()); graph[w].AddLast(v); }
+            */
+
         }
 
         /*
