@@ -4,6 +4,35 @@ namespace InterviewPrep
 {
     class MinimumBitFlips
     {
+        public void ComputeMinimumBitFlipsBitwise(int a, int b)
+        {
+            /* XOR GATE:
+               INPUT	OUTPUT
+                A	B	A XOR B
+                0	0	    0
+                0	1	    1
+                1	0	    1
+                1	1	    0
+
+             if bits are different, XOR will return 1
+             */
+            int result = a ^ b;
+
+            int shiftCount = 1;
+            int counter = 0;
+
+            // shiftCount < 33 => 32 bit int
+            while (shiftCount < 33)
+            {
+                if ((result & (1 << shiftCount)) != 0)
+                    counter++;
+
+                shiftCount++;
+            }
+
+            Console.WriteLine($">> {counter}");
+        }
+
         public void ComputeMinimumBitFlips(int a, int b)
         {
             // int Array to store Binary bits
