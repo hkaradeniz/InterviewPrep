@@ -10,7 +10,7 @@ namespace InterviewPrep
             {
                 // 1 2 3 4 5 6 7 8 left = 0 right = 8 mid = 4
                 // 1 2 3 5 6 6 7   left = 0 right = 7 mid = 3
-                int mid = (left + right) / 2;
+                int mid = (left + right) / 2; // left + (right - left) / 2
 
                 if (key == array[mid])
                 {
@@ -35,7 +35,7 @@ namespace InterviewPrep
 
             // 1 2 3 4 5 6 7 8 left = 0 right = 8 mid = 4
             // 1 2 3 5 6 6 7   left = 0 right = 7 mid = 3
-            int mid = (left + right) / 2;
+            int mid = (left + right) / 2; // left + (right - left) / 2
 
             if (key == array[mid])
             {
