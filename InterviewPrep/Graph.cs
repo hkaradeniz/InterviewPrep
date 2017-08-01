@@ -53,5 +53,35 @@ namespace InterviewPrep
                 }
             }
         }
+
+        // prints BFS traversal from a given source v
+        public void BreadthFirstSearch(int v)
+        {
+            bool[] visited = new bool[V];
+
+            // Create a queue for BFS
+            Queue<int> queue = new Queue<int>();
+            queue.Enqueue(v);
+            visited[v] = true;
+
+            while (queue.Count > 0)
+            {
+                int vertex = queue.Dequeue();
+                LinkedList<int> edgeList = graph[vertex];
+                Console.Write($"{vertex} - ");
+
+                // Get all adjacent vertices of the dequeued vertex s
+                // If a adjacent has not been visited, then mark it
+                // visited and enqueue it
+                foreach (var item in edgeList)
+                {
+                    if (!visited[item])
+                    {
+                        visited[item] = true;
+                        queue.Enqueue(item);
+                    }
+                }
+            }
+        }
     }
 }
