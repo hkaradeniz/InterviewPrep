@@ -11,6 +11,7 @@ namespace InterviewPrep
 
         // Dictionary for Adjacency List Representation
         Dictionary<int, LinkedList<int>> graph;
+        Stack<int> dfsStack = new Stack<int>();
 
         public Graph(int v)
         {
@@ -157,28 +158,36 @@ namespace InterviewPrep
 
             // Output: 4 5 0 2 3 1
          */
-        public void TopologicalSort()
+        public Stack<int> TopologicalSort()
         {
             // To mark visited vertices
             bool[] visited = new bool[V];
 
             // To store visited nodes
-            Stack<int> stack = new Stack<int>();
+            // Stack<int> stack = new Stack<int>();
 
             int[] vertexList = graph.Keys.ToArray();
 
             foreach (var vertex in vertexList)
             {
                 if (!visited[vertex])
-                { TopologicalSortUtil(vertex, visited, stack); }
+                { TopologicalSortUtil(vertex, visited); }
             }
 
-            while (stack.Count > 0)
-            { Console.Write($"{stack.Pop()} - "); }
+            return dfsStack;
+        }
+
+        public void PrintTopologicalSort()
+        {
+            if (dfsStack.Count < 0)
+            { Console.WriteLine("Stack Empty!"); return; }
+
+            while (dfsStack.Count > 0)
+            { Console.Write($"{dfsStack.Pop()} - "); }
         }
 
         // A recursive function used by topologicalSort
-        private void TopologicalSortUtil(int v, bool[] visited, Stack<int> stack)
+        private void TopologicalSortUtil(int v, bool[] visited)
         {
 
             // Mark the current node as visited.
@@ -191,11 +200,11 @@ namespace InterviewPrep
             foreach (var edge in edgesList)
             {
                 if (!visited[edge])
-                    TopologicalSortUtil(edge, visited, stack);
+                    TopologicalSortUtil(edge, visited);
             }
 
             // Push current vertex to stack
-            stack.Push(v);
+            dfsStack.Push(v);
         }
 
 
@@ -266,6 +275,35 @@ namespace InterviewPrep
             // remove the vertex from the recursionStack
             recursionStack[v] = false;
             return false;
+        }
+
+        // The main function that finds and prints all strongly connected components
+        // Kosaraju's Algorith Steps:
+            // Step 1: Compute Topological order (reverse postorder) in Kernel DAG
+            // Run DFS, considering vertices in reverse topological order
+            // Reverse Graph: Strong components in G are same as in G^R
+            // Kernel DAG: Contact each strong component into a single vertex 
+            // Complexity: O(V+E)
+            // http://www.geeksforgeeks.org/strongly-connected-components/
+        public void StronglyConnectedComponents()
+        {
+            bool[] visited = new bool[V];
+
+            // Compute Topological Order
+            TopologicalSort();
+
+            // Now process all vertices in order defined by Stack
+            while (dfsStack.Count > 0)
+            {
+                int val = dfsStack.Pop();
+
+                //Print Strongly connected component of the popped vertex
+                if (!visited[val])
+                {
+                    DepthFirstSearchUtil(val, visited);
+                    Console.WriteLine();
+                }
+            }
         }
     }
 }
