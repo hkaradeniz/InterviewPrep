@@ -11,16 +11,6 @@ namespace InterviewPrep
 
         static void Main(string[] args)
         {
-            // Create a graph given in the above diagram
-            Graph g = new Graph(5);
-            g.AddEdge(1, 0);
-            g.AddEdge(0, 2);
-            g.AddEdge(2, 1);
-            g.AddEdge(0, 3);
-            g.AddEdge(3, 4);
-
-            Console.WriteLine("Following are strongly connected components in given graph");
-            g.StronglyConnectedComponents();
             Console.Read();
         }
 

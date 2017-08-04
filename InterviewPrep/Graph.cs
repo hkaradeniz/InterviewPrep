@@ -279,12 +279,25 @@ namespace InterviewPrep
 
         // The main function that finds and prints all strongly connected components
         // Kosaraju's Algorith Steps:
-            // Step 1: Compute Topological order (reverse postorder) in Kernel DAG
-            // Run DFS, considering vertices in reverse topological order
-            // Reverse Graph: Strong components in G are same as in G^R
-            // Kernel DAG: Contact each strong component into a single vertex 
-            // Complexity: O(V+E)
-            // http://www.geeksforgeeks.org/strongly-connected-components/
+        // Step 1: Compute Topological order (reverse postorder) in Kernel DAG
+        // Run DFS, considering vertices in reverse topological order
+        // Reverse Graph: Strong components in G are same as in G^R
+        // Kernel DAG: Contact each strong component into a single vertex 
+        // Complexity: O(V+E)
+        // http://www.geeksforgeeks.org/strongly-connected-components/
+        // Test Data
+        /*
+        // Create a graph given in the above diagram
+           Graph g = new Graph(5);
+           g.AddEdge(1, 0);
+           g.AddEdge(0, 2);
+           g.AddEdge(2, 1);
+           g.AddEdge(0, 3);
+           g.AddEdge(3, 4);
+
+           Console.WriteLine("Following are strongly connected components in given graph");
+           g.StronglyConnectedComponents();
+        */
         public void StronglyConnectedComponents()
         {
             bool[] visited = new bool[V];
