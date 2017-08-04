@@ -4,6 +4,10 @@ namespace InterviewPrep
 {
     class CoinChange
     {
+        /* Test Data
+            CoinChange cc = new CoinChange();
+            Console.WriteLine(cc.MakeChange(new int[] { 1, 2, 5 }, 5));
+        */
         public long MakeChange(int[] coins, int money)
         {
             return MakeChange(coins, money, 0, new Dictionary<string, long>());
@@ -31,11 +35,11 @@ namespace InterviewPrep
             while (currentTotalWithCoins <= money)
             {
                 int remaining = money - currentTotalWithCoins;
-                numberOfWays += MakeChange(coins, remaining, coinIndex++, memoTable);
+                numberOfWays += MakeChange(coins, remaining, coinIndex+1, memoTable);
                 currentTotalWithCoins += coins[coinIndex];
             }
 
-            memoTable.Add(key, currentTotalWithCoins);
+            memoTable.Add(key, numberOfWays);
             return numberOfWays;
         }
     }
