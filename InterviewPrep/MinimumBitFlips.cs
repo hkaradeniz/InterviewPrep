@@ -18,11 +18,10 @@ namespace InterviewPrep
              */
             int result = a ^ b;
 
-            int shiftCount = 1;
+            int shiftCount = 0;
             int counter = 0;
 
-            // shiftCount < 33 => 32 bit int
-            while (shiftCount < 33)
+            while (shiftCount < 32)
             {
                 if ((result & (1 << shiftCount)) != 0)
                     counter++;
