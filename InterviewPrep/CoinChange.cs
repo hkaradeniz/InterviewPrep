@@ -56,5 +56,33 @@ namespace InterviewPrep
             memoTable.Add(key, numberOfWays);
             return numberOfWays;
         }
+
+        //  2nd Approach
+        /*
+        Explanation:
+
+        Amount: 12 Coins: 1, 2, 5
+
+        Create an array with 12 elements (Let's call this "combinations")
+        Rule: 
+            if(amount >= coin) then
+                combinations[amount] += combinations[amount-coin] 
+        */
+        public long Change(int amount, int[] coins)
+        {
+            long[] combinations = new long[amount + 1];
+            combinations[0] = 1;
+
+            foreach (var coin in coins)
+            {
+                for (int i = 1; i < combinations.Length+1; i++)
+                {
+                    if (amount > coin)
+                        combinations[amount] += combinations[amount - coin]; 
+                }
+            }
+
+            return combinations[amount];
+        } 
     }
 }
