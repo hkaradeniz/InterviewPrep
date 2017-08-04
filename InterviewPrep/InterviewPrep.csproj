@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="3Sum.cs" />
+    <Compile Include="ActivitySelectionProblem.cs" />
     <Compile Include="AtoiClass.cs" />
     <Compile Include="BinarySearch.cs" />
     <Compile Include="CharToAscii.cs" />
