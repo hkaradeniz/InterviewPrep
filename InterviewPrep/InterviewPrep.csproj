@@ -72,6 +72,7 @@
     <Compile Include="MergeOverlappingIntervals\MergeOverlappingIntervals.cs" />
     <Compile Include="MergeTwoSortedArrays.cs" />
     <Compile Include="MinimumBitFlips.cs" />
+    <Compile Include="MinimumNumberofPlatforms.cs" />
     <Compile Include="MoveZeros.cs" />
     <Compile Include="MyHeap\MinIntHeap.cs" />
     <Compile Include="MyLinkedList\MyLinkedList.cs" />
