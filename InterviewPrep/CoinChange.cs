@@ -4,6 +4,20 @@ namespace InterviewPrep
 {
     class CoinChange
     {
+        // Coin Change Problem
+        /*
+        You are given coins of different denominations and a total amount of  
+        money. Write a function to commpute the minimum number of combinations
+        that make up that amount.
+
+        Ex: Money: 5 Coins:[1,2,5]
+        5 = 5
+        5 = 2 + 2 + 1
+        5 = 2 + 1 + 1 + 1
+        5 = 1 + 1 + 1 + 1 + 1
+
+        Output: 4 ways
+        */
         /* Test Data
             CoinChange cc = new CoinChange();
             Console.WriteLine(cc.MakeChange(new int[] { 1, 2, 5 }, 5));
