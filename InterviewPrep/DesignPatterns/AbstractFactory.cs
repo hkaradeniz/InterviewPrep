@@ -2,6 +2,10 @@
 
 namespace InterviewPrep.DesignPatterns
 {
+    /// <summary>
+    /// Abstract Factory Design Pattern.
+    /// Creational Pattern
+    /// </summary>
     class AbstractFactory
     {
     }
