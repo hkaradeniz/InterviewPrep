@@ -1,144 +1,104 @@
-﻿using System.Collections.Generic;
-
-namespace InterviewPrep.DesignPatterns
+﻿namespace InterviewPrep.DesignPatterns
 {
     /// <summary>
     /// Factory Method
     /// Creational Patterns
     /// </summary>
     /// 
-
     class Factory
     {
 
     }
 
-    abstract class Page
+    enum Employee
     {
-    }
-    /// <summary>
-    /// A 'ConcreteProduct' class
-    /// </summary>
-    class SkillsPage : Page
-    {
+        Manager,
+        Director,
+        Developer,
+        Default
     }
 
-    /// <summary>
-    /// A 'ConcreteProduct' class
-    /// </summary>
-    class EducationPage : Page
+    abstract class Position
     {
+        public abstract string Title { get; }
     }
 
-    /// <summary>
-    /// A 'ConcreteProduct' class
-    /// </summary>
-    class ExperiencePage : Page
+    class Manager
+        : Position
     {
-    }
-
-    /// <summary>
-    /// A 'ConcreteProduct' class
-    /// </summary>
-    class IntroductionPage : Page
-    {
-    }
-
-    /// <summary>
-    /// A 'ConcreteProduct' class
-    /// </summary>
-    class ResultsPage : Page
-    {
-    }
-
-    /// <summary>
-    /// A 'ConcreteProduct' class
-    /// </summary>
-    class ConclusionPage : Page
-    {
-    }
-
-    /// <summary>
-    /// A 'ConcreteProduct' class
-    /// </summary>
-    class SummaryPage : Page
-    {
-    }
-
-    /// <summary>
-    /// A 'ConcreteProduct' class
-    /// </summary>
-    class BibliographyPage : Page
-    {
-    }
-
-    /// <summary>
-    /// The 'Creator' abstract class
-    /// </summary>
-    abstract class Document
-    {
-        private List<Page> _pages = new List<Page>();
-
-        public Document()
+        public override string Title
         {
-            this.CreatePages();
-        }
-
-        public List<Page> Pages
-        {
-            get { return _pages; }
-        }
-
-        public abstract void CreatePages();
-
-    }
-
-    /// <summary>
-    /// A 'ConcreteCreator' class
-    /// </summary>
-    class Resume
-        : Document
-    {
-        public override void CreatePages()
-        {
-            Pages.Add(new SkillsPage());
-            Pages.Add(new EducationPage());
-            Pages.Add(new ExperiencePage());
+            get
+            {
+                return "Manager"; 
+            }
         }
     }
 
-    /// <summary>
-    /// A 'ConcreteCreator' class
-    /// </summary>
-    class Report : Document
+    class Director
+       : Position
     {
-        // Factory Method implementation
-        public override void CreatePages()
+        public override string Title
         {
-            Pages.Add(new IntroductionPage());
-            Pages.Add(new ResultsPage());
-            Pages.Add(new ConclusionPage());
-            Pages.Add(new SummaryPage());
-            Pages.Add(new BibliographyPage());
+            get
+            {
+                return "Director";
+            }
         }
     }
+
+    class Developer
+       : Position
+    {
+        public override string Title
+        {
+            get
+            {
+                return "Developer";
+            }
+        }
+    }
+
+    class Default
+      : Position
+    {
+        public override string Title
+        {
+            get
+            {
+                return "Default";
+            }
+        }
+    }
+
+    class EmployeeFactory
+    {
+        public Position GetTitle(Employee employee)
+        {
+            switch (employee)
+            {
+                case Employee.Manager:
+                    return new Manager();
+                case Employee.Director:
+                    return new Director();
+                case Employee.Developer:
+                    return new Developer();
+                default:
+                    return new Default();
+            }
+        }
+    }
+
 }
 
 /*
-            Document[] documents = new Document[2];
-            documents[0] = new Resume();
-            documents[1] = new Report();
-
-            foreach (Document d in documents)
-            {
-                Console.WriteLine("\n " + d.GetType().Name + " --");
-
-                foreach (Page p in d.Pages)
-                {
-                    Console.WriteLine(" " + p.GetType().Name);
-                }
-            }
-
+ * 
+    static void Main(string[] args)
+    {
+        Position newPosition = EmployeeFactory.GetTitle(Employee.Director);
+        Console.WriteLine(newPosition.Title);
+    }
+    
     FACTORY PATTERN:
 
     Creational Pattern
