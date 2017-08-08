@@ -88,7 +88,7 @@ namespace InterviewPrep.MyTree
         // Delete Recursively
         public void Delete(int value)
         {
-            Root = DeleteElement(Root, value); 
+            Root = DeleteElement(Root, value);
         }
 
         private TreeNode DeleteElement(TreeNode node, int value)
@@ -376,6 +376,69 @@ namespace InterviewPrep.MyTree
                 return true;
             else
                 return false;
+        }
+
+        // Print All Paths Of a Binary Tree
+        /*
+         * http://blog.gainlo.co/index.php/2016/04/15/print-all-paths-of-a-binary-tree/
+           Given a binary tree, print all of the paths from the root to leaf nodes.
+
+            After visiting a node, we put the left child (or the right child if left doesn’t exist) into the stack.
+            Repeat step 1 until we hit the leaf node.
+            Once we hit the leaf, just print everything in the stack. Then pop the leaf node from the stack, 
+                repeat from step 1 (the current node is the top of stack)
+
+            Test Data:
+            InterviewPrep.MyTree.MyTree mt = new InterviewPrep.MyTree.MyTree();
+            mt.Insert(100);
+            mt.Insert(60);
+            mt.Insert(50);
+            mt.Insert(70);
+            mt.Insert(65);
+            mt.Insert(80);
+            mt.Insert(110);
+            mt.Insert(120);
+            mt.Insert(115);
+            mt.PrintBST();
+        */
+        public void PrintBST()
+        {
+            if (Root == null)
+                Console.WriteLine("Empty tree...");
+            else
+            {
+                Stack<TreeNode> stack = new Stack<TreeNode>();
+                stack.Push(Root);
+                PrintAllPaths(Root, stack);
+            }
+        }
+
+        private void PrintAllPaths(TreeNode root, Stack<TreeNode> elements)
+        {
+            // Base Case
+            if (root == null)
+                return;
+           
+            // If there is no child then print the list
+            if (root.LeftChild == null && root.RightChild == null)
+            {
+                foreach (var element in elements)
+                    Console.Write($"{element.ValueInt} ");
+
+                Console.WriteLine();
+                elements.Pop();
+            }
+
+            if (root.LeftChild != null)
+                elements.Push(root.LeftChild);
+
+            PrintAllPaths(root.LeftChild, elements);
+
+            if (root.RightChild != null)
+                elements.Push(root.RightChild);
+
+            PrintAllPaths(root.RightChild, elements);
+          
         }
     }
 }
