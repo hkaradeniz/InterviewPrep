@@ -93,6 +93,7 @@
     <Compile Include="Sorting\3WayQuickSort.cs" />
     <Compile Include="Sorting\InsertionSort.cs" />
     <Compile Include="Sorting\MergeSort.cs" />
+    <Compile Include="Sorting\RadixSortIComparer.cs" />
     <Compile Include="StackWithQueue.cs" />
     <Compile Include="SubarrayWithGivenSum.cs" />
     <Compile Include="WeightedRandomNumbers.cs" />
