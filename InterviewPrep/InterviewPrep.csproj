@@ -97,6 +97,7 @@
     <Compile Include="StackWithQueue.cs" />
     <Compile Include="SubarrayWithGivenSum.cs" />
     <Compile Include="WeightedRandomNumbers.cs" />
+    <Compile Include="WeightedUniformStrings.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
