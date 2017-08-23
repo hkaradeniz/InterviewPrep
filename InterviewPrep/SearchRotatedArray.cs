@@ -43,6 +43,51 @@ namespace InterviewPrep
             return -1;
         }
 
+        // Find Rotation Count
+        /*
+        2 Test Arrays:
+        
+                                 X
+        15 | 22 | 23 | 28 | 31 | 38 | 5 | 6 | 8 | 10 | 12 
+
+
+                                X
+        15 | 22 | 23 | 28 | 3 | 4 | 5 | 6 | 8 | 10 | 12
+
+        */
+        public int FindRotationCount(int[] arr)
+        {
+            int low = 0;
+            int n = arr.Length;
+            int high = n-1;
+            
+            // Rotation count will be equal to the index of the minium element
+            // Minimum element is located at the index of where the value of 
+            // previous index or the value of next index are greater.
+            while (low <= high)
+            {
+                // Case 1
+                if (arr[low] <= arr[high])
+                    return low;
+
+                int mid = low + (high - low) / 2;
+                int previous = (mid + 1) % n;
+                int next = (mid + n - 1) % n;
+
+                // Case 2
+                if (arr[mid] <= arr[next] && arr[mid] <= arr[previous])
+                    return mid;
+                // Case 3
+                else if (arr[mid] >= arr[high])
+                    low = mid + 1;
+                // Case 4
+                else if (arr[mid] <= arr[low])
+                    high = mid - 1;
+            }
+
+            return -1;
+        }
+
 
          /*
          // Recursive
