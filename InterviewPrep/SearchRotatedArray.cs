@@ -9,6 +9,7 @@ namespace InterviewPrep
          the algorithm as follows:
          http://blog.gainlo.co/index.php/2017/01/12/rotated-array-binary-search/
          */
+         // Elements must be distinct
         public int SolveSearchRotatedArray(int[] arr, int target)
         {
             int low = 0;
