@@ -32,6 +32,13 @@
         }  
 
         // Depth of any node x is at most lg N (lg = base2)
+
+        algorithm       initialize      union       connected
+        quick-find          N             N             1
+        quick-union         N             N*            N
+        weighted QU         N            lg N*         lg N*
+
+        * includes cost of finding roots
     */
     class QuickUnion
     {
@@ -54,7 +61,10 @@
         {
             while (i != items[i])
             {
-                items[i] = items[items[i]];
+                // Path Compression
+                // Quick union with path compression: Just after computing the root of p,
+                // set the id of each examined node to point to that root
+                items[i] = items[items[i]]; // --> only one extra line of code
                 i = items[i];
             }
 
