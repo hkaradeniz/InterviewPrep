@@ -1,5 +1,38 @@
 ﻿namespace InterviewPrep
 {
+    /*
+    Quick Union is  good but the problem is that trees might get 
+    very tall and the worst-case scenario to find the root might 
+    increase to O(N).
+        
+        What is the solution?
+        Weighted Quick-Union
+         + Modify quick union to avoid tall trees
+         + Keep track of size of each tree (number of objects in each tree)
+         + Balance by linking root of smaller tree to the root of larger tree
+        
+        * Structure: Same as quick-union but maintain extra array "size[]"
+        to count number of object in the tree rooted to it. And link the root
+        of smaller tree to the root of larger tree.
+        
+        Union(p, q);
+
+        int i = root(p);
+        int j = root(q);
+        
+        if(size[i] < size[j])
+        {
+            items[i] = j;
+            size[j] += size[i];
+        } 
+        else
+        {
+            items[j] = i;
+            size[i] += size[j];
+        }  
+
+        // Depth of any node x is at most lg N (lg = base2)
+    */
     class QuickUnion
     {
         private int[] items;
