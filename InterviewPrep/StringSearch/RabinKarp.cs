@@ -50,20 +50,17 @@ namespace InterviewPrep.StringSearch
                Pattern= "CD"
                q=11; m=2; n=5;
                h = (1*256) % 11 = 3;
-
                Iteration 1:
                    p = (256 * 0 + 68) % 11 = 2;
                    t = (256 * 0 + 65) % 11 = 10;
-
                Iteration 2:
                    p = (256 * 2 + 67) % 11 = 7;
                    t = (256 * 10 + 66) % 11 = 8;
-
              // Since m=2 we stop here and see if the pattern occurs in the text
            */
 
             // Slide the pattern over the text one by one
-            for (int i = 0; i < n-m; i++)
+            for (int i = 0; i < n - m; i++)
             {
 
                 // Check the hash values of current window of text
@@ -86,7 +83,7 @@ namespace InterviewPrep.StringSearch
 
                     // if p == t and pat[0...m-1] = txt[i, i+1, ...i+m-1]
                     if (match)
-                        Console.WriteLine("Match found at index: " +i);
+                        Console.WriteLine("Match found at index: " + i);
                 }
 
                 // Calculate hash value for next window of text: Remove
