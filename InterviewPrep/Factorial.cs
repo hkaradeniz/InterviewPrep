@@ -18,6 +18,19 @@
         {
             return num == 0 ? 1 : num * FactorialRecursive(num - 1);
         }
+
+        // Factorial Tail Recursion
+        public int FactorialTailRecursion(int num)
+        {
+            return FactorialTailRecursionHelper(num, 1); 
+        }
+
+        private int FactorialTailRecursionHelper(int num, int result)
+        {
+            if (num == 0) return 1;
+            return FactorialTailRecursionHelper(num - 1, num * result);
+        }
+
     }
 
 }
