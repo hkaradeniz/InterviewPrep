@@ -52,6 +52,7 @@
     <Compile Include="BinarySearch.cs" />
     <Compile Include="CharToAscii.cs" />
     <Compile Include="CoinChange.cs" />
+    <Compile Include="Contest\Counting Sheep.cs" />
     <Compile Include="CustomStack.cs" />
     <Compile Include="DelimiterMatching.cs" />
     <Compile Include="DesignPatterns\AbstractFactory.cs" />
