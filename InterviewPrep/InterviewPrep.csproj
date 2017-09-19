@@ -94,6 +94,7 @@
     <Compile Include="RotateArray.cs" />
     <Compile Include="RotateMatrix.cs" />
     <Compile Include="SearchRotatedArray.cs" />
+    <Compile Include="SortBigFile.cs" />
     <Compile Include="SortedMerge.cs" />
     <Compile Include="SortedSearchNoSize.cs" />
     <Compile Include="Sorting\3WayQuickSort.cs" />
