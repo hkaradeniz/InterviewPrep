@@ -186,6 +186,10 @@ namespace InterviewPrep.MyLinkedList
             } 
         }
 
+        /*? 
+       Cracking the Coding Interview, 6th Edition
+      Remove Dups! Write code to remove duplicates from an unsorted linked list.
+       */
         public void RemoveDuplicatesUsingBuffer()
         {
             HashSet<int> bufferHash = new HashSet<int>();
@@ -214,6 +218,13 @@ namespace InterviewPrep.MyLinkedList
 
             DisplayAll();
         }
+
+        /*? 
+        Cracking the Coding Interview, 6th Edition
+        Remove Dups! Write code to remove duplicates from an unsorted linked list.
+        FOLLOW UP
+        How would you solve this problem if a temporary buffer is not allowed?
+        */
 
         public void RemoveDuplicatesWithoutBuffer()
         {
@@ -247,6 +258,42 @@ namespace InterviewPrep.MyLinkedList
 
             DisplayAll();
          
+        }
+
+        /*? 
+        Cracking the Coding Interview, 6th Edition
+        Return Kth to Last: Implement an algorithm to find the kth to last element of a singly linked list.
+        */
+        public void FindKthNodeFromEnd(int k)
+        {
+            Node current = Head;
+
+            if (Head == null)
+            { Console.WriteLine("Empty list!"); return; }
+
+            int len = 0;
+
+            while (current.Next != null)
+            {
+                current = current.Next;
+                len++;
+            }
+
+            current = Head;
+
+            if (len < k)
+            {
+                Console.WriteLine($"{k} is bigger than the size of the linkedlist");
+                return;
+            }
+
+            current = Head;
+            for (int i = 0; i < len-k+1; i++)
+            {
+                current = current.Next;
+            }
+
+            Console.WriteLine(current.Value);
         }
     }
 }
