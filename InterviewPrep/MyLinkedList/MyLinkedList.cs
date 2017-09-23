@@ -101,27 +101,15 @@ namespace InterviewPrep.MyLinkedList
         public void Remove(int value)
         {
             Node current = Head;
-            Node previous = current;
 
-            while (current != null)
+            if (current.Value == value)
+            { Head = Head.Next; return; }
+
+            while (current.Next != null)
             {
-                if (current.Value == value)
-                {
-                    //// Found... Delete it...
+                if (current.Next.Value == value)
+                { current.Next = current.Next.Next; return; }
 
-                    if (current == Head)
-                    {
-                        Head = Head.Next;
-                    }
-                    else
-                    {
-                        previous.Next = current.Next;
-                    }
-
-                    break;
-                }
-
-                previous = current;
                 current = current.Next;
             }
 
@@ -202,57 +190,63 @@ namespace InterviewPrep.MyLinkedList
         {
             HashSet<int> bufferHash = new HashSet<int>();
             Node current = Head;
-            Node previous = current;
 
-            while (current != null)
+            if (current == null)
             {
-                if (bufferHash.Contains(current.Value))
+                return;
+            }
+
+            bufferHash.Add(current.Value);
+
+            while (current.Next != null)
+            {
+                if (bufferHash.Contains(current.Next.Value))
                 {
                     //// Delete it...
-                    previous.Next = current.Next.Next;
-                    current = previous.Next;
+                    current.Next = current.Next.Next;
                 }
                 else
                 {
-                    bufferHash.Add(current.Value);
-                    previous = current;
+                    bufferHash.Add(current.Next.Value);
                     current = current.Next;
                 }
             }
+
+            DisplayAll();
         }
 
         public void RemoveDuplicatesWithoutBuffer()
         {
-            /*
-            Node current = Head;
-            Node previous = current;
-            Node pointer = current;
+            Node current = Head; 
 
-            while (current != null)
+            // If head is null, list is empty
+            if (current == null)
+            { return; }
+
+            while (current.Next != null)
             {
-                pointer = Head;
-                bool isDuplicate = false;
-
+                Node pointer = current.Next;
+                Node previous = current;
+    
                 while (pointer != null)
                 {
                     if (pointer.Value == current.Value)
                     {
-                        isDuplicate = true;
-                        break;
+                        pointer = pointer.Next;
+                        previous.Next = pointer;
                     }
                     else
                     {
+                        previous = pointer;
                         pointer = pointer.Next;
                     }
                 }
 
-                if (isDuplicate)
-                {
-                    previous.Next = previous.Next.Next;
-                    current = current.Next;
-                }
+                current = current.Next;
             }
-            */
+
+            DisplayAll();
+         
         }
     }
 }
