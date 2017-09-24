@@ -301,7 +301,7 @@ namespace InterviewPrep.MyLinkedList
     Palindrome: Implement a function to check if a linked list is a palindrome.
      */
         Node left;
-
+        // Time is O(n) and space is O(1).
         public bool IsPalindrome()
         {
             left = Head;
