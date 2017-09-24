@@ -295,5 +295,37 @@ namespace InterviewPrep.MyLinkedList
 
             Console.WriteLine(current.Value);
         }
+
+        /*? 
+     Cracking the Coding Interview, 6th Edition
+    Palindrome: Implement a function to check if a linked list is a palindrome.
+     */
+        Node left;
+
+        public bool IsPalindrome()
+        {
+            left = Head;
+            return PalindromeHelper(Head);
+        }
+
+
+        private bool PalindromeHelper(Node node)
+        {
+            // Stop recursion if we hit the last node
+            if(node == null)
+                return true;
+
+            bool result = PalindromeHelper(node.Next);
+
+            if (!result)
+                return false;
+
+            //compare left with right (as left gets left.next we compare left and right)
+            bool compare = node.Value == left.Value;
+
+            left = left.Next;
+
+            return compare; 
+        }
     }
 }
