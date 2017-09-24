@@ -440,5 +440,65 @@ namespace InterviewPrep.MyTree
             PrintAllPaths(root.RightChild, elements);
           
         }
+
+
+        /*?
+            Cracking the Coding Interview, 6th Edition    
+            List of Depths: Given a binary tree, design an algorithm which creates a linked list of all the nodes
+            at each depth (e.g., if you have a tree with depth D, you'll have D linked lists).
+        */
+        public void ListOfDepths()
+        {
+            if (Root != null)
+            {
+                LinkedList<TreeNode> list = new LinkedList<TreeNode>();
+                Queue<TreeNode> queue = new Queue<TreeNode>();
+                list.AddLast(Root);
+                queue.Enqueue(Root);
+                ListOfDepthsPrintLinkedList(list);
+                ListOfDepthsHelper(queue);
+            }
+        }
+
+        private void ListOfDepthsHelper(Queue<TreeNode> queue)
+        {
+            if (queue.Count == 0)
+                return;
+
+            LinkedList<TreeNode> list = new LinkedList<TreeNode>();
+            Queue<TreeNode> newLevel = new Queue<TreeNode>();
+
+            while (queue.Count > 0)
+            {
+                TreeNode node = queue.Dequeue();
+
+                if (node.LeftChild != null)
+                {
+                    newLevel.Enqueue(node.LeftChild);
+                    list.AddLast(node.LeftChild);
+                }
+
+
+                if (node.RightChild != null)
+                {
+                    newLevel.Enqueue(node.RightChild);
+                    list.AddLast(node.RightChild);
+                }
+            }
+
+            ListOfDepthsPrintLinkedList(list);
+            ListOfDepthsHelper(newLevel);
+        }
+
+        private void ListOfDepthsPrintLinkedList(LinkedList<TreeNode> list)
+        {
+            foreach (var item in list)
+            {
+                    Console.Write(item.ValueInt + " - ");
+            }
+
+            Console.WriteLine();
+        }
+
     }
 }
