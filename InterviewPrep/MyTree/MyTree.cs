@@ -502,8 +502,8 @@ namespace InterviewPrep.MyTree
 
         /*?   Cracking the Coding Interview, 6th Edition    
         First Common Ancestor: Design an algorithm and write code to find the first common ancestor
-of two nodes in a binary tree. Avoid storing additional nodes in a data structure. NOTE: This is not
-necessarily a binary search tree.
+        of two nodes in a binary tree. Avoid storing additional nodes in a data structure. NOTE: This is not
+        necessarily a binary search tree.
 
     */
         public TreeNode FirstCommonAncestor(TreeNode root, TreeNode n1, TreeNode n2)
@@ -521,5 +521,14 @@ necessarily a binary search tree.
             return left == null ? right : left;
         }
 
+
+        // Height of a tree
+        public int Height(TreeNode node)
+        {
+            if (node == null)
+                return 0;
+
+            return 1 + Math.Max(Height(node.LeftChild), Height(node.RightChild));
+        }
     }
 }
