@@ -530,5 +530,31 @@ namespace InterviewPrep.MyTree
 
             return 1 + Math.Max(Height(node.LeftChild), Height(node.RightChild));
         }
+
+        // Is Binary tree balanced?
+        public bool IsBalanced(TreeNode node)
+        {
+            int lh; /* for height of left subtree */
+
+            int rh; /* for height of right subtree */
+
+            /* If tree is empty then return true */
+            if (node == null)
+                return true;
+
+            /* Get the height of left and right sub trees */
+            lh = Height(node.LeftChild);
+            rh = Height(node.RightChild);
+
+            if (Math.Abs(lh - rh) <= 1
+                    && IsBalanced(node.LeftChild)
+                    && IsBalanced(node.RightChild))
+                return true;
+
+            /* If we reach here then tree is not height-balanced */
+            return false;
+        }
+
+
     }
 }
