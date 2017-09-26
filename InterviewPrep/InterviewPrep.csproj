@@ -113,6 +113,7 @@
     <Compile Include="StringPermutations.cs" />
     <Compile Include="StringSearch\RabinKarp.cs" />
     <Compile Include="SubarrayWithGivenSum.cs" />
+    <Compile Include="TicTacToeWinner.cs" />
     <Compile Include="WeightedRandomNumbers.cs" />
     <Compile Include="WeightedUniformStrings.cs" />
   </ItemGroup>
