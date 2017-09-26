@@ -59,10 +59,9 @@ namespace InterviewPrep
                 stack.Push(division);
             }
 
-            int count = stack.Count;
-            while (count > 0)
+            while (stack.Count > 0)
             {
-                switch (count)
+                switch (stack.Count)
                 {
                     case 4:
                         if(stack.Peek() > 0)
@@ -76,7 +75,7 @@ namespace InterviewPrep
                         if (stack.Peek() <= 1)
                         {
                             // Its between 0-19 
-                            sb.Append($"{dict[stack.Pop()]} ");
+                            sb.Append($"{dict[stack.Pop() * 10 + stack.Pop()]} ");
                         }
                         else
                         {
@@ -85,11 +84,12 @@ namespace InterviewPrep
                             sb.Append($"{dict[stack.Pop()]} ");
                         }
                         break;
+                    case 1:
+                        sb.Append($"{dict[stack.Pop()]} ");
+                        break;
                     default:
                         break;
                 }
-
-                count--;
             }
 
             Console.WriteLine(sb.ToString());
