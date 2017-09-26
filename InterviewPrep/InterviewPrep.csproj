@@ -48,6 +48,12 @@
   <ItemGroup>
     <Compile Include="3Sum.cs" />
     <Compile Include="ActivitySelectionProblem.cs" />
+    <Compile Include="ArraysStrings\CheckPermutation.cs" />
+    <Compile Include="ArraysStrings\IsUnique.cs" />
+    <Compile Include="ArraysStrings\OneAway.cs" />
+    <Compile Include="ArraysStrings\PalindromePermutation.cs" />
+    <Compile Include="ArraysStrings\StringCompression.cs" />
+    <Compile Include="ArraysStrings\StringRotation.cs" />
     <Compile Include="AtoiClass.cs" />
     <Compile Include="BinarySearch.cs" />
     <Compile Include="CharToAscii.cs" />
@@ -83,6 +89,7 @@
     <Compile Include="MyHeap\MinIntHeap.cs" />
     <Compile Include="MyLinkedList\MyLinkedList.cs" />
     <Compile Include="MyLinkedList\Node.cs" />
+    <Compile Include="MyLinkedList\SumList.cs" />
     <Compile Include="MyTree\MyTree.cs" />
     <Compile Include="MyTree\TreeNode.cs" />
     <Compile Include="NQueenProblem.cs" />
