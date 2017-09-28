@@ -16,6 +16,21 @@ namespace InterviewPrep
             create while running a 64-bit managed application on a 64-bit Windows operating system.
             https://msdn.microsoft.com/en-us/library/ms241064(VS.80).aspx
               */
+
+            /*?
+            IN JAVA
+            In a recent HotSpot VM, the correct answer is Integer.MAX_VALUE - 5. Once you go beyond that:
+
+            public class Foo {
+              public static void main(String[] args) {
+                Object[] array = new Object[Integer.MAX_VALUE - 4];
+              }
+            }
+            You get:
+
+            Exception in thread "main" java.lang.OutOfMemoryError:
+              Requested array size exceeds VM limit
+            */
             Stopwatch stopwatch1 = new Stopwatch();
             Stopwatch stopwatch2 = new Stopwatch();
 
