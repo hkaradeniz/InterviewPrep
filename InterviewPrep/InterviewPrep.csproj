@@ -93,6 +93,7 @@
     <Compile Include="MyTree\MyTree.cs" />
     <Compile Include="MyTree\TreeNode.cs" />
     <Compile Include="NQueenProblem.cs" />
+    <Compile Include="Operations.cs" />
     <Compile Include="Palindrome.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
