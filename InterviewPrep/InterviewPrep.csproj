@@ -76,6 +76,7 @@
     <Compile Include="GetNextGreaterNumber.cs" />
     <Compile Include="Graph.cs" />
     <Compile Include="GroupAnagrams.cs" />
+    <Compile Include="LivingPeople.cs" />
     <Compile Include="LongestIncreasingSubarray.cs" />
     <Compile Include="LongestSubstringWORepeating.cs" />
     <Compile Include="MakeAnagram.cs" />
