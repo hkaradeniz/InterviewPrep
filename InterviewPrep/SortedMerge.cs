@@ -9,37 +9,96 @@ namespace InterviewPrep
          end to hold B. Write a method to merge B into A in sorted order.
          */
 
+
         // Test Data
-        //int?[] arrA = { 10, 20, 30, 45, 53, 62, null, null, null, null };
+        //int[] arrA = { 10, 20, 30, 45, 53, 62, -1, -1, -1, -1};
+        //int[] arrB = { 9, 15, 59, 65 };
+        //SortedMerge sm = new SortedMerge();
+        //sm.SolveSortedMerge(arrA, arrB, 6, 4);
+        public void SolveSortedMerge(int[] arrA, int[] arrB, int sizeA, int sizeB)
+        {
+            int indexA = sizeA - 1;
+            int indexB = sizeB - 1;
+            int newIndex = sizeA + sizeB - 1;
+
+            while (indexA >= 0 && indexB >= 0)
+            {
+                if (arrA[indexA] > arrB[indexB])
+                {
+                    arrA[newIndex] = arrA[indexA];
+                    indexA--;
+                }
+                else 
+                {
+                    arrA[newIndex] = arrB[indexB];
+                    indexB--;
+                }
+                newIndex--;
+            }
+
+            while (indexB >= 0)
+            {
+                arrA[newIndex] = arrB[indexB];
+                indexB--;
+                newIndex--;
+            }
+
+            PrintArray(arrA);
+        }
+
+        // Test Data
+        //int?[] arrA = { 10, 20, 30, 45, 53, 62, -1, -1, -1, -1};
         //int[] arrB = { 9, 15, 59, 65 };
         //SortedMerge sm = new SortedMerge();
         //sm.SolveSortedMerge1(arrA, arrB);
 
         //? O(A) A-> Size of Array A
-        public void SolveSortedMerge1(int?[] arrA, int[] arrB)
+        // With Extra Space
+        public void SolveSortedMergeExtraSpace(int[] arrA, int[] arrB, int sizeA, int sizeB)
         {
-          
-            int size = arrA.Length;
-            int pointerA = 0; int pointerB = 0;
-            int?[] newArray = new int?[size];
+            int indexA = 0;
+            int indexB = 0;
+            int newIndex = 0;
+            int[] newArray = new int[sizeA + sizeB];
 
-            for (int i = 0; i < size; i++)
+            while(indexA < sizeA && indexB < sizeB)
             {
-                if (arrA[pointerA]!=null && arrA[pointerA] <= arrB[pointerB])
+                if (arrA[indexA] <= arrB[indexB])
                 {
-                    newArray[i] = arrA[pointerA];
-                    pointerA++;
+                    newArray[newIndex] = arrA[indexA];
+                    indexA++;
                 }
                 else
                 {
-                    newArray[i] = arrB[pointerB];
-                    pointerB++;
+                    newArray[newIndex] = arrB[indexB];
+                    indexB++;
                 }
+
+                newIndex++;
             }
 
-            foreach (var item in newArray)
+            while (indexB < sizeB)
             {
-                Console.WriteLine(item);
+                newArray[newIndex] = arrB[indexB];
+                indexB++;
+                newIndex++;
+            }
+
+            while (indexA < sizeA)
+            {
+                newArray[newIndex] = arrA[indexA];
+                indexA++;
+                newIndex++;
+            }
+
+            PrintArray(newArray);
+        }
+
+        private void PrintArray(int[] arr)
+        {
+            foreach (var item in arr)
+            {
+                Console.Write($"{item} * ");
             }
         }
     }
