@@ -46,6 +46,11 @@ namespace InterviewPrep
         */
         // birth: 01 10 10 12 13 20 23 75 83 90
         // death: 15 72 82 90 94 98 98 98 98 99
+
+
+        // Test Data
+        // LivingPeople lp = new LivingPeople();
+        // Console.WriteLine(lp.GetTheMostCrowdedYear(new int[] { 1912, 1920, 1910, 1901, 1910, 1923, 1913, 1990, 1983, 1975 }, new int[] { 1915, 1990, 1998, 1972, 1998, 1982, 1998, 1998, 1999, 1994 }));
         public int GetTheMostCrowdedYear(int[] born, int[] death)
         {
             if (born.Length != death.Length)
@@ -60,7 +65,8 @@ namespace InterviewPrep
             int maxAlive = 0;
             int maxAliveYear = 0;
 
-
+            // birth: 01 10 10 12 13 20 23 75 83 90
+            // death: 15 72 82 90 94 98 98 98 98 99
             while (birthindex < born.Length)
             {
                 if (born[birthindex] <= death[deathindex])
