@@ -368,5 +368,96 @@ namespace InterviewPrep.MyLinkedList
 
             return compare; 
         }
+
+
+        /*?
+         *      Cracking the Coding Interview, 6th Edition
+         * Intersection: Given two (singly) linked lists, determine if the two lists intersect. Return the
+            intersecting node. Note that the intersection is defined based on reference, not value. That is, if the
+            kth node of the first linked list is the exact same node (by reference) as the jth node of the second
+            linked list, then they are intersecting.
+
+
+            One thought is that we could traverse backwards through each linked list. When the linked lists"split'; that's
+            the intersection. Of course, you can't really traverse backwards through a singly linked list.
+            If the linked lists were the same length, you could just traverse through them at the same time. When they
+            collide, that's your intersection.
+
+            When they're not the same length, we'd like to just"chop off"-or ignore-those excess (gray) nodes.
+            How can we do this? Well, if we know the lengths of the two linked lists, then the difference between those
+            two linked lists will tell us how much to chop off.
+            We can get the lengths at the same time as we get the tails of the linked lists (which we used in the first step
+            to determine if there's an intersection).
+
+            Putting it all together.
+            We now have a multistep process.
+            1. Run through each linked list to get the lengths and the tails.
+            2. Compare the tails. If they are different (by reference, not by value), return immediately. There is no intersection.
+            3. Set two pointers to the start of each linked list.
+            4. On the longer linked list, advance its pointer by the difference in lengths.
+            5. Now, traverse on each linked list until the pointers are the same.
+         */
+        public Node GetIntersectingNode(Node head1, Node head2)
+        {
+            if (head1 == null || head2 == null)
+                return null;
+
+            LinkedListInfo result1 = GetLinkedListInfo(head1);
+            LinkedListInfo result2 = GetLinkedListInfo(head2);
+
+            if (result1.LastNode != result2.LastNode)
+                return null;
+
+            Node shorter = result1.Size > result2.Size ? head2 : head1;
+            Node longer = result1.Size > result2.Size ? head1 : head2;
+
+            int difference = Math.Abs(result1.Size - result2.Size);
+
+            /* Advance the pointer for the longer linked list by difference in lengths. */
+            while (difference > 0 && longer!=null)
+            {
+                longer = longer.Next;
+                difference--;
+            }
+
+            while (shorter != null && longer != null)
+            {
+                if (shorter == longer)
+                    return longer;
+
+                shorter = shorter.Next;
+                longer = longer.Next;
+            }
+
+            return null;
+        }
+
+        public LinkedListInfo GetLinkedListInfo(Node head)
+        {
+            int size = 0;
+            Node tail = null;
+
+            Node current = head;
+            while (current != null)
+            {
+                size++;
+                tail = current;
+                current = current.Next;
+            }
+
+            return new LinkedListInfo(size, tail);
+        }
+    }
+
+    public class LinkedListInfo
+    {
+        public int Size { get; }
+        public Node LastNode { get; }
+
+        public LinkedListInfo(int size, Node node)
+        {
+            Size = size;
+            LastNode = node;
+        }
     }
 }

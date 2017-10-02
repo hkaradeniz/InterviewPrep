@@ -2,7 +2,7 @@
 
 namespace InterviewPrep.MyLinkedList
 {
-    class Node
+    public class Node
     {
         public Node Next { get; set; }
         public int Value { get; set; }
