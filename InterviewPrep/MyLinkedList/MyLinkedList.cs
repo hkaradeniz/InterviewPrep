@@ -219,6 +219,26 @@ namespace InterviewPrep.MyLinkedList
             DisplayAll();
         }
 
+        /*?
+        Cracking the Coding Interview, 6th Edition
+        Delete Middle Node: Implement an algorithm to delete a node in the middle (i.e., any node but
+        the first and last node, not necessarily the exact middle) of a singly linked list, given only access to
+        that node.
+        EXAMPLE
+        lnput:the node c from the linked list a->b->c->d->e->f
+        Result: nothing is returned, but the new linked list looks like a ->b->d- >e- >f
+         */
+        public void DeleteNodeFromTheMiddle(Node node)
+        {
+            if (node == null || node.Next == null)
+                throw new InvalidOperationException();
+
+            Node next = node.Next;
+            node.Value = next.Value;
+            node.Next = next.Next;
+        }
+
+
         /*? 
         Cracking the Coding Interview, 6th Edition
         Remove Dups! Write code to remove duplicates from an unsorted linked list.
