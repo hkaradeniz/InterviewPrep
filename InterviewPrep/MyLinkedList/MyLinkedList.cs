@@ -227,6 +227,11 @@ namespace InterviewPrep.MyLinkedList
         EXAMPLE
         lnput:the node c from the linked list a->b->c->d->e->f
         Result: nothing is returned, but the new linked list looks like a ->b->d- >e- >f
+
+
+        In this p roblem, you are not given access to the head of the linked list. You only have access to that node.
+        The solution is simply to copy the data from the next node over to the current node, and then to delete the
+        next node.
          */
         public void DeleteNodeFromTheMiddle(Node node)
         {
