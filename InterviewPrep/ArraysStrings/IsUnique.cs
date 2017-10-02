@@ -53,5 +53,34 @@ namespace InterviewPrep.ArraysStrings
             }
             return false;
         }
+
+        // Another Solution with an Array
+        /*?
+        You should first ask your interviewer if the string is an ASCII string or a Unicode string. Asking this question
+        will show an eye for detail and a solid foundation in computer science. We'll assume for simplicity the character
+        set is ASCII.If this assumption is not valid, we would need to increase the storage size.
+
+        One solution is to create an array of boolean values, where the flag at index i indicates whether character
+        i in the alphabet is contained in the string. The second time you see this character you can immediately
+        return false.
+        */
+
+        public bool IsUnique2(string str)
+        {
+            if (String.IsNullOrEmpty(str) || str.Length > 256)
+                return false;
+
+            bool[] arr = new bool[256];
+
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (arr[str[i]])
+                    return false;
+
+                arr[str[i]] = true;
+            }
+
+            return true;
+        }
     }
 }
