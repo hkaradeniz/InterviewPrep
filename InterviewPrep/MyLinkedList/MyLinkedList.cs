@@ -264,6 +264,22 @@ namespace InterviewPrep.MyLinkedList
         Cracking the Coding Interview, 6th Edition
         Return Kth to Last: Implement an algorithm to find the kth to last element of a singly linked list.
         */
+        // Recursive
+        public int FindKthNodeFromEnd(Node node, int k)
+        {
+            if (node == null)
+                return 0;
+
+            int i = FindKthNodeFromEnd(node.Next, k) + 1;
+
+            if (i == k)
+            {
+                Console.WriteLine(node.Value);
+            }
+
+            return i; 
+        }
+
         public void FindKthNodeFromEnd(int k)
         {
             Node current = Head;
