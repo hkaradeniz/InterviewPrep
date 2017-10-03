@@ -121,6 +121,7 @@
     <Compile Include="SubarrayWithGivenSum.cs" />
     <Compile Include="Test.cs" />
     <Compile Include="TicTacToeWinner.cs" />
+    <Compile Include="TreesAndGraphs\RouteBetweenNodes.cs" />
     <Compile Include="WeightedRandomNumbers.cs" />
     <Compile Include="WeightedUniformStrings.cs" />
   </ItemGroup>
