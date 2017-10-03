@@ -113,6 +113,7 @@
     <Compile Include="Sorting\MergeSort.cs" />
     <Compile Include="Sorting\RadixSortIComparer.cs" />
     <Compile Include="SparseSearch.cs" />
+    <Compile Include="StacksAndQueues\ThreeInOne.cs" />
     <Compile Include="StackWithQueue.cs" />
     <Compile Include="StringPermutations.cs" />
     <Compile Include="StringSearch\RabinKarp.cs" />
