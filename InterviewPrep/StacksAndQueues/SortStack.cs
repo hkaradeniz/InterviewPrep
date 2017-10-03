@@ -23,6 +23,7 @@ namespace InterviewPrep.StacksAndQueues
         onto sl) and then push 5 onto s2.
    */
 
+    /*This algorithm is O ( N2 ) time and O ( N) space.*/
     class SortStack
     {
         public Stack<int> Sort(Stack<int> stack)
