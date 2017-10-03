@@ -447,6 +447,64 @@ namespace InterviewPrep.MyLinkedList
 
             return new LinkedListInfo(size, tail);
         }
+
+        /*?
+          Cracking the Coding Interview, 6th Edition
+        Loop Detection: Given a circular linked list, implement an algorithm that returns the node at the
+        beginning of the loop.
+        DEFINITION
+        Circular linked list: A (corrupt) linked list in which a node's next pointer points to an earlier node, so
+        as to make a loop in the linked list.
+        
+        To summarize, we move FastPointer twice as fast as SlowPointer. When SlowPointer enters
+        the loop, after k nodes, FastPointer is k nodes into the loop. This means that FastPointer and
+        SlowPointer are LOOP _SIZE - k nodes away from each other.
+        Next, if FastPointer moves two nodes for each node that SlowPointer moves, they move one node
+        closer to each other on each turn. Therefore, they will meet after LOOP _SIZE - k turns. Both will be k
+        nodes from the front of the loop.
+        The head of the linked list is also k nodes from the front of the loop. So, if we keep one pointer where it is,
+        and move the other pointer to the head of the linked list, then they will meet at the front of the loop.
+        Our algorithm is derived directly from parts 1, 2 and 3.
+
+        1. Create two pointers, FastPointer and SlowPointer.
+        2. Move FastPointer at a rate of 2 steps and SlowPointer at a rate of 1 step.
+        3. When they collide, move SlowPointer to LinkedListHead. Keep FastPointer where it is.
+        4. Move SlowPointer and FastPointer at a rate of one step. Return the new collision point.
+        */
+        public Node FindTheBeginningOfTheLoop(Node head)
+        {
+            if (head == null)
+                return null;
+
+            Node slow = head;
+            Node fast = head;
+
+            while (fast != null && fast.Next != null)
+            {
+                slow = slow.Next;
+                fast = fast.Next.Next;
+
+                // Loop Detected?
+                if (slow == fast)
+                    break;
+            }
+
+            /* We don't know yet if the loop hit break point. That is why we do Error check - no meeting point, and therefore no loop*/
+            if (fast == null || fast.Next == null)
+                return null;
+
+            /* Move slow to Head. Keep fast at Meeting Point. Each are k steps from the
+                Loop Start. If they move at the same pace, they must meet at Loop Start . */
+            slow = head;
+            while (slow != fast)
+            {
+                slow = slow.Next;
+                fast = fast.Next;
+            }
+
+            /* Both now point to the start of the loop. Return either fast or slow */
+            return fast;
+        }
     }
 
     public class LinkedListInfo
