@@ -411,36 +411,27 @@ namespace InterviewPrep.MyTree
             {
                 Stack<TreeNode> stack = new Stack<TreeNode>();
                 stack.Push(Root);
-                PrintAllPaths(Root, stack);
+                PrintAllPaths(stack);
             }
         }
 
-        private void PrintAllPaths(TreeNode root, Stack<TreeNode> elements)
+        private void PrintAllPaths(Stack<TreeNode> elements)
         {
             // Base Case
-            if (root == null)
+            if (elements.Count == 0)
                 return;
-           
-            // If there is no child then print the list
-            if (root.LeftChild == null && root.RightChild == null)
-            {
-                foreach (var element in elements)
-                    Console.Write($"{element.ValueInt} ");
 
-                Console.WriteLine();
-                elements.Pop();
-            }
+            TreeNode value = elements.Pop();
 
-            if (root.LeftChild != null)
-                elements.Push(root.LeftChild);
+            Console.WriteLine(value.ValueInt);
 
-            PrintAllPaths(root.LeftChild, elements);
+            if (value.LeftChild != null)
+                elements.Push(value.LeftChild);
 
-            if (root.RightChild != null)
-                elements.Push(root.RightChild);
+            if (value.RightChild != null)
+                elements.Push(value.RightChild);
 
-            PrintAllPaths(root.RightChild, elements);
-          
+            PrintAllPaths(elements);
         }
 
 
