@@ -57,6 +57,7 @@
     <Compile Include="ArraysStrings\URLify.cs" />
     <Compile Include="AtoiClass.cs" />
     <Compile Include="BinarySearch.cs" />
+    <Compile Include="BitManipulation\Insertion.cs" />
     <Compile Include="CharToAscii.cs" />
     <Compile Include="CoinChange.cs" />
     <Compile Include="Contest\Counting Sheep.cs" />
