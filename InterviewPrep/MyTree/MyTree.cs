@@ -543,7 +543,13 @@ namespace InterviewPrep.MyTree
             return left == null ? right : left;
         }
 
-
+        /*?
+         * Check Balanced: Implement a function to check if a binary tree is balanced. For the purposes of
+            this question, a balanced tree is defined to be a tree such that the heights of the two subtrees of any
+            node never differ by more than one.
+            We can simply recurse through the entire tree, and for each node, compute the heights of each subtree.
+            Complexity: O(N log N)
+         */
         // Height of a tree
         public int Height(TreeNode node)
         {
@@ -577,6 +583,47 @@ namespace InterviewPrep.MyTree
             return false;
         }
 
+        /*?  Checked Balanced - More Efficient */
+        /*?
+         * Although this works. it's not very efficient. On each node. we recurse through its entire subtree. This means
+           that Height is called repeatedly on the same nodes. The algorithm isO(N log N) since each node is
+           touched" once per node above it.
 
+           We need to cut out some of the calls to Height.
+
+        If we inspect this method, we may notice that getHeight could actually check if the tree is balanced at
+        the same time as it's checking heights. What do we do when we discover that the subtree isn' t balanced?
+        Just return an error code.
+
+        This improved algorithm works by checking the height of each subtree as we recurse down from the root.
+        On each node, we recursively get the heights of the left and right subtrees through the checkHeight
+        method. If the subtree is balanced, then checkHeight will return the actual height of the subtree. If the
+        subtree is not balanced, then c h ec kHeight will return an error code. We will immediately break and
+        return an error code from the current call.
+         */
+        public bool IsBinaryTreeBalanced(TreeNode root)
+        {
+            return CheckHeight(root) == int.MinValue ? false : true;
+        }
+
+        private int CheckHeight(TreeNode root)
+        {
+            if (root == null)
+                return -1;
+
+            int leftHeight = CheckHeight(root.LeftChild);
+            if (leftHeight == int.MinValue)
+                return int.MinValue; // It means the hight difference is more than 1
+
+            int rightHeight = CheckHeight(root.RightChild);
+            if (rightHeight == int.MinValue)
+                return int.MinValue; // It means the hight difference is more than 1
+
+            int difference = Math.Abs(leftHeight - rightHeight);
+            if (difference > 1)
+                return int.MinValue; // difference is more than 1
+            else
+                return Math.Max(leftHeight, rightHeight) + 1;
+        }
     }
 }
