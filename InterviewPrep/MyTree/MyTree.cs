@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace InterviewPrep.MyTree
@@ -439,58 +440,86 @@ namespace InterviewPrep.MyTree
             Cracking the Coding Interview, 6th Edition    
             List of Depths: Given a binary tree, design an algorithm which creates a linked list of all the nodes
             at each depth (e.g., if you have a tree with depth D, you'll have D linked lists).
+
+
+            Though we might think at first glance that this problem requires a level-by-level traversal, this isn't actually
+            necessary. We can traverse the graph any way that we'd like, provided we know which level we're on as we
+            do so.
+            We can implement a simple modification of the pre-order traversal algorithm, where we pass in level +
+            1 to the next recursive call. The code below provides an implementation using depth-first search.
+
+            // Test Data
+             MyTree.MyTree mt = new MyTree.MyTree();
+            mt.Insert(50);
+            mt.Insert(40);
+            mt.Insert(55);
+            mt.Insert(60);
+            mt.Insert(30);
+            mt.Insert(45);
+            mt.Insert(20);
+            mt.Insert(41);
+            mt.Insert(47);
+            mt.ListOfDepths();
         */
         public void ListOfDepths()
         {
             if (Root != null)
             {
-                LinkedList<TreeNode> list = new LinkedList<TreeNode>();
-                Queue<TreeNode> queue = new Queue<TreeNode>();
-                list.AddLast(Root);
-                queue.Enqueue(Root);
-                ListOfDepthsPrintLinkedList(list);
-                ListOfDepthsHelper(queue);
+                Dictionary<int, LinkedList<TreeNode>> lists = new Dictionary<int, LinkedList<TreeNode>>();
+                ListOfDepths(Root, lists, 0);
+                ListOfDepthsPrintLinkedLists(lists);
+            }
+            else
+            {
+                Console.WriteLine("Empty Tree!");
             }
         }
 
-        private void ListOfDepthsHelper(Queue<TreeNode> queue)
+        private void ListOfDepths(TreeNode root, Dictionary<int, LinkedList<TreeNode>> lists, int level)
         {
-            if (queue.Count == 0)
+            if (root == null)
                 return;
 
-            LinkedList<TreeNode> list = new LinkedList<TreeNode>();
-            Queue<TreeNode> newLevel = new Queue<TreeNode>();
+            LinkedList<TreeNode> list = null;
 
-            while (queue.Count > 0)
+            /*
+             * Levels are always traversed in order. So, if this is the first time we've
+               visited level i, we must have seen levels 0 through i - 1. We can
+               therefore safely add the level at the end.
+             */
+            if (lists.ContainsKey(level))
             {
-                TreeNode node = queue.Dequeue();
-
-                if (node.LeftChild != null)
-                {
-                    newLevel.Enqueue(node.LeftChild);
-                    list.AddLast(node.LeftChild);
-                }
-
-
-                if (node.RightChild != null)
-                {
-                    newLevel.Enqueue(node.RightChild);
-                    list.AddLast(node.RightChild);
-                }
+                // Level is already in the dictionary
+                list = lists[level];
+            }
+            else
+            {
+                // Level is NOT in the dictionary
+                list = new LinkedList<TreeNode>();
+                lists.Add(level, list);
             }
 
-            ListOfDepthsPrintLinkedList(list);
-            ListOfDepthsHelper(newLevel);
+            list.AddLast(root);
+            Console.WriteLine($"Adding * Level {level} *, *Value {root.ValueInt} *");
+            ListOfDepths(root.LeftChild, lists, level + 1);
+            ListOfDepths(root.RightChild, lists, level + 1);
         }
 
-        private void ListOfDepthsPrintLinkedList(LinkedList<TreeNode> list)
+        private void ListOfDepthsPrintLinkedLists(Dictionary<int, LinkedList<TreeNode>> lists)
         {
-            foreach (var item in list)
+            foreach (var item in lists)
             {
-                    Console.Write(item.ValueInt + " - ");
-            }
+                int listNumber = item.Key;
+                LinkedList<TreeNode> list = item.Value;
 
-            Console.WriteLine();
+                Console.WriteLine($"List Number: {listNumber}");
+                foreach (var node in list)
+                {
+                    Console.Write($"{node.ValueInt} * ");
+                }
+
+                Console.WriteLine();
+            }
         }
 
         /*?   Cracking the Coding Interview, 6th Edition    
