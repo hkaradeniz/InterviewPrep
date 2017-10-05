@@ -58,6 +58,7 @@
     <Compile Include="AtoiClass.cs" />
     <Compile Include="BinarySearch.cs" />
     <Compile Include="BitManipulation\BinaryToString.cs" />
+    <Compile Include="BitManipulation\FlipBitToWin.cs" />
     <Compile Include="BitManipulation\Insertion.cs" />
     <Compile Include="CharToAscii.cs" />
     <Compile Include="CoinChange.cs" />
