@@ -22,7 +22,22 @@ namespace InterviewPrep
                 Take 8 for example. 1000 & 0111 = 0000
              */
         }
+        public double ReduceToPowerOfTwo(int num)
+        {
+            int i = 31;
 
+            //Console.WriteLine(Convert.ToString(num,2));
+
+            while (i > 0)
+            {
+                if ((num & (1 << i)) != 0)
+                    break;
+
+                i--;
+            }
+
+            return Math.Pow(2, i);
+        }
         public BigInteger Reduce(int num)
         {
             /*
