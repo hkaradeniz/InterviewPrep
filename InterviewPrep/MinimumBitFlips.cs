@@ -4,6 +4,18 @@ namespace InterviewPrep
 {
     class MinimumBitFlips
     {
+        public int ComputeMinimumBitFlipsOptimum(int a, int b)
+        {
+            int count = 0;
+
+            for (int i = a^b; i!=0; i = i>>1)
+            {
+                count += i & 1;
+            }
+
+            return count;
+        }
+
         public void ComputeMinimumBitFlipsBitwise(int a, int b)
         {
             /* XOR GATE:
