@@ -18,18 +18,20 @@
         ->if it is greater than high index element then copy high index in low index and double the high index.
         ->if it is smaller, then apply binary search on high and low indices found.
         */
-
         public int SolveSortedSearchNoSize(int[] arr, int key)
         {
-            int left = 0;
-            int right = 1;
+            int index = 1;
 
-            while (arr[right] > 0 && arr[right] < key)
+            while (arr[index] != -1 && arr[index] < key)
             {
-                left = right;
-                right *= 2;
+                index *= 2;
             }
 
+            return BinarySearch(arr, key, index / 2, index);
+        }
+
+        private int BinarySearch(int[] arr, int key, int left, int right)
+        {
             while (left <= right)
             {
                 int mid = left + (right - left) / 2;
@@ -38,15 +40,14 @@
                 {
                     return mid;
                 }
-                else if (arr[mid] < key)
-                {
-                    left = mid + 1;
-                }
-                else
+                else if (arr[mid] > key || arr[mid] == -1)
                 {
                     right = mid - 1;
                 }
-                
+                else
+                {
+                    left = mid + 1;
+                }
             }
 
             return -1;
