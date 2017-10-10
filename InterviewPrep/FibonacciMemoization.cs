@@ -6,13 +6,6 @@ namespace InterviewPrep
     {
         static Dictionary<int, int> fibmemo = new Dictionary<int, int>();
 
-        public FibonacciMemoization()
-        {
-            fibmemo.Clear();
-            fibmemo.Add(0, 0);
-            fibmemo.Add(1, 1);
-        }
-
         /*
           fib(n) = fib(n-1) + fib(n-2)
           fib(0) = 0
@@ -35,12 +28,10 @@ namespace InterviewPrep
         // Memoization => O(N) Time
         public int Fibonacci(int n)
         {
-            if (fibmemo.ContainsKey(n))
-                return fibmemo[n];
-            else
-            {
+            if (n <= 1)
+                return n;
+            else if (!fibmemo.ContainsKey(n))
                 fibmemo.Add(n, Fibonacci(n - 1) + Fibonacci(n - 2));
-            }
 
             return fibmemo[n];
         }
