@@ -98,6 +98,7 @@
     <Compile Include="MyLinkedList\MyLinkedList.cs" />
     <Compile Include="MyLinkedList\Node.cs" />
     <Compile Include="MyLinkedList\SumList.cs" />
+    <Compile Include="MyTree\CreateBST.cs" />
     <Compile Include="MyTree\MyTree.cs" />
     <Compile Include="MyTree\TreeNode.cs" />
     <Compile Include="NQueenProblem.cs" />
