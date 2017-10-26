@@ -20,6 +20,11 @@ namespace InterviewPrep
          */
 
         // Elements must be distinct
+        /*
+         Test Data:
+          SearchRotatedArray sa = new SearchRotatedArray();
+          Console.WriteLine(sa.SolveSearchRotatedArray(new int[] {78,82,99,10,23,35,49,51,60 }, 10)); 
+        */
         public int SolveSearchRotatedArray(int[] arr, int target)
         {
             int low = 0;
@@ -33,7 +38,7 @@ namespace InterviewPrep
                 if (arr[mid] == target)
                     return mid;
                 // Else let's find out which side of the array is sorted...
-                else if (arr[mid] <= arr[high]) // //Left is normally ordered.
+                else if (arr[mid] < arr[high]) // //Right is normally ordered.
                 {
                     if (arr[mid] < target && arr[high] >= target)
                         low = mid + 1; // Search RIGHT
@@ -43,10 +48,10 @@ namespace InterviewPrep
                 // if right is not sorted somehow, this means left is totaly sorted
                 else
                 {
-                    if (arr[low] <= target && arr[mid] > target) //Right is normally ordered.
+                    if (arr[low] <= target && arr[mid] > target) 
                         high = mid - 1; // Search LEFT
                     else
-                        low = mid - 1; // // Search RIGHT
+                        low = mid + 1; // // Search RIGHT
                 }
             }
 
