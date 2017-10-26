@@ -43,5 +43,24 @@ namespace InterviewPrep.General
             node.Next = null;
             Pointer = Pointer.Next;
         }
+
+        // Reverse a Linked List - Iterative
+        // Keep three pointers
+        public void ReverseLinkedListIteratively()
+        {
+            Node prev = null;
+            Node current = null;
+            Node next = Head;
+
+            while (next != null)
+            {
+                current = next;
+                next = next.Next;
+                current.Next = prev;
+                prev = current;
+            }
+
+            Head = current;
+        }
     }
 }
