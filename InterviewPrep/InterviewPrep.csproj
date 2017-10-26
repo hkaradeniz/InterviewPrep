@@ -79,6 +79,7 @@
     <Compile Include="FizzBuzz.cs" />
     <Compile Include="FlattenLinkedList.cs" />
     <Compile Include="FloydsCycleFindingAlgorithm.cs" />
+    <Compile Include="General\DeleteMiddleNodeFromLinkedList.cs" />
     <Compile Include="General\FindMajorityElement.cs" />
     <Compile Include="General\MaximumAverageSubarray.cs" />
     <Compile Include="General\NextGreater.cs" />
