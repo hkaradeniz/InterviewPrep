@@ -99,6 +99,7 @@
     <Compile Include="MergeTwoSortedArrays.cs" />
     <Compile Include="MinimumBitFlips.cs" />
     <Compile Include="MinimumNumberofPlatforms.cs" />
+    <Compile Include="MinimumNumberOfRooms.cs" />
     <Compile Include="MissingInt.cs" />
     <Compile Include="MoveZeros.cs" />
     <Compile Include="MyHeap\MinIntHeap.cs" />
