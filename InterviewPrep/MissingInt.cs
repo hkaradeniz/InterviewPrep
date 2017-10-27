@@ -16,6 +16,8 @@ namespace InterviewPrep
                you will get the missing number.
          */
         // Nonnegative Integer: An integer that is either 0 or positive 
+        /* If the sum of the numbers goes beyond maximum allowed integer, then there 
+         * can be integer overflow! */
         public void FindMissingInteger(int[] arr, int n)
         {
             // If the Array has 7 elements, that means max number is 8
