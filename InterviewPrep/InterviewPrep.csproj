@@ -106,6 +106,7 @@
     <Compile Include="MyLinkedList\Node.cs" />
     <Compile Include="MyLinkedList\SumList.cs" />
     <Compile Include="MyTree\CreateBST.cs" />
+    <Compile Include="MyTree\MaximumWidth.cs" />
     <Compile Include="MyTree\MyTree.cs" />
     <Compile Include="MyTree\TreeNode.cs" />
     <Compile Include="MyTree\VerticalSum.cs" />
