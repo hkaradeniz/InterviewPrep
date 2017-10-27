@@ -54,7 +54,7 @@ namespace InterviewPrep
         public int GetTheMostCrowdedYear(int[] born, int[] death)
         {
             if (born.Length != death.Length)
-                throw new Exception("Inconsistant data!");
+                throw new Exception("Inconsistent data!");
 
             Array.Sort(born);
             Array.Sort(death);
