@@ -86,6 +86,7 @@
     <Compile Include="General\MaximumAverageSubarray.cs" />
     <Compile Include="General\NextGreater.cs" />
     <Compile Include="General\ReverseLinkedList.cs" />
+    <Compile Include="General\SubArrayWithSumK.cs" />
     <Compile Include="General\TrappingRainWater.cs" />
     <Compile Include="GetNextGreaterNumber.cs" />
     <Compile Include="Graph.cs" />
