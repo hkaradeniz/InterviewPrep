@@ -132,6 +132,7 @@
     <Compile Include="Sorting\MergeSort.cs" />
     <Compile Include="Sorting\RadixSortIComparer.cs" />
     <Compile Include="SparseSearch.cs" />
+    <Compile Include="StacksAndQueues\MinStackConstant.cs" />
     <Compile Include="StacksAndQueues\SortStack.cs" />
     <Compile Include="StacksAndQueues\ThreeInOne.cs" />
     <Compile Include="StackWithQueue.cs" />
