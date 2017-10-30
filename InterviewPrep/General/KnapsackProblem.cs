@@ -46,6 +46,7 @@ namespace InterviewPrep.General
            General.KnapsackProblem kp = new General.KnapsackProblem();
            Console.WriteLine(kp.KnapSack(10, new int[] {2,2,4,5}, new int[] {3,7,2,9}));
          */
+        /* Knapsack Complexity: O(nW) */
         public int KnapSack(int weight, int[] weights, int[] values)
         {
             return KnapSack(weight, 0, weights, values);
@@ -58,15 +59,11 @@ namespace InterviewPrep.General
 
             if (weights[pointer] > weight)
               return KnapSack(weight, pointer + 1, weights, values);
-            else
-            {
-               /*
-                  int includeValue = values[pointer] + KnapSack(weight - weights[pointer], pointer + 1, weights, values);
-                  int excludeValue = KnapSack(weight, pointer + 1, weights, values);
-                 */
-                return Math.Max(values[pointer] + KnapSack(weight - weights[pointer], pointer + 1, weights, values),
-                    KnapSack(weight, pointer + 1, weights, values));
-            }
+            
+            int includeValue = values[pointer] + KnapSack(weight - weights[pointer], pointer + 1, weights, values);
+            int excludeValue = KnapSack(weight, pointer + 1, weights, values);
+                
+            return Math.Max(includeValue, excludeValue);
         }
     }
 }
