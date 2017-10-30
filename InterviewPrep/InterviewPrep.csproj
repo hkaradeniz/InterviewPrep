@@ -83,6 +83,7 @@
     <Compile Include="General\DeleteMiddleNodeFromLinkedList.cs" />
     <Compile Include="General\FindMajorityElement.cs" />
     <Compile Include="General\FriendCircle.cs" />
+    <Compile Include="General\KnapsackProblem.cs" />
     <Compile Include="General\MaximumAverageSubarray.cs" />
     <Compile Include="General\NextGreater.cs" />
     <Compile Include="General\ReverseLinkedList.cs" />
