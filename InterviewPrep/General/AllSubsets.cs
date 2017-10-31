@@ -4,6 +4,7 @@ namespace InterviewPrep.General
 {
     class AllSubsets
     {
+        /* Facebook Coding Interview Question */
         /* Find and print all subsets of a given set! (Given as an array.) */
         /* Complexity O(2^N) */
 
