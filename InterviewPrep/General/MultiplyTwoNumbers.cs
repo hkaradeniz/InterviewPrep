@@ -17,6 +17,16 @@ namespace InterviewPrep.General
 
             for (int i = 0; i < arr.Length; i++)
             {
+                /*
+                        Explanation: 
+                        Dividing two ints performs an integer division, i.e. the fractional part is truncated 
+                        since it can't be stored in the result type.
+                        Enforce non-integer division on int arguments by explicitly casting at least one of 
+                        the arguments to a floating-point type, e.g.
+                        int a = 42;
+                        int b = 23;
+                        double result = (double)a / b;
+                  */
                 double number = (double) total / arr[i];
 
                 if (hash.Contains(number))
