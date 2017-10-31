@@ -79,6 +79,7 @@
     <Compile Include="FizzBuzz.cs" />
     <Compile Include="FlattenLinkedList.cs" />
     <Compile Include="FloydsCycleFindingAlgorithm.cs" />
+    <Compile Include="General\AllSubsets.cs" />
     <Compile Include="General\BinaryStringsNoConsecutiveOnes.cs" />
     <Compile Include="General\DeleteMiddleNodeFromLinkedList.cs" />
     <Compile Include="General\FindMajorityElement.cs" />
