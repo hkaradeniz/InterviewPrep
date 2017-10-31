@@ -50,6 +50,7 @@
     <Compile Include="ActivitySelectionProblem.cs" />
     <Compile Include="ArraysStrings\CheckPermutation.cs" />
     <Compile Include="ArraysStrings\IsUnique.cs" />
+    <Compile Include="ArraysStrings\KadanesLargestSumContiguousSubarray.cs" />
     <Compile Include="ArraysStrings\OneAway.cs" />
     <Compile Include="ArraysStrings\PalindromePermutation.cs" />
     <Compile Include="ArraysStrings\StringCompression.cs" />
