@@ -136,6 +136,7 @@
     <Compile Include="SortedSearchNoSize.cs" />
     <Compile Include="Sorting\3WayQuickSort.cs" />
     <Compile Include="Sorting\InsertionSort.cs" />
+    <Compile Include="Sorting\KnuthShuffle.cs" />
     <Compile Include="Sorting\MergeSort.cs" />
     <Compile Include="Sorting\RadixSortIComparer.cs" />
     <Compile Include="SparseSearch.cs" />
