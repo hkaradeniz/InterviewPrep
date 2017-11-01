@@ -10,6 +10,7 @@
     {
         private static Singleton instance;
 
+        // Construction method is protected. Cannot use new
         protected Singleton()
         { }
 
