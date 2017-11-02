@@ -103,6 +103,7 @@
     <Compile Include="LongestSubstringWORepeating.cs" />
     <Compile Include="MakeAnagram.cs" />
     <Compile Include="Matrices.cs" />
+    <Compile Include="Matrix\SearchSortedMatrix.cs" />
     <Compile Include="MergeOverlappingIntervals\Interval.cs" />
     <Compile Include="MergeOverlappingIntervals\MergeOverlappingIntervals.cs" />
     <Compile Include="MergeTwoSortedArrays.cs" />
