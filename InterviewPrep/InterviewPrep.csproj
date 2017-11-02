@@ -84,6 +84,7 @@
     <Compile Include="General\AddOne.cs" />
     <Compile Include="General\AllSubsets.cs" />
     <Compile Include="General\BinaryStringsNoConsecutiveOnes.cs" />
+    <Compile Include="General\BuySellStock.cs" />
     <Compile Include="General\DeleteMiddleNodeFromLinkedList.cs" />
     <Compile Include="General\FindMajorityElement.cs" />
     <Compile Include="General\FriendCircle.cs" />
