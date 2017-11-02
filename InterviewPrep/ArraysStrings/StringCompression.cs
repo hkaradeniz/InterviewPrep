@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
 namespace InterviewPrep.ArraysStrings
 {
@@ -49,6 +45,40 @@ namespace InterviewPrep.ArraysStrings
             string newStr = sb.ToString();
 
             return newStr.Length < s.Length ? newStr : s;
+        }
+
+        public string Compress(string s)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            int pointer = 0;
+            int scanner = 1;
+            int counter = 0;
+
+            while (pointer < s.Length)
+            {
+                char c = s[pointer];
+                sb.Append(c);
+                counter = 1;
+
+                scanner = pointer + 1;
+                while (scanner < s.Length)
+                {
+                    if (c == s[scanner])
+                    {
+                        counter++;
+                        scanner++;
+                    }
+                    else
+                        break;
+                }
+
+                sb.Append(counter);
+                pointer = scanner;
+
+            }
+
+            return sb.ToString();
         }
     }
 }
