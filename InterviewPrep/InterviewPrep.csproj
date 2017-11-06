@@ -93,6 +93,7 @@
     <Compile Include="General\MinimumJumps.cs" />
     <Compile Include="General\MultiplyTwoNumbers.cs" />
     <Compile Include="General\NextGreater.cs" />
+    <Compile Include="General\PowerOfX.cs" />
     <Compile Include="General\ReverseLinkedList.cs" />
     <Compile Include="General\SubArrayWithSumK.cs" />
     <Compile Include="General\TrappingRainWater.cs" />
