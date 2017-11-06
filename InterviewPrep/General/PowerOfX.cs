@@ -42,5 +42,24 @@ namespace InterviewPrep.General
 
             return false;
         }
+
+        /* Solution - 2: Check if log A / log i is an integer */
+        public bool IsPowerOfY(int number)
+        {
+            if (number < 1) return false;
+
+            int sqrt = (int)Math.Sqrt(number);
+
+            /* Ex:  */
+            for (int i = 2; i <= sqrt; i++)
+            {
+                double value = Math.Log(number) / Math.Log(i);
+
+                if (value == Math.Floor(value))
+                    return true;
+            }
+
+            return false;
+        }
     }
 }
