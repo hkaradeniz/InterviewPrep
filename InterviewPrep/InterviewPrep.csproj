@@ -50,6 +50,7 @@
     <Compile Include="ActivitySelectionProblem.cs" />
     <Compile Include="ArraysStrings\ArrayLeaders.cs" />
     <Compile Include="ArraysStrings\CheckPermutation.cs" />
+    <Compile Include="ArraysStrings\CountFrequencies.cs" />
     <Compile Include="ArraysStrings\IsUnique.cs" />
     <Compile Include="ArraysStrings\KadanesLargestSumContiguousSubarray.cs" />
     <Compile Include="ArraysStrings\LongestConsecutiveCharacters.cs" />
