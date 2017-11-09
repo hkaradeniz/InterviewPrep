@@ -102,6 +102,7 @@
     <Compile Include="General\UnsortedSubarray.cs" />
     <Compile Include="GetNextGreaterNumber.cs" />
     <Compile Include="Graph.cs" />
+    <Compile Include="Graphs\NumberOfClusters.cs" />
     <Compile Include="GroupAnagrams.cs" />
     <Compile Include="LivingPeople.cs" />
     <Compile Include="LongestIncreasingSubarray.cs" />
