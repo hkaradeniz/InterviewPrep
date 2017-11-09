@@ -97,6 +97,7 @@
     <Compile Include="General\NextGreater.cs" />
     <Compile Include="General\PowerOfX.cs" />
     <Compile Include="General\ReverseLinkedList.cs" />
+    <Compile Include="General\SquareRoot.cs" />
     <Compile Include="General\SubArrayWithSumK.cs" />
     <Compile Include="General\TrappingRainWater.cs" />
     <Compile Include="General\UnsortedSubarray.cs" />
