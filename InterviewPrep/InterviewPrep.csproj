@@ -58,6 +58,7 @@
     <Compile Include="ArraysStrings\PalindromePermutation.cs" />
     <Compile Include="ArraysStrings\StringCompression.cs" />
     <Compile Include="ArraysStrings\StringRotation.cs" />
+    <Compile Include="ArraysStrings\SymmetricBinaryTree.cs" />
     <Compile Include="ArraysStrings\URLify.cs" />
     <Compile Include="AtoiClass.cs" />
     <Compile Include="BinarySearch.cs" />
