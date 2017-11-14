@@ -53,6 +53,7 @@
     <Compile Include="ArraysStrings\CountFrequencies.cs" />
     <Compile Include="ArraysStrings\IsUnique.cs" />
     <Compile Include="ArraysStrings\KadanesLargestSumContiguousSubarray.cs" />
+    <Compile Include="ArraysStrings\LargestSubsetWithConsecutiveNumbers.cs" />
     <Compile Include="ArraysStrings\LongestConsecutiveCharacters.cs" />
     <Compile Include="ArraysStrings\OneAway.cs" />
     <Compile Include="ArraysStrings\PalindromePermutation.cs" />
