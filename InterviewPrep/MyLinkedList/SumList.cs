@@ -102,7 +102,7 @@ namespace InterviewPrep.MyLinkedList
             // Get total sum
             while (first != null || second != null)
             {
-                sum += (first.Value + second.Value) * Convert.ToInt32(Math.Pow(10, power));
+                sum += ((first == null ? 0 : first.Value) + (second == null ? 0 : second.Value)) * Convert.ToInt32(Math.Pow(10, power));
                 power--;
 
                 first = first.Next;
