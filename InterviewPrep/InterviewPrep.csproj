@@ -143,6 +143,7 @@
     <Compile Include="ReverseWords.cs" />
     <Compile Include="RotateArray.cs" />
     <Compile Include="RotateMatrix.cs" />
+    <Compile Include="SampleInts\ReverseVowels.cs" />
     <Compile Include="SearchRotatedArray.cs" />
     <Compile Include="SortBigFile.cs" />
     <Compile Include="SortedMerge.cs" />
