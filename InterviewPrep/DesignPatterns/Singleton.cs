@@ -19,7 +19,7 @@
         public static Singleton GetInstance()
         {
             if (instance == null)
-                return new Singleton();
+               instance = new Singleton();
 
             return instance;
         }
