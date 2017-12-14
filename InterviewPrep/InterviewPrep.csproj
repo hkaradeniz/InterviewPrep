@@ -107,6 +107,7 @@
     <Compile Include="General\TrappingRainWater.cs" />
     <Compile Include="General\UnsortedSubarray.cs" />
     <Compile Include="GetNextGreaterNumber.cs" />
+    <Compile Include="Google\LongestValidParentheses.cs" />
     <Compile Include="Graph.cs" />
     <Compile Include="Graphs\NumberOfClusters.cs" />
     <Compile Include="GroupAnagrams.cs" />
