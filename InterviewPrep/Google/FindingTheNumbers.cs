@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace InterviewPrep.Google
 {
@@ -27,37 +28,39 @@ namespace InterviewPrep.Google
 
         Output :
         3 4
-1 3
+        1 3
+
+        Google.FindingTheNumbers fn = new Google.FindingTheNumbers();
+       //fn.PrintNumbers(new int[] { 1, 2, 3, 2, 1, 4 }, 2);
+       fn.PrintNumbers(new int[] { 2, 1, 3, 2 }, 1);
      */
     class FindingTheNumbers
     {
         /* 1- Naive Solution: scan the array for each element then then sort the distinct ones O(N^2) */
 
-        /* 2- Sort the array, remove duplicates, return the result O(N LOG(N))*/
+        /* 2- Scan the whole array, remove the duplicates, copy hash to an array, order two final elements, print*/
 
         public void PrintNumbers(int[] arr, int n)
         {
             if (arr == null || arr.Length == 0) return;
 
-            Array.Sort(arr);
             int size = 2 * n + 2;
 
-            int previous = arr[0];
-            //int counter = 0;
-            int scanner = 1;
+            HashSet<int> hash = new HashSet<int>();
 
-            while (scanner < size)
+            for (int i = 0; i < size; i++)
             {
-                if (arr[scanner - 1] == arr[scanner])
-                {
-                    scanner = scanner + 2;
-                }
+                if (hash.Contains(arr[i]))
+                    hash.Remove(arr[i]);
                 else
-                {
-                    Console.WriteLine(arr[scanner-1]);
-                    scanner++;
-                }
+                    hash.Add(arr[i]);
             }
+
+            int[] temp = new int[2];
+            hash.CopyTo(temp);
+            Array.Sort(temp);
+
+            Console.WriteLine($"{temp[0]} {temp[1]}");
         }
     }
 }
