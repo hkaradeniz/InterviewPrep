@@ -133,6 +133,7 @@
     <Compile Include="MyLinkedList\MyLinkedList.cs" />
     <Compile Include="MyLinkedList\Node.cs" />
     <Compile Include="MyLinkedList\SumList.cs" />
+    <Compile Include="MyTree\BSTNodesInRange.cs" />
     <Compile Include="MyTree\CreateBST.cs" />
     <Compile Include="MyTree\DiagonalSum.cs" />
     <Compile Include="MyTree\MaximumWidth.cs" />
