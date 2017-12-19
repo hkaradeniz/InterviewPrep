@@ -79,6 +79,7 @@
     <Compile Include="DesignPatterns\Prototype.cs" />
     <Compile Include="DesignPatterns\Singleton.cs" />
     <Compile Include="DesignPatterns\Strategy.cs" />
+    <Compile Include="Facebook\ActivitySelection.cs" />
     <Compile Include="Factorial.cs" />
     <Compile Include="FibonacciMemoization.cs" />
     <Compile Include="FirstNonRepeatedChar.cs" />
