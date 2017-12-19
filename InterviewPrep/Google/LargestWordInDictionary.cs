@@ -3,9 +3,11 @@ using System.Text;
 
 namespace InterviewPrep.Google
 {
+    /*  */
     /* Find largest word in dictionary */
     /* https://practice.geeksforgeeks.org/problems/find-largest-word-in-dictionary/0 */
-    /* Giving a dictionary and a string ‘str’, your task is to find the longest string in dictionary of size x which can be formed by deleting some characters of the given ‘str’.
+    /* Giving a dictionary and a string ‘str’, your task is to find the longest string in dictionary 
+        of size x which can be formed by deleting some characters of the given ‘str’.
 
         Examples:
 
@@ -38,26 +40,12 @@ namespace InterviewPrep.Google
 
         public string FindLargestWordInDictionary(string str)
         {
-            if (string.IsNullOrEmpty(str)) return string.Empty;
-
-            FindLargestWordInDictionary(str, string.Empty, 0);
-
-            return largestWord;
+            return string.Empty;
         }
 
         private void FindLargestWordInDictionary(string originalStr, string tempStr, int index)
         {
-            if (index == originalStr.Length)
-            {
-                System.Console.WriteLine($": {tempStr.ToString()}");
-                return;
-            }
-
-            if (tempStr.Length > largestWord.Length && dictionary.Contains(tempStr.ToString()))
-                largestWord = tempStr.ToString();
-
-            FindLargestWordInDictionary(originalStr, tempStr + originalStr[index], index + 1);
-            FindLargestWordInDictionary(originalStr, tempStr, index + 1);
+  
         }
     }
 }
