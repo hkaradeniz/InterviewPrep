@@ -41,7 +41,7 @@ namespace InterviewPrep.Facebook
 
             List<Activity> activities = new List<Activity>();
 
-            // Adding a beginning activy starts at 0 ends at zero, or display the first activity by default
+            // Adding a beginning activity starts at 0 ends at zero, or display the first activity by default
             Activity defaultBegining = new Activity(0, 0);
             activities.Add(defaultBegining);
 
