@@ -115,6 +115,7 @@
     <Compile Include="Google\LongestValidParentheses.cs" />
     <Compile Include="Google\LRUCache.cs" />
     <Compile Include="Google\SubarrayWithGivenSum.cs" />
+    <Compile Include="Google\TotalDecodingMessages.cs" />
     <Compile Include="Google\WordBreak.cs" />
     <Compile Include="Graph.cs" />
     <Compile Include="Graphs\NumberOfClusters.cs" />

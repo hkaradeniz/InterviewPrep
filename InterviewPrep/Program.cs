@@ -11,6 +11,8 @@ namespace InterviewPrep
 
         static void Main(string[] args)
         {
+            Google.TotalDecodingMessages td = new Google.TotalDecodingMessages();
+            td.TotalNumberOfCombinations("1234");
             Console.Read();
         }
 
