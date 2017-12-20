@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace InterviewPrep.Facebook
 {
@@ -13,22 +10,15 @@ namespace InterviewPrep.Facebook
             if (string.IsNullOrEmpty(str1) || string.IsNullOrEmpty(str2)) return "-1";
 
             int carry;
-            Dictionary<int, StringBuilder> dict = new Dictionary<int, StringBuilder>();
+            Dictionary<int, List<int>> dict = new Dictionary<int, List<int>>();
 
             // 40 * 20
             for (int i = str1.Length-1; i >=0; i--)
             {
                 carry = 0;
 
-                StringBuilder sb = new StringBuilder();
-                dict.Add(str1.Length - 1 - i, sb);
-
-                //int pad = 0;
-                //while (pad < str1.Length - 1 - i)
-                //{
-                //    sb.Append('0');
-                //    pad++;
-                //}
+                List<int> list = new List<int>();
+                dict.Add(str1.Length - 1 - i, list);
 
                 for (int j = str2.Length-1; j >=0; j--)
                 {
@@ -36,14 +26,55 @@ namespace InterviewPrep.Facebook
                     carry = value / 10;
                     value %= 10;
 
-                    sb.Append(value);
+                    list.Add(value);
                 }
 
                 if (carry > 0)
-                    sb.Append(carry);
+                    list.Add(carry);
+            }
+
+            List<int> result = dict[0];
+            int resultPointer;
+            int c;
+            for (int i = 1; i < dict.Count; i++)
+            {
+                List<int> temp = dict[i];
+
+                resultPointer = i;
+                int pointer = 0;
+                c = 0;
+                int resultCount = result.Count;
+                while (pointer < temp.Count)
+                {
+                    if (resultPointer < resultCount)
+                    {
+                        int sum = ((result[resultPointer]) + (temp[pointer])) + c;
+                        c = sum / 10;
+                        sum %= 10;
+
+                        result[resultPointer] = sum;
+                        resultPointer++;
+                    }
+                    else
+                    {
+                        result.Add(temp[pointer]);
+                    }
+
+                    pointer++;
+                }
+
+                if(c > 0)
+                    result.Add(c);
+            }
+
+            for (int i = result.Count-1; i >= 0; i--)
+            {
+                Console.Write(result[i]);
             }
 
             return string.Empty;
         }
+
+       
     }
 }
