@@ -5,9 +5,9 @@ namespace InterviewPrep.Facebook
 {
     class MultiplyLargeNumbers
     {
-        public string Multiply(string str1, string str2)
+        public void Multiply(string str1, string str2)
         {
-            if (string.IsNullOrEmpty(str1) || string.IsNullOrEmpty(str2)) return "-1";
+            if (string.IsNullOrEmpty(str1) || string.IsNullOrEmpty(str2)) return;
 
             int carry;
             Dictionary<int, List<int>> dict = new Dictionary<int, List<int>>();
@@ -46,9 +46,11 @@ namespace InterviewPrep.Facebook
                 int resultCount = result.Count;
                 while (pointer < temp.Count)
                 {
+                    int sum = (temp[pointer]) + c;
+
                     if (resultPointer < resultCount)
                     {
-                        int sum = ((result[resultPointer]) + (temp[pointer])) + c;
+                        sum += result[resultPointer];
                         c = sum / 10;
                         sum %= 10;
 
@@ -57,7 +59,9 @@ namespace InterviewPrep.Facebook
                     }
                     else
                     {
-                        result.Add(temp[pointer]);
+                        c = sum / 10;
+                        sum %= 10;
+                        result.Add(sum);
                     }
 
                     pointer++;
@@ -71,10 +75,6 @@ namespace InterviewPrep.Facebook
             {
                 Console.Write(result[i]);
             }
-
-            return string.Empty;
-        }
-
-       
+        } 
     }
 }
