@@ -82,6 +82,7 @@
     <Compile Include="Facebook\ActivitySelection.cs" />
     <Compile Include="Facebook\BinaryTreeMinimumDepth.cs" />
     <Compile Include="Facebook\KPalindrome.cs" />
+    <Compile Include="Facebook\LargestFibonacciSubsequence.cs" />
     <Compile Include="Facebook\MultiplyLargeNumbers.cs" />
     <Compile Include="Factorial.cs" />
     <Compile Include="FibonacciMemoization.cs" />
