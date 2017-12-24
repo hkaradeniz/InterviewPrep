@@ -14,7 +14,7 @@ namespace InterviewPrep.General
             **
             **    **
             **  ****
-            ********
+            **  ****
             ********
             5 1 3 4
             
