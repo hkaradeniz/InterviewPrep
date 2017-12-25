@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="3Sum.cs" />
     <Compile Include="ActivitySelectionProblem.cs" />
+    <Compile Include="Amazon\BinaryTreeToDLL.cs" />
     <Compile Include="Amazon\KLargestElements.cs" />
     <Compile Include="ArraysStrings\ArrayLeaders.cs" />
     <Compile Include="ArraysStrings\CheckPermutation.cs" />
@@ -142,6 +143,7 @@
     <Compile Include="MissingInt.cs" />
     <Compile Include="MoveZeros.cs" />
     <Compile Include="MyHeap\MinIntHeap.cs" />
+    <Compile Include="MyLinkedList\DoublyLinkedList.cs" />
     <Compile Include="MyLinkedList\MyLinkedList.cs" />
     <Compile Include="MyLinkedList\Node.cs" />
     <Compile Include="MyLinkedList\SumList.cs" />
