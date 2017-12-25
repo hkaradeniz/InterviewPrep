@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="3Sum.cs" />
     <Compile Include="ActivitySelectionProblem.cs" />
+    <Compile Include="Amazon\KLargestElements.cs" />
     <Compile Include="ArraysStrings\ArrayLeaders.cs" />
     <Compile Include="ArraysStrings\CheckPermutation.cs" />
     <Compile Include="ArraysStrings\CountFrequencies.cs" />

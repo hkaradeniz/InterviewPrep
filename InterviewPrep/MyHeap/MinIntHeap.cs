@@ -85,7 +85,7 @@ namespace InterviewPrep.MyHeap
         }
 
         // Remove first element. In this case, you will move the last element to root
-        // Then after we will have to readjust the heap (array) as needed
+        // Then after we will have to readjust the Heap (array) as needed
         public int Poll()
         {
             if (size == 0)
@@ -99,7 +99,7 @@ namespace InterviewPrep.MyHeap
         }
 
         // Adding an item, use the last index too add. Make sure about the capacity first
-        // Then after we will have to readjust the heap (array) as needed
+        // Then after we will have to readjust the Heap (array) as needed
         public void Add(int item)
         {
             ensureExtraCapacity();
