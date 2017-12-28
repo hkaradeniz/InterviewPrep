@@ -51,6 +51,7 @@
     <Compile Include="Amazon\BinaryTreeToDLL.cs" />
     <Compile Include="Amazon\EditDistance.cs" />
     <Compile Include="Amazon\KLargestElements.cs" />
+    <Compile Include="Amazon\MaximumOfAllSubarraysOfSizeK.cs" />
     <Compile Include="Amazon\NextLargerElement.cs" />
     <Compile Include="ArraysStrings\ArrayLeaders.cs" />
     <Compile Include="ArraysStrings\CheckPermutation.cs" />
