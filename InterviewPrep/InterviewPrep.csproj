@@ -53,6 +53,7 @@
     <Compile Include="Amazon\KLargestElements.cs" />
     <Compile Include="Amazon\MaximumOfAllSubarraysOfSizeK.cs" />
     <Compile Include="Amazon\NextLargerElement.cs" />
+    <Compile Include="Amazon\PythagoreanTriplet.cs" />
     <Compile Include="ArraysStrings\ArrayLeaders.cs" />
     <Compile Include="ArraysStrings\CheckPermutation.cs" />
     <Compile Include="ArraysStrings\CountFrequencies.cs" />
