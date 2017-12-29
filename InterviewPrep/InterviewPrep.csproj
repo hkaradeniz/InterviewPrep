@@ -53,6 +53,7 @@
     <Compile Include="Amazon\CheckForBST.cs" />
     <Compile Include="Amazon\DetectRemoveLoopLinkedList.cs" />
     <Compile Include="Amazon\EditDistance.cs" />
+    <Compile Include="Amazon\FormTheBiggestNumber.cs" />
     <Compile Include="Amazon\KLargestElements.cs" />
     <Compile Include="Amazon\MaximumOfAllSubarraysOfSizeK.cs" />
     <Compile Include="Amazon\NextLargerElement.cs" />
