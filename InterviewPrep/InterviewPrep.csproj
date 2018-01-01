@@ -148,6 +148,7 @@
     <Compile Include="MergeOverlappingIntervals\Interval.cs" />
     <Compile Include="MergeOverlappingIntervals\MergeOverlappingIntervals.cs" />
     <Compile Include="MergeTwoSortedArrays.cs" />
+    <Compile Include="Microsoft\IsBinaryNumberMultipleOf3.cs" />
     <Compile Include="Microsoft\KeyPair.cs" />
     <Compile Include="MinimumBitFlips.cs" />
     <Compile Include="MinimumNumberofPlatforms.cs" />
