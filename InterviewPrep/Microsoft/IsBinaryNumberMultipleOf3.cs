@@ -7,6 +7,12 @@ namespace InterviewPrep.Microsoft
     /* Given a binary number,  write a program that prints 1 if given binary number is a multiple of 3.  Else prints 0. The given number can be big upto 2^100 */
     class IsBinaryNumberMultipleOf3
     {
+        /*
+            Explanation:
+            There is a pattern in binary representation of the number that can be used to find if 
+            number is a multiple of 3. If difference between count of odd set bits (Bits set at odd positions) 
+            and even set bits is multiple of 3 then is the number.
+         */
         public bool IsMultipleOf3(string number)
         {
             if (string.IsNullOrEmpty(number)) return false;
