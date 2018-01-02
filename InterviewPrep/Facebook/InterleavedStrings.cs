@@ -12,6 +12,8 @@ namespace InterviewPrep.Facebook
     {
         public bool IsInterleaved(string x, string y, string str)
         {
+            if (x == null || y == null || str == null) return false;
+
             StringBuilder xy = new StringBuilder();
             StringBuilder yx = new StringBuilder();
 
