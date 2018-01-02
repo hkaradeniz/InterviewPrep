@@ -23,7 +23,7 @@ namespace InterviewPrep.ArraysStrings
                 return true;
 
             /* This means, one of the branches is null. It cannot be a symmetric tree */
-            if (node2 == null || node2 == null)
+            if (node1 == null || node2 == null)
                 return false;
 
             if (node1.ValueInt == node2.ValueInt)
