@@ -61,6 +61,7 @@
     <Compile Include="Amazon\NextLargerElement.cs" />
     <Compile Include="Amazon\NumberOfIslands.cs" />
     <Compile Include="Amazon\PythagoreanTriplet.cs" />
+    <Compile Include="Amazon\SortedMatrixSearch.cs" />
     <Compile Include="Amazon\ZigZagArray.cs" />
     <Compile Include="ArraysStrings\ArrayLeaders.cs" />
     <Compile Include="ArraysStrings\CheckPermutation.cs" />
