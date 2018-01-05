@@ -120,6 +120,7 @@
     <Compile Include="General\MultiplyTwoNumbers.cs" />
     <Compile Include="General\NextGreater.cs" />
     <Compile Include="General\NumberOccuringOddNumberOfTimes.cs" />
+    <Compile Include="General\PascalTriangle.cs" />
     <Compile Include="General\PowerOfX.cs" />
     <Compile Include="General\ReverseLinkedList.cs" />
     <Compile Include="General\SieveOfEratosthenes.cs" />
