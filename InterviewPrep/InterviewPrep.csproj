@@ -53,6 +53,7 @@
     <Compile Include="Amazon\BSTMaximumDifference.cs" />
     <Compile Include="Amazon\CheckForBST.cs" />
     <Compile Include="Amazon\DetectRemoveLoopLinkedList.cs" />
+    <Compile Include="Amazon\DutchNationalFlag.cs" />
     <Compile Include="Amazon\EditDistance.cs" />
     <Compile Include="Amazon\FormTheBiggestNumber.cs" />
     <Compile Include="Amazon\KLargestElements.cs" />
