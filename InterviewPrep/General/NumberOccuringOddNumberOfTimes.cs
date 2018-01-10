@@ -23,9 +23,11 @@
 
             int result = arr[0];
 
+            // If you XOR a number with itself, you get 0
+            // If you XOR a number with 0, you get the number
             for (int i = 1; i < arr.Length; i++)
             {
-                result = result ^ arr[i];
+                result ^= arr[i];
             }
 
             return result;
