@@ -18,6 +18,37 @@ namespace InterviewPrep.General
     */
     class SieveOfEratosthenes
     {
+        // Find prime numbers up to any given limit
+        // array [2,3,4,5,6,7,8,9,10,11] n=11
+        public void CalculatePrimeNumbers(int[] arr, int n)
+        {
+            if (n <= 1) return;
+            if (n <= 3) { Console.WriteLine(n); return; }
+
+            int sqrt = (int)Math.Sqrt(n);
+            int pointer;
+
+            for (int i = 2; i <= sqrt; i++)
+            {
+                int num = i;
+                pointer = i - 1;
+
+                while (pointer < arr.Length)
+                {
+                    if (arr[pointer] != -1)
+                    {
+                        if (arr[pointer] % num == 0)
+                            arr[pointer] = -1;
+                    }
+
+                    pointer++;
+                }
+            }
+
+            PrintPrimeNumbers(arr);
+        }
+
+        /*
         public void CalculatePrimeNumbers(int[] arr, int n)
         {
             if (arr == null || arr.Length == 0) return;
@@ -33,7 +64,7 @@ namespace InterviewPrep.General
                 while (counter < arr.Length && isPrime)
                 {
                     if (arr[counter] % arr[i] == 0)
-                        arr[counter] = 1;
+                        arr[counter] = -1;
 
                     counter++;
                 }
@@ -59,12 +90,13 @@ namespace InterviewPrep.General
 
             return true;
         }
+        */
 
         private void PrintPrimeNumbers(int[] arr)
         {
             for (int i = 0; i < arr.Length; i++)
             {
-                if(arr[i] != 1)
+                if(arr[i] != -1)
                     Console.Write($" {arr[i]} ");
             }
         }
