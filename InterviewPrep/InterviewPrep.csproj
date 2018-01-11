@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="3Sum.cs" />
     <Compile Include="ActivitySelectionProblem.cs" />
+    <Compile Include="Adobe\PrimeFactors.cs" />
     <Compile Include="Adobe\ReverseWords.cs" />
     <Compile Include="Adobe\RootToLeafPathSum.cs" />
     <Compile Include="Adobe\SortArrayOf0s1s2s.cs" />
