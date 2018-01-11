@@ -49,6 +49,7 @@
     <Compile Include="3Sum.cs" />
     <Compile Include="ActivitySelectionProblem.cs" />
     <Compile Include="Adobe\ReverseWords.cs" />
+    <Compile Include="Adobe\SortArrayOf0s1s2s.cs" />
     <Compile Include="Adobe\SubsetSumPartition.cs" />
     <Compile Include="Amazon\BinaryTreeToDLL.cs" />
     <Compile Include="Amazon\BreadthFirstTraversal.cs" />
