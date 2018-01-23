@@ -220,6 +220,7 @@
     <Compile Include="TreesAndGraphs\RouteBetweenNodes.cs" />
     <Compile Include="WeightedRandomNumbers.cs" />
     <Compile Include="WeightedUniformStrings.cs" />
+    <Compile Include="Yahoo\LargestPrimeFactor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
