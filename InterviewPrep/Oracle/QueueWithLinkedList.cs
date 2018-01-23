@@ -2,6 +2,9 @@
 {
     /* Implement Queue using Linked List */
     /* https://practice.geeksforgeeks.org/problems/implement-queue-using-linked-list/1 */
+    /* Array implementation uses much less memory */
+    /* For the Microsoft .NET CLR v4, the x86 CLR has a per-object overhead of 8 bytes, and the x64 CLR has a per-object 
+     * overhead of 16 bytes. */
     class QueueWithLinkedList
     {
         LList list;
