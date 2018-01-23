@@ -185,6 +185,7 @@
     <Compile Include="MyTree\VerticalSum.cs" />
     <Compile Include="NQueenProblem.cs" />
     <Compile Include="Operations.cs" />
+    <Compile Include="Oracle\IntegerPalindrome.cs" />
     <Compile Include="Palindrome.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
