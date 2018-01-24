@@ -225,6 +225,7 @@
     <Compile Include="Yahoo\LargestProductPalindrome.cs" />
     <Compile Include="Yahoo\SortStack.cs" />
     <Compile Include="Yahoo\SurpasserCount.cs" />
+    <Compile Include="Yahoo\ThreeWayPartitioning.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
