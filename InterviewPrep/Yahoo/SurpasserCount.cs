@@ -7,7 +7,7 @@ namespace InterviewPrep.Yahoo
     /* https://practice.geeksforgeeks.org/problems/surpasser-count/0 */
     class SurpasserCount
     {
-        // Time Complexity: O(n)
+        // Time Complexity: O(n log(n))
         // Space Complexity: O(n)
         // Create a tree and insert values there...
         // While inserting keep a right leaf count...
