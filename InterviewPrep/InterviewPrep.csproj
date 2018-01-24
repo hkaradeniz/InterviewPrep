@@ -65,6 +65,7 @@
     <Compile Include="Amazon\DutchNationalFlag.cs" />
     <Compile Include="Amazon\EditDistance.cs" />
     <Compile Include="Amazon\FormTheBiggestNumber.cs" />
+    <Compile Include="Amazon\GoldbachsConjecture.cs" />
     <Compile Include="Amazon\KLargestElements.cs" />
     <Compile Include="Amazon\MaximumOfAllSubarraysOfSizeK.cs" />
     <Compile Include="Amazon\NextLargerElement.cs" />
