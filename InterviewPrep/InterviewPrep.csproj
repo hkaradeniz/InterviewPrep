@@ -222,6 +222,7 @@
     <Compile Include="WeightedUniformStrings.cs" />
     <Compile Include="Yahoo\LargestPrimeFactor.cs" />
     <Compile Include="Yahoo\LargestProductPalindrome.cs" />
+    <Compile Include="Yahoo\SurpasserCount.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
