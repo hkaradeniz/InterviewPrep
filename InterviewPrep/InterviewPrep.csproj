@@ -203,6 +203,7 @@
     <Compile Include="SortedMerge.cs" />
     <Compile Include="SortedSearchNoSize.cs" />
     <Compile Include="Sorting\3WayQuickSort.cs" />
+    <Compile Include="Sorting\BubbleSort.cs" />
     <Compile Include="Sorting\InsertionSort.cs" />
     <Compile Include="Sorting\KnuthShuffle.cs" />
     <Compile Include="Sorting\MergeSort.cs" />
