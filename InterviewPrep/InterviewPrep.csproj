@@ -223,6 +223,7 @@
     <Compile Include="WeightedUniformStrings.cs" />
     <Compile Include="Yahoo\LargestPrimeFactor.cs" />
     <Compile Include="Yahoo\LargestProductPalindrome.cs" />
+    <Compile Include="Yahoo\MaxSumWithoutAdjacents.cs" />
     <Compile Include="Yahoo\SortStack.cs" />
     <Compile Include="Yahoo\SurpasserCount.cs" />
     <Compile Include="Yahoo\ThreeWayPartitioning.cs" />
