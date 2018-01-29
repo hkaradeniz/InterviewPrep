@@ -53,5 +53,47 @@ namespace InterviewPrep.Adobe
         2) Reverse the whole string from start to end and you get the desired output.
             "much very program this like i"
         */
+        public void ReverseWithoutArray(string str)
+        {
+            if (string.IsNullOrEmpty(str)) return;
+
+            int leftIndex = -1;
+            int rightIndex = str.IndexOf(' ');
+            StringBuilder sb = new StringBuilder();
+
+            while (true)
+            {
+                for (int i = rightIndex-1; i > leftIndex; i--)
+                {
+                    sb.Append(str[i]);
+                }
+
+                leftIndex = rightIndex;
+                if (leftIndex == str.Length)
+                    break; 
+                
+                sb.Append('.');
+
+                rightIndex = str.IndexOf(' ', leftIndex + 1);
+
+                if (rightIndex == -1)
+                    rightIndex = str.Length;
+            }
+
+            leftIndex = 0;
+            rightIndex = sb.ToString().Length - 1;
+
+            while (leftIndex < rightIndex)
+            {
+                char c = sb[leftIndex];
+                sb[leftIndex] = sb[rightIndex];
+                sb[rightIndex] = c;
+
+                leftIndex++;
+                rightIndex--; 
+            }
+
+            Console.WriteLine($"\t Original Text: {str} \n\t New Text: {sb.ToString()}");
+        }
     }
 }
