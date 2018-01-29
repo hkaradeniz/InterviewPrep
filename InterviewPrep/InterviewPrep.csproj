@@ -154,6 +154,7 @@
     <Compile Include="Google\TotalDecodingMessages.cs" />
     <Compile Include="Google\WordBreak.cs" />
     <Compile Include="Graph.cs" />
+    <Compile Include="Graphs\GraphSearch.cs" />
     <Compile Include="Graphs\NumberOfClusters.cs" />
     <Compile Include="GroupAnagrams.cs" />
     <Compile Include="LivingPeople.cs" />
