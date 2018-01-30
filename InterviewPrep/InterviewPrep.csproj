@@ -65,6 +65,7 @@
     <Compile Include="Amazon\DetectRemoveLoopLinkedList.cs" />
     <Compile Include="Amazon\DutchNationalFlag.cs" />
     <Compile Include="Amazon\EditDistance.cs" />
+    <Compile Include="Amazon\EqualArrays.cs" />
     <Compile Include="Amazon\ExcelColumnName.cs" />
     <Compile Include="Amazon\FormTheBiggestNumber.cs" />
     <Compile Include="Amazon\GoldbachsConjecture.cs" />
