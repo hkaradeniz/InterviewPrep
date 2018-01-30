@@ -71,6 +71,7 @@
     <Compile Include="Amazon\MaximumOfAllSubarraysOfSizeK.cs" />
     <Compile Include="Amazon\NextLargerElement.cs" />
     <Compile Include="Amazon\NumberOfIslands.cs" />
+    <Compile Include="Amazon\OverlappingRectangles.cs" />
     <Compile Include="Amazon\PythagoreanTriplet.cs" />
     <Compile Include="Amazon\SortedMatrixSearch.cs" />
     <Compile Include="Amazon\ZigZagArray.cs" />
