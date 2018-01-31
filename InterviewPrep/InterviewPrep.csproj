@@ -73,6 +73,7 @@
     <Compile Include="Amazon\GreatestCommonDivisor.cs" />
     <Compile Include="Amazon\KLargestElements.cs" />
     <Compile Include="Amazon\LeastCommonMultiple.cs" />
+    <Compile Include="Amazon\MaximumDifference.cs" />
     <Compile Include="Amazon\MaximumOfAllSubarraysOfSizeK.cs" />
     <Compile Include="Amazon\NextLargerElement.cs" />
     <Compile Include="Amazon\NumberOfIslands.cs" />
