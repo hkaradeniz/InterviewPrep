@@ -69,6 +69,7 @@
     <Compile Include="Amazon\ExcelColumnName.cs" />
     <Compile Include="Amazon\FormTheBiggestNumber.cs" />
     <Compile Include="Amazon\GoldbachsConjecture.cs" />
+    <Compile Include="Amazon\GreatestCommonDivisor.cs" />
     <Compile Include="Amazon\KLargestElements.cs" />
     <Compile Include="Amazon\MaximumOfAllSubarraysOfSizeK.cs" />
     <Compile Include="Amazon\NextLargerElement.cs" />
