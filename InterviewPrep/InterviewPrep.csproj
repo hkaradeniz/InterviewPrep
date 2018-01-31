@@ -77,6 +77,7 @@
     <Compile Include="Amazon\NumberOfIslands.cs" />
     <Compile Include="Amazon\OverlappingRectangles.cs" />
     <Compile Include="Amazon\PythagoreanTriplet.cs" />
+    <Compile Include="Amazon\RunLengthEncoding.cs" />
     <Compile Include="Amazon\SortedMatrixSearch.cs" />
     <Compile Include="Amazon\ZigZagArray.cs" />
     <Compile Include="ArraysStrings\ArrayLeaders.cs" />
