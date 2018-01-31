@@ -58,6 +58,7 @@
     <Compile Include="Adobe\SetBits.cs" />
     <Compile Include="Adobe\SortArrayOf0s1s2s.cs" />
     <Compile Include="Adobe\SubsetSumPartition.cs" />
+    <Compile Include="Amazon\BinaryTreeDiameter.cs" />
     <Compile Include="Amazon\BinaryTreeToDLL.cs" />
     <Compile Include="Amazon\BreadthFirstTraversal.cs" />
     <Compile Include="Amazon\BSTMaximumDifference.cs" />
