@@ -215,6 +215,7 @@
     <Compile Include="Sorting\KnuthShuffle.cs" />
     <Compile Include="Sorting\MergeSort.cs" />
     <Compile Include="Sorting\RadixSortIComparer.cs" />
+    <Compile Include="Sorting\SelectionSort.cs" />
     <Compile Include="SparseSearch.cs" />
     <Compile Include="StacksAndQueues\MinStackConstant.cs" />
     <Compile Include="StacksAndQueues\SortStack.cs" />
