@@ -161,6 +161,7 @@
     <Compile Include="Google\LongestCommonSubsequence.cs" />
     <Compile Include="Google\LongestValidParentheses.cs" />
     <Compile Include="Google\LRUCache.cs" />
+    <Compile Include="Google\MaximumSizeRectangle.cs" />
     <Compile Include="Google\SubarrayWithGivenSum.cs" />
     <Compile Include="Google\TotalDecodingMessages.cs" />
     <Compile Include="Google\WordBreak.cs" />
