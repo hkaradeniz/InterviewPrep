@@ -41,29 +41,20 @@ namespace InterviewPrep.Google
             dictionary.Add("mango");
         }
 
-        public bool IsWordBreak(string sentence)
+        public bool IsWordBreak(string str)
         {
-            if (string.IsNullOrEmpty(sentence)) return false;
+            int size = str.Length;
 
-            int scanner = 0;
-            StringBuilder word = new StringBuilder();
-            bool result = false;
+            if (size == 0) return true;
 
-            while (scanner < sentence.Length)
+            for (int i = 1; i <= size; i++)
             {
-                word.Append(sentence[scanner]);
-                result = false;
-
-                if (dictionary.Contains(word.ToString()))
-                {
-                    word.Clear();
-                    result = true;
-                }
-
-                scanner++;
+                if (dictionary.Contains(str.Substring(0, i))
+                    && IsWordBreak(str.Substring(i, size - i)))
+                    return true;
             }
 
-            return scanner == sentence.Length && result ? true : false;
+            return false;
         }
     }
 }
