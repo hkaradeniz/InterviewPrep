@@ -122,6 +122,7 @@
     <Compile Include="Facebook\InterleavedStrings.cs" />
     <Compile Include="Facebook\KPalindrome.cs" />
     <Compile Include="Facebook\LargestFibonacciSubsequence.cs" />
+    <Compile Include="Facebook\LongestIncreasingSubsequence.cs" />
     <Compile Include="Facebook\MultiplyLargeNumbers.cs" />
     <Compile Include="Facebook\RomanNumerals.cs" />
     <Compile Include="Factorial.cs" />
