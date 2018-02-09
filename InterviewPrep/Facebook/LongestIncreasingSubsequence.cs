@@ -27,6 +27,7 @@ namespace InterviewPrep.Facebook
             for (int i = 0; i < n; i++)
             {
                 lengthArray[i] = 1;
+                sequenceArray[i] = -1;
             }
 
             for (int i = 1; i < n; i++)
@@ -56,7 +57,6 @@ namespace InterviewPrep.Facebook
                 }   
             }
 
-            sequenceArray[0] = -1;
             while (maxIndex >= 0)
             {
                 Console.WriteLine(arr[maxIndex]);
