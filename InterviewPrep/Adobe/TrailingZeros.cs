@@ -20,7 +20,7 @@
             int total = 0;
             int multiplier = 5;
 
-            while (multiplier < n)
+            while (multiplier <= n)
             {
                 total += n / multiplier;
                 multiplier *= 5;
