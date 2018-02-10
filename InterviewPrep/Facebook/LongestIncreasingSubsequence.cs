@@ -34,7 +34,7 @@ namespace InterviewPrep.Facebook
             {
                 for (int j = 0; j < i; j++)
                 {
-                    if (arr[i] > arr[j] + 1)
+                    if (arr[i] > arr[j])
                     {
                         if (lengthArray[i] <= lengthArray[j] + 1)
                         {
