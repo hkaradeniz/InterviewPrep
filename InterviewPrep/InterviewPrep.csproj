@@ -182,6 +182,7 @@
     <Compile Include="MergeTwoSortedArrays.cs" />
     <Compile Include="Microsoft\IsBinaryNumberMultipleOf3.cs" />
     <Compile Include="Microsoft\KeyPair.cs" />
+    <Compile Include="Microsoft\TriangleTest.cs" />
     <Compile Include="MinimumBitFlips.cs" />
     <Compile Include="MinimumNumberofPlatforms.cs" />
     <Compile Include="MinimumNumberOfRooms.cs" />
