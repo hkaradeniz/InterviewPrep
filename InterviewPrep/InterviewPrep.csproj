@@ -164,6 +164,7 @@
     <Compile Include="Google\LRUCache.cs" />
     <Compile Include="Google\MaximumSizeRectangle.cs" />
     <Compile Include="Google\SubarrayWithGivenSum.cs" />
+    <Compile Include="Google\SuffixSearch.cs" />
     <Compile Include="Google\TotalDecodingMessages.cs" />
     <Compile Include="Google\WordBreak.cs" />
     <Compile Include="Graph.cs" />
@@ -181,6 +182,7 @@
     <Compile Include="MergeTwoSortedArrays.cs" />
     <Compile Include="Microsoft\IsBinaryNumberMultipleOf3.cs" />
     <Compile Include="Microsoft\KeyPair.cs" />
+    <Compile Include="Microsoft\TriangleTest.cs" />
     <Compile Include="MinimumBitFlips.cs" />
     <Compile Include="MinimumNumberofPlatforms.cs" />
     <Compile Include="MinimumNumberOfRooms.cs" />
