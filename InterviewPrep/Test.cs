@@ -5,6 +5,35 @@ namespace InterviewPrep
 {
     class Test
     {
+        // Generic Type Parameter
+        /*
+         Use generic types to maximize code reuse, type safety, and performance.
+         The most common use of generics is to create collection classes.
+         The most common use of generics is to create collection classes.
+         Generic classes may be constrained to enable access to methods on particular data types.
+         Information on the types that are used in a generic data type may be obtained at run-time by using reflection.
+
+
+         Generics were added to version 2.0 of the C# language and the common language runtime (CLR). 
+         Generics introduce to the .NET Framework the concept of type parameters, which make it possible 
+         to design classes and methods that defer the specification of one or more types until the class 
+         or method is declared and instantiated by client code. For example, by using a generic type 
+         parameter T you can write a single class that other client code can use without incurring the 
+         cost or risk of runtime casts or boxing operations, as shown here:
+         */
+        public T[] Reverse<T>(T[] arr)
+        {
+            int n = arr.Length;
+            var newArray = new T[n];
+
+            for (int i = 0; i < n; i++)
+            {
+                newArray[n - 1 - i] = arr[i];
+            }
+
+            return newArray;
+        }
+
         public void ArrayMaxBinarySearchTest()
         {
             /*?
