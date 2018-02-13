@@ -228,6 +228,7 @@
     <Compile Include="SparseSearch.cs" />
     <Compile Include="StacksAndQueues\MinStackConstant.cs" />
     <Compile Include="StacksAndQueues\SortStack.cs" />
+    <Compile Include="StacksAndQueues\SetOfStacks.cs" />
     <Compile Include="StacksAndQueues\ThreeInOne.cs" />
     <Compile Include="StackWithQueue.cs" />
     <Compile Include="StringPermutations.cs" />
