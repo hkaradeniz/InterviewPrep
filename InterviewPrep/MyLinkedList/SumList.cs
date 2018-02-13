@@ -60,7 +60,7 @@ namespace InterviewPrep.MyLinkedList
              6 1 7
              2 9 5
             +------
-            (600 + 200) + (10 + 90) + (7 + 2) => 909 
+             (600 + 200) + (10 + 90) + (7 + 5) => 912 
             */
             MyLinkedList newList = new MyLinkedList();
             Node first = list1.Head;
@@ -122,5 +122,71 @@ namespace InterviewPrep.MyLinkedList
 
             return newList;
         }
+
+        public MyLinkedList GetSumListForwardOrderOptimum(MyLinkedList list1, MyLinkedList list2)
+        {
+            /*?
+            Hint:
+             6 1 7
+             2 9 5
+            +------
+            (600 + 200) + (10 + 90) + (7 + 5) => 912 
+            */
+
+            MyLinkedList newList = new MyLinkedList();
+            Node first = list1.Head;
+            Node second = list2.Head;
+            int sum = 0;
+
+            int len1 = 0;
+            int len2 = 0;
+
+            // Get the length of the first linkedlist
+            while (first != null)
+            { first = first.Next; len1++; }
+            // len1 = list1.Size;
+
+
+            // Get the length of the second linkedlist
+            while (second != null)
+            { second = second.Next; len2++; }
+            //len2 = list2.Size;
+
+            // Padding if second linkedlist is smaller
+            while (len1 > len2)
+            {
+                list2.AddFirst(0);
+                len2++;
+            }
+
+            // Padding if second linkedlist is smaller
+            while (len2 > len1)
+            {
+                list1.AddFirst(0);
+                len1++;
+            }
+
+            int total = 0;
+
+            while (first != null)
+            {
+                total *= 10;
+                total += first.Value + second.Value;
+                first = first.Next;
+                second = second.Next;
+            }
+
+            while (total > 0)
+            {
+                int digit = total % 10;
+                total /= 10;
+
+                newList.AddFirst(digit);
+            }
+
+            newList.DisplayAll();
+
+            return newList;
+        }
     }
-}
+ }
