@@ -59,6 +59,7 @@
     <Compile Include="Adobe\SortArrayOf0s1s2s.cs" />
     <Compile Include="Adobe\SubsetSumPartition.cs" />
     <Compile Include="Adobe\TrailingZeros.cs" />
+    <Compile Include="Amazon\BalancedParentheses.cs" />
     <Compile Include="Amazon\BinaryTreeDiameter.cs" />
     <Compile Include="Amazon\BinaryTreeToDLL.cs" />
     <Compile Include="Amazon\BreadthFirstTraversal.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="Amazon\PythagoreanTriplet.cs" />
     <Compile Include="Amazon\RunLengthEncoding.cs" />
     <Compile Include="Amazon\SortedMatrixSearch.cs" />
+    <Compile Include="Amazon\UniqueCharacter.cs" />
     <Compile Include="Amazon\ZigZagArray.cs" />
     <Compile Include="ArraysStrings\ArrayLeaders.cs" />
     <Compile Include="ArraysStrings\CheckPermutation.cs" />
