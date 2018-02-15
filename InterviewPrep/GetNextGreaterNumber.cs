@@ -6,6 +6,8 @@ namespace InterviewPrep
     class GetNextGreaterNumber
     {
         /*
+         * Next Greater Integer
+         * Amazon
             Uber Interview Questions – Arrange Given Numbers To Form The Biggest Number Possible
         */
         int[] digits;
