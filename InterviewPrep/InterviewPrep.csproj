@@ -80,6 +80,7 @@
     <Compile Include="Amazon\MaxMeetingsInOneRoom.cs" />
     <Compile Include="Amazon\NextLargerElement.cs" />
     <Compile Include="Amazon\NumberOfIslands.cs" />
+    <Compile Include="Amazon\ObjectOrientedDesign.cs" />
     <Compile Include="Amazon\OverlappingRectangles.cs" />
     <Compile Include="Amazon\PythagoreanTriplet.cs" />
     <Compile Include="Amazon\RunLengthEncoding.cs" />
