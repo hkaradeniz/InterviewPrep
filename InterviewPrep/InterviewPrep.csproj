@@ -72,6 +72,7 @@
     <Compile Include="Amazon\FormTheBiggestNumber.cs" />
     <Compile Include="Amazon\GoldbachsConjecture.cs" />
     <Compile Include="Amazon\GreatestCommonDivisor.cs" />
+    <Compile Include="Amazon\IsRotation.cs" />
     <Compile Include="Amazon\KLargestElements.cs" />
     <Compile Include="Amazon\LeastCommonMultiple.cs" />
     <Compile Include="Amazon\MaximumDifference.cs" />
