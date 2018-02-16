@@ -80,6 +80,7 @@
     <Compile Include="Amazon\MaximumOfAllSubarraysOfSizeK.cs" />
     <Compile Include="Amazon\MaximumSubSquareMatrix.cs" />
     <Compile Include="Amazon\MaxMeetingsInOneRoom.cs" />
+    <Compile Include="Amazon\MaxSumOf2DArray.cs" />
     <Compile Include="Amazon\NextLargerElement.cs" />
     <Compile Include="Amazon\NumberOfIslands.cs" />
     <Compile Include="Amazon\NumberOfOddNumbers.cs" />
