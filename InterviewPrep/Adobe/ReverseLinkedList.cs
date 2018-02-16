@@ -29,5 +29,29 @@ namespace InterviewPrep.Adobe
             head = previous;
             return head;
         }
+
+        // Reverse a Linked List in groups of given size
+        public Node ReverseByGroup(Node head, int k)
+        {
+            Node current = head;
+            Node next = null;
+            Node previous = null;
+
+            int counter = 0;
+
+            while (current != null & k < counter)
+            {
+                next = current.Next;
+                current.Next = previous;
+                previous = current;
+                current = next;
+                counter++;
+            }
+
+            if (next != null)
+                head.Next = ReverseByGroup(next, k);
+
+            return previous;
+        }
     }
 }
