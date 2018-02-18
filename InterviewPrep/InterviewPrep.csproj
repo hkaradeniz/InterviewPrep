@@ -76,7 +76,9 @@
     <Compile Include="Amazon\IsRotation.cs" />
     <Compile Include="Amazon\KLargestElements.cs" />
     <Compile Include="Amazon\LeastCommonMultiple.cs" />
+    <Compile Include="Amazon\LeftViewBinaryTree.cs" />
     <Compile Include="Amazon\LongestContinuousOnes.cs" />
+    <Compile Include="Amazon\MatrixBreadthFirstSearch.cs" />
     <Compile Include="Amazon\MaximumDifference.cs" />
     <Compile Include="Amazon\MaximumOfAllSubarraysOfSizeK.cs" />
     <Compile Include="Amazon\MaximumSubSquareMatrix.cs" />
