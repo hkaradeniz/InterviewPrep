@@ -17,31 +17,111 @@ namespace InterviewPrep.Amazon
 
         10 10 10 15 15 90 90 
      */
+     /*
+        Amazon.MaximumOfAllSubarraysOfSizeK m = new Amazon.MaximumOfAllSubarraysOfSizeK();
+        m.PrintMaximumOfAllSubarraysOfSizeK(new int[] { 12, 1, 78, 90, 57, 89, 56 }, 3, 7);
+     */
     class MaximumOfAllSubarraysOfSizeK
     {
-        public void PrintMaximumOfAllSubarraysOfSizeK(int[] arr, int k)
+        internal class MyLinkedList
+        {
+            public LinkedListNode Head { get; set; }
+            public LinkedListNode Tail { get; set; }
+
+            public void AddLast(int value, int index)
+            {
+                LinkedListNode newNode = new LinkedListNode(value, index);
+
+                if (Head == null)
+                {
+                    Head = Tail = newNode;
+                    return;
+                }
+
+                Tail.Next = newNode;
+                newNode.Previous = Tail;
+                Tail = newNode;
+            }
+
+            public void RemoveFirst()
+            {
+                if (Head == null)
+                    return;
+                else
+                {
+                    Head = Head.Next;
+                    Head.Previous = null;
+                }
+            }
+
+            public void RemoveLast()
+            {
+                if (Head == null)
+                    return;
+                else if (Head == Tail)
+                    Clear();
+                else
+                {
+                    Tail = Tail.Previous;
+                    Tail.Next = null;
+                }
+            }
+
+            public bool IsEmpty()
+            {
+                return Head == null;
+            }
+
+            public void Clear()
+            {
+                Head = null;
+            }
+        }
+
+        internal class LinkedListNode
+        {
+            public LinkedListNode Next { get; set; }
+            public LinkedListNode Previous { get; set; }
+            public int Value { get; }
+            public int Index { get; }
+
+            public LinkedListNode(int value, int index)
+            {
+                Value = value;
+                Index = index;
+            }
+        }
+
+        public void PrintMaximumOfAllSubarraysOfSizeK(int[] arr, int k, int n)
         {
             if (arr == null || arr.Length == 0) return;
 
-            int pointer = 0;
-            int max = int.MinValue;
+            MyLinkedList list = new MyLinkedList();
 
-            while (pointer < k)
+            for (int i = 0; i < k; i++)
             {
-                if (arr[pointer] > max)
-                    max = arr[pointer];
+                while (!list.IsEmpty() && arr[list.Tail.Index] < arr[i])
+                    list.RemoveLast();
 
-                pointer++;
+                list.AddLast(arr[i], i);
             }
-            Console.Write($" { max } ");
 
-            for (int i = k; i < arr.Length; i++)
+
+            for (int i = k; i < n; i++)
             {
-                if (arr[i] > max)
-                    max = arr[i];
+                // The head of the list is the maximum element in the window
+                Console.WriteLine($" { list.Head.Value } ");
 
-                Console.Write($" { max } ");
+                while (!list.IsEmpty() && list.Head.Index <= i - k)
+                    list.RemoveFirst();
+
+                while (!list.IsEmpty() && arr[list.Tail.Index] < arr[i])
+                    list.RemoveLast();
+
+                list.AddLast(arr[i], i);
             }
+
+            Console.WriteLine($" { list.Head.Value } ");
         }
     }
 }
