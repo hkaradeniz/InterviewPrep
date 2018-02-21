@@ -76,6 +76,7 @@
     <Compile Include="Amazon\GreatestCommonDivisor.cs" />
     <Compile Include="Amazon\IsRotation.cs" />
     <Compile Include="Amazon\KLargestElements.cs" />
+    <Compile Include="Amazon\LazyBartender.cs" />
     <Compile Include="Amazon\LeastCommonMultiple.cs" />
     <Compile Include="Amazon\LeftViewBinaryTree.cs" />
     <Compile Include="Amazon\LongestContinuousOnes.cs" />
