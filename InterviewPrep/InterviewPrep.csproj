@@ -95,6 +95,7 @@
     <Compile Include="Amazon\PrintRootToLeafPaths.cs" />
     <Compile Include="Amazon\ProductArrayPuzzle.cs" />
     <Compile Include="Amazon\PythagoreanTriplet.cs" />
+    <Compile Include="Amazon\RemoveConsecutiveCharacters.cs" />
     <Compile Include="Amazon\RunLengthEncoding.cs" />
     <Compile Include="Amazon\SortedMatrixSearch.cs" />
     <Compile Include="Amazon\SumTree.cs" />
