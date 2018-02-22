@@ -63,6 +63,7 @@
     <Compile Include="Amazon\BinaryTreeDiameter.cs" />
     <Compile Include="Amazon\BinaryTreeSubtreeOfAnotherBinaryTree.cs" />
     <Compile Include="Amazon\BinaryTreeToDLL.cs" />
+    <Compile Include="Amazon\BotSavesPrincess.cs" />
     <Compile Include="Amazon\BreadthFirstTraversal.cs" />
     <Compile Include="Amazon\BSTMaximumDifference.cs" />
     <Compile Include="Amazon\CheckForBST.cs" />
