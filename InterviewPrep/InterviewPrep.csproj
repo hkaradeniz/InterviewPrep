@@ -206,6 +206,7 @@
     <Compile Include="MoveZeros.cs" />
     <Compile Include="MyHeap\MinIntHeap.cs" />
     <Compile Include="MyLinkedList\DoublyLinkedList.cs" />
+    <Compile Include="MyLinkedList\MergeSortedLinkedLists.cs" />
     <Compile Include="MyLinkedList\MyLinkedList.cs" />
     <Compile Include="MyLinkedList\Node.cs" />
     <Compile Include="MyLinkedList\SumList.cs" />
