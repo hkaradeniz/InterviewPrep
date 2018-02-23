@@ -67,5 +67,57 @@ namespace InterviewPrep.Amazon
                 Console.Write($" { arr[i] } ");
             }
         }
+
+        #region MinHeap
+        private void BuildMinHeap(int[] arr)
+        {
+            HeapSize = arr.Length - 1;
+
+            for (int i = HeapSize / 2; i >=0; i--)
+            {
+                MinHeapHeapify(arr, i);
+            }
+        }
+
+        private void MinHeapHeapify(int[] arr, int index)
+        {
+            int leftChildIndex = 2 * index + 1;
+            int rightChildIndex = 2 * index + 2;
+            int maxIndex = index;
+
+            if (HeapSize >= leftChildIndex && arr[index] < arr[leftChildIndex])
+                maxIndex = leftChildIndex;
+
+            if (HeapSize >= rightChildIndex && arr[maxIndex] < arr[rightChildIndex])
+                maxIndex = rightChildIndex;
+
+            if (maxIndex != index)
+            {
+                Swap(arr, index, maxIndex);
+                MinHeapHeapify(arr, maxIndex);
+            }
+        }
+
+        private void SortMinHeap(int[] arr)
+        {
+            BuildMinHeap(arr);
+            for (int i = arr.Length - 1; i >= 0; i--)
+            {
+                Swap(arr, 0, i);
+                HeapSize--;
+                MinHeapHeapify(arr, 0);
+            }
+        }
+
+        public void PrintKSmallestElements(int[] arr, int k)
+        {
+            SortMinHeap(arr);
+
+            for (int i = 0; i < k; i++)
+            {
+                Console.Write($" { arr[i] } ");
+            }
+        }
+        #endregion
     }
 }
