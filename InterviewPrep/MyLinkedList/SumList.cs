@@ -168,6 +168,8 @@ namespace InterviewPrep.MyLinkedList
 
             int total = 0;
 
+            first = list1.Head;
+            second = list2.Head;
             while (first != null)
             {
                 total *= 10;
