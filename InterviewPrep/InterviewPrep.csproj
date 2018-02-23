@@ -66,6 +66,7 @@
     <Compile Include="Amazon\BotSavesPrincess.cs" />
     <Compile Include="Amazon\BreadthFirstTraversal.cs" />
     <Compile Include="Amazon\BSTMaximumDifference.cs" />
+    <Compile Include="Amazon\CharOccuringOddNumberOfTimes.cs" />
     <Compile Include="Amazon\CheckForBST.cs" />
     <Compile Include="Amazon\DetectRemoveLoopLinkedList.cs" />
     <Compile Include="Amazon\DutchNationalFlag.cs" />
