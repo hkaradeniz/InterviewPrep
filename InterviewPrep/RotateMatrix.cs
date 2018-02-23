@@ -160,5 +160,65 @@ namespace InterviewPrep
                 }
             }
         }
+
+        public void RotateCC(int[,] matrix, int n)
+        {
+            /*
+                 Input
+                 1  2  3
+                 4  5  6
+                 7  8  9
+
+                Output:
+                 3  6  9 
+                 2  5  8 
+                 1  4  7 
+
+                 First Cycle (Involves * elements)
+                 *1   *2   *3  *4 
+                 *5    6   7   *8 
+                 *9   10   11  *12 
+                 *13  *14 *15  *16 
+                 
+
+                 Moving first group of four elements (First
+                elements of 1st row, last row, 1st column 
+                and last column) of first cycle in counter
+                clockwise. 
+                 *4  2   3 *16
+                 5   6   7  8 
+                 9  10  11  12 
+                 *1 14  15 *13 
+                 
+                Moving next group of four elements of 
+                first cycle in counter clockwise 
+                 4   *8  3  16 
+                 5    6  7  *15  
+                 *2  10 11  12 
+                 1   14  *9 13 
+             */
+
+            // Consider all squares one by one
+            for (int i = 0; i < n/2; i++)
+            {
+                // Consider elements in group of 4 in current square
+                for (int j = i; j < n-i-1; j++)
+                {
+                    // store current cell in top variable
+                    int top = matrix[i,j];
+
+                    // move values from right to top
+                    matrix[i, j] = matrix[j, n - 1 - i];
+
+                    // move values from bottom to right
+                    matrix[j, n - 1 - i] = matrix[n - 1 - i, n - 1 - j];
+
+                    // move values from left to bottom
+                    matrix[n - 1 - i, n - 1 - j] = matrix[n - 1 - j, i];
+
+                    matrix[n - 1 - j, i] = top;
+                }
+            }
+        }
     }
 }
