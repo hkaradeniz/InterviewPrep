@@ -93,6 +93,7 @@ namespace InterviewPrep.Contest
                         int tempRangeDifference = i - minIndex;
                         if (tempRangeDifference < rangeDifference)
                         {
+                            rangeDifference = tempRangeDifference;
                             start = minIndex;
                             end = i;
                         }
