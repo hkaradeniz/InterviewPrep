@@ -131,6 +131,7 @@
     <Compile Include="CoinChange.cs" />
     <Compile Include="Concordance\Concordance.cs" />
     <Compile Include="Contest\Counting Sheep.cs" />
+    <Compile Include="Contest\SubstringsKDistinctChars.cs" />
     <Compile Include="CustomQueue.cs" />
     <Compile Include="CustomStack.cs" />
     <Compile Include="DelimiterMatching.cs" />
