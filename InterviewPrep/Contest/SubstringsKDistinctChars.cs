@@ -13,7 +13,6 @@ namespace InterviewPrep.Contest
             // WRITE YOUR CODE HERE
 
             List<string> list = new List<string>();
-            int n = inputString.Length;
 
             for (int i = 0; i <= inputString.Length - num; i++)
             {
