@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace InterviewPrep.Contest
 {
@@ -11,6 +12,12 @@ namespace InterviewPrep.Contest
             double left = 0;
             double right = number;
             double middle = -1;
+
+            // Create new stopwatch.
+            Stopwatch stopwatch = new Stopwatch();
+
+            // Begin timing.
+            stopwatch.Start();
 
             while (left <= right)
             {
@@ -25,6 +32,9 @@ namespace InterviewPrep.Contest
                 else
                     left = middle;
             }
+            stopwatch.Stop();
+
+            Console.WriteLine("Time elapsed: {0}", stopwatch.Elapsed.Milliseconds);
 
             Console.WriteLine($"{n}th root of {number}: {middle}");
 
