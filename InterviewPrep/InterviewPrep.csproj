@@ -104,6 +104,7 @@
     <Compile Include="Amazon\RunLengthEncoding.cs" />
     <Compile Include="Amazon\SerializeDeserializeBinarySearchTree.cs" />
     <Compile Include="Amazon\SortedMatrixSearch.cs" />
+    <Compile Include="Amazon\SortWithStack.cs" />
     <Compile Include="Amazon\SumTree.cs" />
     <Compile Include="Amazon\UniqueCharacter.cs" />
     <Compile Include="Amazon\ZigZagArray.cs" />
