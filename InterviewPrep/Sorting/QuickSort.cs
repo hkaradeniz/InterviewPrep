@@ -3,6 +3,7 @@
 namespace InterviewPrep.Sorting
 {
     // QuickSort - pivot is the last element
+    // https://www.hackerrank.com/challenges/quicksort4/problem
     class QuickSort
     {
         public void Sort(int[] arr)
