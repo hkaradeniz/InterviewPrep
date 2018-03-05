@@ -137,6 +137,7 @@
     <Compile Include="Contest\ShortestSubstring.cs" />
     <Compile Include="Contest\SmallestSubstringOfAllChars.cs" />
     <Compile Include="Contest\SubstringsKDistinctChars.cs" />
+    <Compile Include="Contest\ThePowerSum.cs" />
     <Compile Include="CustomQueue.cs" />
     <Compile Include="CustomStack.cs" />
     <Compile Include="DelimiterMatching.cs" />
