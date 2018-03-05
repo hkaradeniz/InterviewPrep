@@ -133,6 +133,7 @@
     <Compile Include="Concordance\Concordance.cs" />
     <Compile Include="Contest\Counting Sheep.cs" />
     <Compile Include="Contest\DecryptMessage.cs" />
+    <Compile Include="Contest\DigitSum.cs" />
     <Compile Include="Contest\RootOfNumber.cs" />
     <Compile Include="Contest\ShortestSubstring.cs" />
     <Compile Include="Contest\SmallestSubstringOfAllChars.cs" />
