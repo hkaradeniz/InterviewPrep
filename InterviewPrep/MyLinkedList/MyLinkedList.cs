@@ -505,6 +505,29 @@ namespace InterviewPrep.MyLinkedList
             /* Both now point to the start of the loop. Return either fast or slow */
             return fast;
         }
+
+        // Sorted LinkedList
+        public void RemoveDuplicates(Node head)
+        {
+            if (head == null || head.Next == null) return;
+
+            Node current = head;
+
+            while (current.Next != null)
+            {
+                if (current.Value == current.Next.Value)
+                {
+                    if (current.Next.Next == null)
+                    { current.Next = null; break; }
+                    else
+                    { current.Next = current.Next.Next; }
+                }
+                else
+                {
+                    current = current.Next;
+                }
+            }
+        }
     }
 
     public class LinkedListInfo
