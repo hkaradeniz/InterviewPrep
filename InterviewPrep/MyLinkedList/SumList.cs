@@ -190,5 +190,88 @@ namespace InterviewPrep.MyLinkedList
 
             return newList;
         }
+
+        /*
+        Alternative:
+
+        public NodeX Sum(NodeX head1, NodeX head2)
+        {
+            if (head1 == null && head2 == null) return null;
+
+            if (head1 == null) return head2;
+            if (head2 == null) return head1;
+
+            // Calculate the length of the linked lists
+            int l1 = 0;
+            int l2 = 0;
+
+            NodeX current = head1;
+
+            while (current != null)
+            { l1++; current = current.Next; }
+
+            current = head2;
+            while (current != null)
+            { l2++; current = current.Next; }
+
+            NodeX smaller = l1 > l2 ? head1 : head2; // XX
+            NodeX bigger = l2 > l1 ? head2 : head1; // XX
+
+            int difference = Math.Abs(l1 - l2);
+            int total = 0;
+
+            while (bigger != null && smaller != null)
+            {
+                total *= 10;
+
+                if (difference > 0)
+                {
+                    total += bigger.Value;
+                    bigger = bigger.Next;
+                    difference--;
+                }
+                else
+                {
+                    total += bigger.Value + smaller.Value;
+                    bigger = bigger.Next;
+                    smaller = smaller.Next;
+                }
+            }
+
+            NodeX newHead = null;
+
+            while (total > 0)
+            {
+                int value = total % 10;
+                total /= 10;
+
+                NodeX newNodeX = new NodeX(value);
+
+                if (newHead == null)
+                {
+                    newHead = newNodeX;
+                }
+                else
+                {
+                    NodeX temp = newHead;
+                    newNodeX.Next = temp;
+                    newHead = newNodeX;
+                }
+            }
+
+            return newHead;
+        }
+
+         class NodeX
+         {
+        public int Value { get; set; }
+        public NodeX Next { get; set; }
+
+          public NodeX(int val)
+          {
+            Value = val;
+          }
+        }
+        */
     }
- }
+}
