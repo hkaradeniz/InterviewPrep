@@ -78,17 +78,12 @@ namespace InterviewPrep
            visited[v] = true;
            Console.Write($"{v} -");
 
+           LinkedList<int> list = graph[v];
            // Recur for all the vertices adjacent to this vertex
-           foreach (var item in graph)
+           foreach (var edge in list)
            {
-               int vertex = item.Key;
-               LinkedList<int> edges = item.Value;
-
-               foreach (var edge in edges)
-               {
-                   if (!visited[edge])
-                       DepthFirstSearchUtil(edge, visited);
-               }
+                if (!visited[edge])
+                    DepthFirstSearchUtil(edge, visited);
            }
         }
 
