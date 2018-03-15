@@ -65,7 +65,7 @@ namespace InterviewPrep.StacksAndQueues
         {
             stack.Push(number);
 
-            if (minStack.Count == 0 || minStack.Peek() > number)
+            if (minStack.Count == 0 || minStack.Peek() >= number)
                 minStack.Push(number);
         }
 
