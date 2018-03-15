@@ -129,6 +129,7 @@
     <Compile Include="BitManipulation\Insertion.cs" />
     <Compile Include="CharToAscii.cs" />
     <Compile Include="Cisco\KthLargestElement.cs" />
+    <Compile Include="ClockAngleProblem.cs" />
     <Compile Include="CoinChange.cs" />
     <Compile Include="Concordance\Concordance.cs" />
     <Compile Include="Contest\Counting Sheep.cs" />
