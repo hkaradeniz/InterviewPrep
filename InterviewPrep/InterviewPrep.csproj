@@ -186,6 +186,7 @@
     <Compile Include="General\SquareRoot.cs" />
     <Compile Include="General\SubArrayWithSumK.cs" />
     <Compile Include="General\TrappingRainWater.cs" />
+    <Compile Include="General\TripletMaximumProduct.cs" />
     <Compile Include="General\UnsortedSubarray.cs" />
     <Compile Include="GetNextGreaterNumber.cs" />
     <Compile Include="Google\FindingTheNumbers.cs" />
