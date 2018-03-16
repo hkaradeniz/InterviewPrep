@@ -278,6 +278,7 @@
     <Compile Include="SubarrayWithGivenSum.cs" />
     <Compile Include="Test.cs" />
     <Compile Include="TicTacToeWinner.cs" />
+    <Compile Include="TopologicalSort.cs" />
     <Compile Include="TreesAndGraphs\BuildOrder.cs" />
     <Compile Include="TreesAndGraphs\MinimalTree.cs" />
     <Compile Include="TreesAndGraphs\RouteBetweenNodes.cs" />
