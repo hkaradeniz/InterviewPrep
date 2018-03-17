@@ -161,6 +161,7 @@
     <Compile Include="Factorial.cs" />
     <Compile Include="FibonacciMemoization.cs" />
     <Compile Include="FirstNonRepeatedChar.cs" />
+    <Compile Include="FirstNonRepeatedCharacter.cs" />
     <Compile Include="FizzBuzz.cs" />
     <Compile Include="FlattenLinkedList.cs" />
     <Compile Include="FloydsCycleFindingAlgorithm.cs" />
