@@ -80,8 +80,8 @@ namespace InterviewPrep.Amazon
         public void Serilaze(TreeNode root)
         {
             PreOrder(root);
-            //TrimSerilizedArray();
-            //PrintSerilizedArray();
+            TrimSerilizedArray();
+            PrintSerilizedArray();
         }
 
         public TreeNode DeSerilize()
