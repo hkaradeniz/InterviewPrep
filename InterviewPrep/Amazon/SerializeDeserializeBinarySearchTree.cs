@@ -31,6 +31,48 @@ namespace InterviewPrep.Amazon
                         /  \           /  \
                       325  375       675   800
      */
+    /*
+   Better Version:
+
+     Queue<TreeNode> queue = new Queue<TreeNode>();
+
+      public void Serilaze(TreeNode root)
+         {
+             PreOrder(root);
+         }
+
+      private void PreOrder(TreeNode node)
+      {
+          queue.Enqueue(node);
+
+          if (node == null) return;
+
+          PreOrder(node.LeftChild);
+          PreOrder(node.RightChild);
+      }
+
+      public TreeNode DeSerilize()
+         {
+             if (queue.Count == 0) return null;
+
+             return DeSerilize(queue);
+         }
+
+      private TreeNode DeSerilize(Queue<TreeNode> queue)
+         {
+             if (queue.Count == 0) return null;
+
+             TreeNode root = queue.Dequeue();
+
+             if (root == null) return null;
+
+             root.LeftChild = DeSerilize(queue);
+             root.RightChild = DeSerilize(queue);
+
+             return root;
+         }
+
+   */
     class SerializeDeserializeBinarySearchTree
     {
         int[] SerilizedArray;
