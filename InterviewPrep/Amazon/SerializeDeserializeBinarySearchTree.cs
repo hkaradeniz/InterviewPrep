@@ -42,6 +42,16 @@ namespace InterviewPrep.Amazon
                PreOrder(root);
            }
 
+        private void PreOrder(TreeNode node)
+        {
+            queue.Enqueue(node);
+
+            if (node == null) return;
+
+            PreOrder(node.LeftChild);
+            PreOrder(node.RightChild);
+        }
+
         public TreeNode DeSerilize()
            {
                if (queue.Count == 0) return null;
