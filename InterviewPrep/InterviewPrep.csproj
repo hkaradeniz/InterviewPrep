@@ -133,6 +133,7 @@
     <Compile Include="ClockAngleProblem.cs" />
     <Compile Include="CoinChange.cs" />
     <Compile Include="Concordance\Concordance.cs" />
+    <Compile Include="Contest\BuySellStocksII.cs" />
     <Compile Include="Contest\Counting Sheep.cs" />
     <Compile Include="Contest\DecryptMessage.cs" />
     <Compile Include="Contest\DigitSum.cs" />
@@ -216,6 +217,7 @@
     <Compile Include="Matrices.cs" />
     <Compile Include="Matrix\RobotInGrid.cs" />
     <Compile Include="Matrix\SearchSortedMatrix.cs" />
+    <Compile Include="Matrix\UniquePaths.cs" />
     <Compile Include="MergeOverlappingIntervals\Interval.cs" />
     <Compile Include="MergeOverlappingIntervals\MergeOverlappingIntervals.cs" />
     <Compile Include="MergeTwoSortedArrays.cs" />
