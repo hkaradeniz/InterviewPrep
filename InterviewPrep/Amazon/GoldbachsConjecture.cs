@@ -43,21 +43,15 @@ namespace InterviewPrep.Amazon
             }
 
             int sqrt = (int)Math.Sqrt(num);
-            int pointer;
 
             for (int i = 2; i <= sqrt; i++)
             {
-                pointer = i + 1;
-
-                while (pointer < arr.Length)
+                if (arr[i] != 0)
                 {
-                    if (arr[pointer] != 0)
+                    for (int j = 2; i * j < num; j++)
                     {
-                        if (arr[pointer] % i == 0)
-                            arr[pointer] = 0;
+                        arr[i * j] = 0;
                     }
-
-                    pointer++;
                 }
             }
 

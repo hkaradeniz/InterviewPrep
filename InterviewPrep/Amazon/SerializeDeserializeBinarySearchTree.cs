@@ -1,6 +1,5 @@
 ﻿using InterviewPrep.MyTree;
 using System;
-using System.Collections.Generic;
 
 namespace InterviewPrep.Amazon
 {
@@ -33,44 +32,52 @@ namespace InterviewPrep.Amazon
                       325  375       675   800
      */
     /*
-     Better Version:
+   Better Version:
 
-       Queue<TreeNode> queue = new Queue<TreeNode>();
+     Queue<TreeNode> queue = new Queue<TreeNode>();
 
-        public void Serilaze(TreeNode root)
-           {
-               PreOrder(root);
-           }
+      public void Serilaze(TreeNode root)
+         {
+             PreOrder(root);
+         }
 
-        public TreeNode DeSerilize()
-           {
-               if (queue.Count == 0) return null;
+      private void PreOrder(TreeNode node)
+      {
+          queue.Enqueue(node);
 
-               return DeSerilize(queue);
-           }
+          if (node == null) return;
 
-        private TreeNode DeSerilize(Queue<TreeNode> queue)
-           {
-               if (queue.Count == 0) return null;
+          PreOrder(node.LeftChild);
+          PreOrder(node.RightChild);
+      }
 
-               TreeNode root = queue.Dequeue();
+      public TreeNode DeSerilize()
+         {
+             if (queue.Count == 0) return null;
 
-               if (root == null) return null;
+             return DeSerilize(queue);
+         }
 
-               root.LeftChild = DeSerilize(queue);
-               root.RightChild = DeSerilize(queue);
+      private TreeNode DeSerilize(Queue<TreeNode> queue)
+         {
+             if (queue.Count == 0) return null;
 
-               return root;
-           }
+             TreeNode root = queue.Dequeue();
 
-     */
+             if (root == null) return null;
+
+             root.LeftChild = DeSerilize(queue);
+             root.RightChild = DeSerilize(queue);
+
+             return root;
+         }
+
+   */
     class SerializeDeserializeBinarySearchTree
     {
         int[] SerilizedArray;
         int Capacity = 10;
         int Pointer = -1;
-
-        Queue<TreeNode> queue = new Queue<TreeNode>();
 
         public SerializeDeserializeBinarySearchTree()
         {
@@ -80,40 +87,42 @@ namespace InterviewPrep.Amazon
         public void Serilaze(TreeNode root)
         {
             PreOrder(root);
-            //TrimSerilizedArray();
-            //PrintSerilizedArray();
+            TrimSerilizedArray();
+            PrintSerilizedArray();
         }
 
         public TreeNode DeSerilize()
         {
             if (SerilizedArray.Length == 0) return null;
 
-            TreeNode root = DeSerilize(queue);
+            return DeSerilize(0, SerilizedArray.Length - 1);
+        }
+
+        private TreeNode DeSerilize(int left, int right)
+        {
+            if (left > right) return null;
+
+            TreeNode root = new TreeNode(SerilizedArray[left]);
+
+            int divisionIndex = FindDivision(root.ValueInt, left + 1, right);
+
+            root.LeftChild = DeSerilize(left + 1, divisionIndex - 1);
+            root.RightChild = DeSerilize(divisionIndex, right);
+
             return root;
         }
 
-        private TreeNode DeSerilize(Queue<TreeNode> queue)
+        private void PreOrder(TreeNode root)
         {
-            if (queue.Count == 0) return null;
+            if (root == null) return;
 
-            TreeNode root = queue.Dequeue();
+            Pointer++;
 
-            if (root == null) return null;
+            EnsureExtraCapacity();
+            SerilizedArray[Pointer] = root.ValueInt;
 
-            root.LeftChild = DeSerilize(queue);
-            root.RightChild = DeSerilize(queue);
-
-            return root;
-        }
-
-        private void PreOrder(TreeNode node)
-        {
-            queue.Enqueue(node);
-
-            if (node == null) return;
-
-            PreOrder(node.LeftChild);
-            PreOrder(node.RightChild);
+            PreOrder(root.LeftChild);
+            PreOrder(root.RightChild);
         }
 
         private void EnsureExtraCapacity()
