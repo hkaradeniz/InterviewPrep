@@ -49,18 +49,24 @@ namespace InterviewPrep.Facebook
                 lastCol--;
 
                 // Print the last row from the remaining rows */
-                for (pointer = lastCol; pointer >= firstRow; pointer--)
+                if (firstRow <= lastRow)
                 {
-                    Console.Write($"{matrix[lastRow, pointer]} ");
+                    for (pointer = lastCol; pointer >= firstRow; pointer--)
+                    {
+                        Console.Write($"{matrix[lastRow, pointer]} ");
+                    }
+                    lastRow--;
                 }
-                lastRow--;
 
                 // Print the first column from the remaining columns */
-                for (pointer = lastRow; pointer >= firstRow; pointer--)
+                if (firstCol <= lastCol)
                 {
-                    Console.Write($"{matrix[pointer, firstCol]} ");
+                    for (pointer = lastRow; pointer >= firstRow; pointer--)
+                    {
+                        Console.Write($"{matrix[pointer, firstCol]} ");
+                    }
+                    firstCol++;
                 }
-                firstCol++;
             }
 
         }
