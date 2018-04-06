@@ -29,6 +29,7 @@
             // Right tree exist...
             if (node.RightChild != null)
             {
+                current = node.RightChild;
                 while (current.LeftChild != null)
                 {
                     current = current.LeftChild;
