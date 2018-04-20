@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace InterviewPrep.Facebook
 {
@@ -28,44 +29,41 @@ namespace InterviewPrep.Facebook
             dict.Add(1000, "M");
         }
 
-        public void ConvertToRoman(int number)
+        public void ConvertToRoman(int A)
         {
-            if (number < 1) Console.WriteLine();
+            if (A < 1) Console.WriteLine();
 
             int pointer = dict.Count - 1;
             LinkedList<string> numeral = new LinkedList<string>();
-            bool prepend = false;
+            StringBuilder sb = new StringBuilder();
 
-            while (pointer >= 0 && number > 0)
+            while (pointer >= 0 && A > 0)
             {
                 int key = dict.Keys.ElementAt(pointer);
 
-                if (dict.ContainsKey(number))
+                if (dict.ContainsKey(A))
                 {
-                    if (prepend)
-                        numeral.AddFirst(dict[number]);
-                    else
-                        numeral.AddLast(dict[number]);
-
+                    sb.Append(dict[A]);
                     break;
                 }
-                else if (numeral.Count == 0 && dict.ContainsKey(key - number))
-                { numeral.AddFirst(dict[key]); prepend = true; number = key - number; }
-                else if (key < number)
+                else if (dict.ContainsKey(key - A))
                 {
-                    numeral.AddLast(dict[key]);
-                    number -= key;
+                    sb.Append(dict[key - A]);
+                    sb.Append(dict[key]);
+                    break;
+                }
+                else if (key < A)
+                {
+                    sb.Append(dict[key]);
+                    A = A - key;
                 }
                 else
                 {
                     pointer--;
-                }     
+                }
             }
 
-            foreach (var item in numeral)
-            {
-                Console.Write($"{item}");
-            }
+            Console.WriteLine(sb.ToString());
         }
     }
 }
