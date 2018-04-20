@@ -41,4 +41,26 @@ namespace InterviewPrep.Google
             return dict[A];
         }
     }
+
+    /*
+     * Given numRows, generate the first numRows of Pascal’s triangle.
+     public List<List<int>> generate(int A) {
+        List<List<int>> triangle = new List<List<int>>();
+    
+        for(int i=0; i<A; i++)
+        {
+            List<int> newList = new List<int>();
+            
+            for(int j=0; j<=i; j++)
+            {
+                if(j==0 || j==i) newList.Add(1);
+                else newList.Add(triangle[i-1][j-1] + triangle[i-1][j]);
+            }
+            
+            triangle.Add(newList);
+        }
+        
+        return triangle;
+    }
+     */
 }
