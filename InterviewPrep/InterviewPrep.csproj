@@ -201,6 +201,7 @@
     <Compile Include="Google\LongestCommonSubsequence.cs" />
     <Compile Include="Google\LongestValidParentheses.cs" />
     <Compile Include="Google\LRUCache.cs" />
+    <Compile Include="Google\MaxDistanceInArray.cs" />
     <Compile Include="Google\MaximumSizeRectangle.cs" />
     <Compile Include="Google\SubarrayWithGivenSum.cs" />
     <Compile Include="Google\SuffixSearch.cs" />
