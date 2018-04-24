@@ -39,7 +39,7 @@ namespace InterviewPrep.Adobe
 
             int counter = 0;
 
-            while (current != null & k < counter)
+            while (current != null & k > counter)
             {
                 next = current.Next;
                 current.Next = previous;
