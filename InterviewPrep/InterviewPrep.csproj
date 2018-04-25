@@ -207,6 +207,7 @@
     <Compile Include="Google\SuffixSearch.cs" />
     <Compile Include="Google\TotalDecodingMessages.cs" />
     <Compile Include="Google\WordBreak.cs" />
+    <Compile Include="Google\WordLadder.cs" />
     <Compile Include="Graph.cs" />
     <Compile Include="Graphs\GraphSearch.cs" />
     <Compile Include="Graphs\NumberOfClusters.cs" />
