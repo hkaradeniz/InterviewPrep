@@ -128,10 +128,11 @@ namespace InterviewPrep
                 {
                     if (!visited[item])
                     {
-                        visited[item] = true;
                         queue.Enqueue(item);
                     }
                 }
+
+                visited[vertex] = true;
             }
         }
 
