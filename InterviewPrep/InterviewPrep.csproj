@@ -151,6 +151,7 @@
     <Compile Include="DesignPatterns\Prototype.cs" />
     <Compile Include="DesignPatterns\Singleton.cs" />
     <Compile Include="DesignPatterns\Strategy.cs" />
+    <Compile Include="EvenOccurringElement.cs" />
     <Compile Include="Facebook\ActivitySelection.cs" />
     <Compile Include="Facebook\BinaryTreeMinimumDepth.cs" />
     <Compile Include="Facebook\InterleavedStrings.cs" />
