@@ -13,6 +13,12 @@ namespace InterviewPrep
             StringBuilder sb = new StringBuilder(row);
             int count = 0;
 
+            if (row[0] == '0' && row[1] == '0')
+            {
+                count++;
+                pointer++;
+            }
+
             while (pointer < row.Length - 1)
             {
                 if (row[pointer] == '1')
