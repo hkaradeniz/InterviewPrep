@@ -290,6 +290,7 @@
     <Compile Include="TreesAndGraphs\BuildOrder.cs" />
     <Compile Include="TreesAndGraphs\MinimalTree.cs" />
     <Compile Include="TreesAndGraphs\RouteBetweenNodes.cs" />
+    <Compile Include="UnknownLengthArray.cs" />
     <Compile Include="WeightedRandomNumbers.cs" />
     <Compile Include="WeightedUniformStrings.cs" />
     <Compile Include="Yahoo\LargestPrimeFactor.cs" />
