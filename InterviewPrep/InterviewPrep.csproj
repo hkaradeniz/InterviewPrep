@@ -217,6 +217,7 @@
     <Compile Include="LivingPeople.cs" />
     <Compile Include="LongestIncreasingSubarray.cs" />
     <Compile Include="LongestSubstringWORepeating.cs" />
+    <Compile Include="LRUCache.cs" />
     <Compile Include="MakeAnagram.cs" />
     <Compile Include="Matrices.cs" />
     <Compile Include="Matrix\RobotInGrid.cs" />
