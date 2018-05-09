@@ -55,4 +55,44 @@ namespace InterviewPrep.Sorting
             }
         }
     }
+
+    /*
+      // QuickSort elements in the list. So we get ascending startTime order
+        private void OrderIntervals(List<Interval> list, int left, int right)
+        {
+
+            int i = left; int j = right;
+            int pivot = list.ElementAt((i + j) / 2).startTime;
+
+            while (i <= j)
+            {
+                while (list[i].startTime < pivot)
+                {
+                    i++;
+                }
+
+                while (list[j].startTime > pivot)
+                {
+                    j--;
+                }
+
+                if (i <= j)
+                {
+                    Interval temp = list[i];
+                    list[i] = list[j];
+                    list[j] = temp;
+                    i++; j--;
+                }
+            }
+
+            if (left < j)
+            {
+                OrderIntervals(list, left, j);
+            }
+            if (i < right)
+            {
+                OrderIntervals(list, i, right);
+            }
+        }
+     */
 }
