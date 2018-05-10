@@ -21,33 +21,27 @@ namespace InterviewPrep
 
         public bool IsMatched(string text)
         {
-            int mismatchedDelimiter = 0;
+            //int mismatchedDelimiter = 0;
 
             // Test case 1: [dklf(df(kl))d]{}
             // Test case 2: {df][d}
             // Test case 3: {[[[]]]}
+            Stack<char> stack = new Stack<char>();
+
             for (int i = 0; i < text.Length; i++)
             {
                 if (text[i] == '{' || text[i] == '(' || text[i] == '[')
-                {
-                    dict[text[i]]++;
-                    mismatchedDelimiter++;
-                }    
+                    stack.Push(text[i]);
                 else if (text[i] == '}' || text[i] == ')' || text[i] == ']')
                 {
                     char c = GetOpenDelimiter(text[i]);
 
-                    if (dict[c] < 1)
+                    if (stack.Pop() != c)
                         return false;
-                    else
-                    {
-                        dict[c]--;
-                        mismatchedDelimiter--;
-                    } 
                 }
             }
 
-            return mismatchedDelimiter == 0;
+            return stack.Count == 0;
         }
 
         private char GetOpenDelimiter(char c)
