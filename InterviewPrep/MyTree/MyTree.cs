@@ -115,7 +115,7 @@ namespace InterviewPrep.MyTree
                     return node.LeftChild;
 
                 // node with two children: Get the smallest in the right subtree
-                node.ValueInt = MinValue(node).ValueInt;
+                node.ValueInt = MinValue(node.RightChild).ValueInt;
 
                 // Delete the smallest in the right subtree
                 node.RightChild = DeleteElement(node.RightChild, node.ValueInt);
