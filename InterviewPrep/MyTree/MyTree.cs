@@ -625,5 +625,29 @@ namespace InterviewPrep.MyTree
             else
                 return Math.Max(leftHeight, rightHeight) + 1;
         }
+
+        Stack<int> stack = new Stack<int>();
+        public void GetPath(TreeNode head, int value)
+        {
+            GetPathHelper(head, value);
+
+            while (stack.Count > 0)
+            {
+                Console.WriteLine(stack.Pop());
+            }
+        }
+
+        private bool GetPathHelper(TreeNode node, int value)
+        {
+            if (node == null) return false;
+
+            if (node.ValueInt == value || GetPathHelper(node.LeftChild, value) || GetPathHelper(node.RightChild, value))
+            {
+                stack.Push(node.ValueInt);
+                return true;
+            }
+
+            return false;
+        }
     }
 }
