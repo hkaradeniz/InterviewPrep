@@ -17,9 +17,11 @@
 
             while (left <= right)
             {
-                if (right - left == 1) return arr[right];
+                //if (right - left == 1) return arr[right];
 
                 int middle = left + (right - left) / 2;
+
+                if (arr[middle] < arr[middle - 1]) return arr[middle];
 
                 if (arr[middle] < arr[right])
                     left = middle;
