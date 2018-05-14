@@ -263,6 +263,7 @@
     <Compile Include="ReduceTheLargestPowerOfTwo.cs" />
     <Compile Include="ReverseWords.cs" />
     <Compile Include="RotateArray.cs" />
+    <Compile Include="RotatedArrayFindMin.cs" />
     <Compile Include="RotateMatrix.cs" />
     <Compile Include="SampleInts\ReverseVowels.cs" />
     <Compile Include="SearchRotatedArray.cs" />
