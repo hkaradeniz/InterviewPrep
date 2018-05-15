@@ -123,6 +123,7 @@
     <Compile Include="ArraysStrings\URLify.cs" />
     <Compile Include="AtoiClass.cs" />
     <Compile Include="BinarySearch.cs" />
+    <Compile Include="BinaryTreeIterator.cs" />
     <Compile Include="BitManipulation\BinaryToString.cs" />
     <Compile Include="BitManipulation\Conversion.cs" />
     <Compile Include="BitManipulation\FlipBitToWin.cs" />
