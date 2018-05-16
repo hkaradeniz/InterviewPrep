@@ -8,7 +8,7 @@
         {
             HeapSize = arr.Length - 1;
 
-            for (int i = HeapSize / 2; i >=0 ; i--)
+            for (int i = HeapSize / 2; i >= 0; i--)
             {
                 Heapify(arr, i);
             }
@@ -23,12 +23,13 @@
             if (leftChildIndex <= HeapSize && arr[index] > arr[leftChildIndex])
                 minIndex = leftChildIndex;
 
-            if (leftChildIndex <= HeapSize && arr[minIndex] > arr[rightChildIndex])
+            if (rightChildIndex <= HeapSize && arr[minIndex] > arr[rightChildIndex])
                 minIndex = rightChildIndex;
 
+            // This means min value is different than the element in the index
             if (minIndex != index)
             {
-                Swap(arr, minIndex, index);
+                Swap(arr, index, minIndex);
                 Heapify(arr, minIndex);
             }
         }
@@ -43,13 +44,12 @@
         public void SortHeap(int[] arr)
         {
             BuildMaxHeap(arr);
-
             for (int i = arr.Length - 1; i >= 0; i--)
             {
                 Swap(arr, 0, i);
                 HeapSize--;
                 Heapify(arr, 0);
             }
-        } 
+        }
     }
 }
