@@ -6,16 +6,15 @@ namespace InterviewPrep
     class LRUCache
     {
         private int capacity = 5;
-        private int size = 0;
         private Dictionary<int, LinkedListNode> map = new Dictionary<int, LinkedListNode>();
         private LinkedListNode head;
         private LinkedListNode tail;
 
         public String get(int key)
         {
-            LinkedListNode item = map[key];
+            if (!map.ContainsKey(key)) return string.Empty;
 
-            if (item == null) return null;
+            LinkedListNode item = map[key];
 
             if (item != head)
             {
@@ -31,7 +30,7 @@ namespace InterviewPrep
             // if key exists
             remove(key);
 
-            if (size == capacity && tail != null)
+            if (map.Count >= capacity && tail != null)
                 remove(tail.key);
 
             LinkedListNode newNode = new LinkedListNode(key, value);
@@ -41,6 +40,8 @@ namespace InterviewPrep
 
         private void remove(int key)
         {
+            if (!map.ContainsKey(key)) return;
+
             LinkedListNode item = map[key];
 
             if (item == null) return;
@@ -51,8 +52,10 @@ namespace InterviewPrep
 
         private void deleteFromLinkedList(LinkedListNode node)
         {
-            if (node.prev != null) node.next.prev = node.next;
-            if (node.next != null) node.prev.next = node.prev;
+            if (node == null) return;
+
+            if (node.prev != null) node.prev.next= node.next;
+            if (node.next != null) node.next.prev = node.prev;
             if (node == head) head = node.next;
             if (node == tail) tail = node.prev;
         }
