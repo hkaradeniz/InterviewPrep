@@ -54,13 +54,13 @@ namespace InterviewPrep.General
 
             while (next != null)
             {
-                current = next;
-                next = next.Next;
+                next = current.Next;
                 current.Next = prev;
                 prev = current;
+                current = next;
             }
 
-            Head = current;
+            Head = prev;
         }
     }
 }
