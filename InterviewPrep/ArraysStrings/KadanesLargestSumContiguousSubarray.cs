@@ -24,11 +24,11 @@
             {
                 maxCurrentEnding += arr[i];
 
-                if (maxCurrentEnding < 0)
-                    maxCurrentEnding = 0;
-
                 if (max < maxCurrentEnding)
                     max = maxCurrentEnding;
+
+                if (maxCurrentEnding < 0)
+                    maxCurrentEnding = 0;
             }
 
             return max;
