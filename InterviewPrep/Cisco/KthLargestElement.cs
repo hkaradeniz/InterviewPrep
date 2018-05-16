@@ -40,7 +40,7 @@
             arr[index2] = temp;
         }
 
-        private void SortHeap(int[] arr)
+        public void SortHeap(int[] arr)
         {
             BuildMaxHeap(arr);
 
