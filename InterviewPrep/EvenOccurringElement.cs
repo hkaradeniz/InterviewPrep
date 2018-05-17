@@ -23,6 +23,8 @@ namespace InterviewPrep
 
             for (int i = 1; i < arr.Length; i++)
             {
+                if (!hash.Contains(arr[i])) hash.Add(arr[i]);
+
                 result ^= arr[i];
             }
 
