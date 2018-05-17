@@ -21,27 +21,22 @@ namespace InterviewPrep
          */
         public void SolveMoveZeros(int[] arr)
         {
-            //int start = 0;
-            int end = arr.Length - 1;
 
-            for (int start = 0; start < end; start++)
+            int left = 0;
+            int right = arr.Length - 1;
+
+            while (left < right)
             {
-                while (end > start)
-                {
-                    if (arr[end] == 0)
-                        end--;
-                    else
-                        break;
-                }
+                while (left < right && arr[right] == 0)
+                    right--;
 
-                if (arr[start] == 0)
-                {
-                    arr[start] = arr[end];
-                    arr[end] = 0;
-                    end--;
-                }
+                while (left < right && arr[left] != 0)
+                    left++;
+
+                if (left < right) Swap(arr, left, right);
+                left++;
+                right--;
             }
-
             // [1, 2, 0, 3, 0, 1, 2]
             // start    end
             //   0       6
@@ -56,6 +51,13 @@ namespace InterviewPrep
             {
                 Console.Write($"{item} ");
             }
+        }
+
+        private void Swap(int[] arr, int index1, int index2)
+        {
+            int temp = arr[index1];
+            arr[index1] = arr[index2];
+            arr[index2] = temp;
         }
     }
 }
