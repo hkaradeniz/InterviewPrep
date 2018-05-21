@@ -260,6 +260,7 @@
     <Compile Include="Palindrome.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueueWithStacks.cs" />
     <Compile Include="QuickUnion.cs" />
     <Compile Include="ReduceTheLargestPowerOfTwo.cs" />
     <Compile Include="ReverseWords.cs" />
