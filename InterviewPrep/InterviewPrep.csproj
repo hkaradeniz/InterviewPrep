@@ -246,6 +246,7 @@
     <Compile Include="MyTree\BSTNodesInRange.cs" />
     <Compile Include="MyTree\CreateBST.cs" />
     <Compile Include="MyTree\DiagonalSum.cs" />
+    <Compile Include="MyTree\InOrderIterative.cs" />
     <Compile Include="MyTree\InorderSuccessor.cs" />
     <Compile Include="MyTree\MaximumWidth.cs" />
     <Compile Include="MyTree\MyTree.cs" />
