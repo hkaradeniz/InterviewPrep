@@ -249,6 +249,7 @@
     <Compile Include="MyTree\InorderSuccessor.cs" />
     <Compile Include="MyTree\MaximumWidth.cs" />
     <Compile Include="MyTree\MyTree.cs" />
+    <Compile Include="MyTree\PostOrderIterative.cs" />
     <Compile Include="MyTree\SpiralLevelOrderTraversal.cs" />
     <Compile Include="MyTree\TreeNode.cs" />
     <Compile Include="MyTree\VerticalSum.cs" />
