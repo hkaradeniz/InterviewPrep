@@ -224,6 +224,7 @@
     <Compile Include="Matrix\RobotInGrid.cs" />
     <Compile Include="Matrix\SearchSortedMatrix.cs" />
     <Compile Include="Matrix\UniquePaths.cs" />
+    <Compile Include="MergeKSortedLists.cs" />
     <Compile Include="MergeOverlappingIntervals\Interval.cs" />
     <Compile Include="MergeOverlappingIntervals\MergeOverlappingIntervals.cs" />
     <Compile Include="MergeTwoSortedArrays.cs" />
