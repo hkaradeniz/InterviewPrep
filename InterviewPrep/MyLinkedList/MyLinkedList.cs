@@ -305,36 +305,34 @@ namespace InterviewPrep.MyLinkedList
             return i; 
         }
 
-        public void FindKthNodeFromEnd(int k)
+        /*
+         Maintain two pointers – reference pointer and main pointer. Initialize both reference and main pointers to head. 
+         First move reference pointer to n nodes from head. Now move both pointers one by one until reference pointer 
+         reaches end. Now main pointer will point to nth node from the end. Return main pointer.
+         */
+        public Node FindKthNodeFromEnd2(Node head, int k)
         {
-            Node current = Head;
+            if (head == null) return null;
 
-            if (Head == null)
-            { Console.WriteLine("Empty list!"); return; }
+            Node fast = head;
+            Node slow = head;
 
-            int len = 0;
-
-            while (current.Next != null)
+            int counter = 1;
+            while (counter <= k)
             {
-                current = current.Next;
-                len++;
+                if (fast == null) return null;
+
+                fast = fast.Next;
+                counter++;
             }
 
-            current = Head;
-
-            if (len < k)
+            while (fast.Next != null)
             {
-                Console.WriteLine($"{k} is bigger than the size of the linkedlist");
-                return;
+                slow = slow.Next;
+                fast = fast.Next;
             }
 
-            current = Head;
-            for (int i = 0; i < len-k+1; i++)
-            {
-                current = current.Next;
-            }
-
-            Console.WriteLine(current.Value);
+            return slow;
         }
 
         /*? 
