@@ -67,13 +67,15 @@ namespace InterviewPrep
        {
            // Boolean array to mark if the vertex is visited
            bool[] visited = new bool[V];
+           int[] edgeTo = new int[V];
 
            // Call the recursive helper function to print DFS traversal
-           DepthFirstSearchUtil(v, visited);
+           DepthFirstSearchUtil(v, visited, edgeTo);
        }
 
-        private void DepthFirstSearchUtil(int v, bool[] visited)
+        private void DepthFirstSearchUtil(int v, bool[] visited, int[] edgeTo)
         {
+           if (visited[v]) return;
            // Mark the node as visited and display it
            visited[v] = true;
            Console.Write($"{v} -");
@@ -83,7 +85,10 @@ namespace InterviewPrep
            foreach (var edge in list)
            {
                 if (!visited[edge])
-                    DepthFirstSearchUtil(edge, visited);
+                {
+                    DepthFirstSearchUtil(edge, visited, edgeTo);
+                    edgeTo[edge] = v;
+                }
            }
         }
 
@@ -109,7 +114,7 @@ namespace InterviewPrep
         public void BreadthFirstSearch(int v)
         {
             bool[] visited = new bool[V];
-
+            int[] edgeTo = new int[V];
             // Create a queue for BFS
             Queue<int> queue = new Queue<int>();
             queue.Enqueue(v);
@@ -129,10 +134,10 @@ namespace InterviewPrep
                     if (!visited[item])
                     {
                         queue.Enqueue(item);
+                        visited[vertex] = true;
+                        edgeTo[item] = vertex;
                     }
                 }
-
-                visited[vertex] = true;
             }
         }
 
@@ -319,7 +324,7 @@ namespace InterviewPrep
                 //Print Strongly connected component of the popped vertex
                 if (!visited[val])
                 {
-                    DepthFirstSearchUtil(val, visited);
+                    DepthFirstSearchUtil(val, visited, new int[V]);
                     Console.WriteLine();
                 }
             }
