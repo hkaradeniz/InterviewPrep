@@ -302,6 +302,7 @@
     <Compile Include="UnknownLengthArray.cs" />
     <Compile Include="WeightedRandomNumbers.cs" />
     <Compile Include="WeightedUniformStrings.cs" />
+    <Compile Include="WordSearch.cs" />
     <Compile Include="Yahoo\LargestPrimeFactor.cs" />
     <Compile Include="Yahoo\LargestProductPalindrome.cs" />
     <Compile Include="Yahoo\MaxSumWithoutAdjacents.cs" />
