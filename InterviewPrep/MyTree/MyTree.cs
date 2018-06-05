@@ -522,6 +522,40 @@ namespace InterviewPrep.MyTree
             }
         }
 
+        /*Min depth of a binary three*/
+        /*Use breadth first search*/
+        public int MinDepth(TreeNode root)
+        {
+            return GetMinDepth(root);
+        }
+
+        private int GetMinDepth(TreeNode root)
+        {
+            if (root == null) return 0;
+
+            Queue<TreeNode> queue = new Queue<TreeNode>();
+            queue.Enqueue(root);
+
+            int depth = 0;
+            while (queue.Count > 0)
+            {
+                int size = queue.Count;
+                depth++;
+
+                while (size > 0)
+                {
+                    TreeNode node = queue.Dequeue();
+
+                    if (node.LeftChild != null) queue.Enqueue(node.LeftChild);
+                    if (node.RightChild != null) queue.Enqueue(node.RightChild);
+                    if (node.LeftChild == null && node.RightChild == null) return depth;
+                    size--;
+                }
+            }
+
+            return -1;
+        }
+
         /*?   Cracking the Coding Interview, 6th Edition    
         First Common Ancestor: Design an algorithm and write code to find the first common ancestor
         of two nodes in a binary tree. Avoid storing additional nodes in a data structure. NOTE: This is not
