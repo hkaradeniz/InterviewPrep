@@ -53,7 +53,7 @@ namespace InterviewPrep.Facebook
 
                 // from bottom to top
                 for (int i = bottom; i >= top; i--)
-                    Console.Write(matrix[left, i]);
+                    Console.Write(matrix[left, i] + " ");
                 left++;
                 if (left > right || top > bottom) return;
             }
