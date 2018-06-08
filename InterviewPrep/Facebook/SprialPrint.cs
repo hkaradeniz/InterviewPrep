@@ -26,50 +26,37 @@ namespace InterviewPrep.Facebook
             int row = matrix.GetLength(0);
             int col = matrix.GetLength(1);
 
-            int pointer = 0;
-            int firstRow = 0;
-            int firstCol = 0;
-            int lastRow = row - 1;
-            int lastCol = col - 1;
+            int top = 0;
+            int bottom = row-1;
+            int left = 0;
+            int right = col - 1;
 
-            while (firstRow < lastRow && firstCol < lastCol)
+            while (true)
             {
-                // Print the first row from the remaining rows
-                for (pointer = firstCol; pointer <= lastCol; pointer++)
-                {
-                    Console.Write($"{matrix[firstRow, pointer]} ");
-                }
-                firstRow++;
+                // from left to right
+                for (int i = left; i <= right; i++)
+                    Console.Write(matrix[top, i] + " ");
+                top++;
+                if (left > right || top > bottom) return;
 
-                // Print the last column from the remaining columns 
-                for (pointer = firstRow; pointer <= lastRow; pointer++)
-                {
-                    Console.Write($"{matrix[pointer, lastCol]} ");
-                }
-                lastCol--;
+                // from top to bottom
+                for (int i = top; i <= bottom; i++)
+                    Console.Write(matrix[i,right] + " ");
+                right--;
+                if (left > right || top > bottom) return;
 
-                // Print the last row from the remaining rows */
-                if (firstRow <= lastRow)
-                {
-                    for (pointer = lastCol; pointer >= firstRow; pointer--)
-                    {
-                        Console.Write($"{matrix[lastRow, pointer]} ");
-                    }
-                    lastRow--;
-                }
+                // from right to left
+                for (int i = right; i >= left; i--)
+                    Console.Write(matrix[bottom, i] + " ");
+                bottom--;
+                if (left > right || top > bottom) return;
 
-                // Print the first column from the remaining columns */
-                if (firstCol <= lastCol)
-                {
-                    for (pointer = lastRow; pointer >= firstRow; pointer--)
-                    {
-                        Console.Write($"{matrix[pointer, firstCol]} ");
-                    }
-                    firstCol++;
-                }
+                // from bottom to top
+                for (int i = bottom; i >= top; i--)
+                    Console.Write(matrix[left, i]);
+                left++;
+                if (left > right || top > bottom) return;
             }
-
         }
-        
     }
 }
