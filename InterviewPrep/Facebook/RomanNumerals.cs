@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Text;
 
 namespace InterviewPrep.Facebook
@@ -16,54 +14,63 @@ namespace InterviewPrep.Facebook
      */
     class RomanNumerals
     {
-        Dictionary<int, string> dict = new Dictionary<int, string>();
+        /*
+            Symbol       Value
+            I             1
+            V             5
+            X             10
+            L             50
+            C             100
+            D             500
+            M             1000
+         */
 
-        public RomanNumerals()
+        public string ConvertToRoman(int num)
         {
-            dict.Add(1, "I");
-            dict.Add(5, "V");
-            dict.Add(10, "X");
-            dict.Add(50, "L");
-            dict.Add(100, "C");
-            dict.Add(500, "D");
-            dict.Add(1000, "M");
-        }
+            int[] values = { 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 };
+            string[] strs = { "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I" };
 
-        public void ConvertToRoman(int A)
-        {
-            if (A < 1) Console.WriteLine();
-
-            int pointer = dict.Count - 1;
-            LinkedList<string> numeral = new LinkedList<string>();
             StringBuilder sb = new StringBuilder();
 
-            while (pointer >= 0 && A > 0)
+            for (int i = 0; i < values.Length; i++)
             {
-                int key = dict.Keys.ElementAt(pointer);
+                while (num >= values[i])
+                {
+                    num -= values[i];
+                    sb.Append(strs[i]);
+                }
+            }
+            return sb.ToString();
+        }
 
-                if (dict.ContainsKey(A))
+        public int romanToInt(string s)
+        {
+            Dictionary<string, int> map = new Dictionary<string, int>();
+            map.Add("I", 1); map.Add("IV", 4); map.Add("V", 5); map.Add("IX", 9);
+            map.Add("X", 10); map.Add("XL", 40); map.Add("L", 50); map.Add("XC", 90);
+            map.Add("C", 100); map.Add("CD", 400); map.Add("D", 500); map.Add("CM", 900);
+            map.Add("M", 1000);
+
+            string prevChar = " ";
+            int result = 0;
+
+            for (int i = 0; i < s.Length; i++)
+            {
+                string num = prevChar + s[i];
+
+                if (map.ContainsKey(num))
                 {
-                    sb.Append(dict[A]);
-                    break;
-                }
-                else if (dict.ContainsKey(key - A))
-                {
-                    sb.Append(dict[key - A]);
-                    sb.Append(dict[key]);
-                    break;
-                }
-                else if (key < A)
-                {
-                    sb.Append(dict[key]);
-                    A = A - key;
+                    result -= map[prevChar];
+                    result += map[num];
                 }
                 else
                 {
-                    pointer--;
+                    string val = s[i].ToString();
+                    result += map[val];
+                    prevChar = val;
                 }
             }
-
-            Console.WriteLine(sb.ToString());
+            return result;
         }
     }
 }
