@@ -82,5 +82,45 @@ namespace InterviewPrep
                 Console.WriteLine("Draw!");
 
         }
+
+        public bool Winner(int player)
+        {
+            int[,] board = new int[,] { {1,1,0},
+                                        {1,0,1},
+                                        {1,1,0}};
+
+            bool[] rows = new bool[3];
+            bool[] cols = new bool[3];
+            bool diagL = true;
+            bool diagR = true;
+
+            for (int i = 0; i < 3; i++)
+            {
+                rows[i] = true;
+                cols[i] = true;
+            }
+
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    if (board[i, j] != player)
+                    {
+                        rows[i] = false;
+                        cols[j] = false;
+
+                        if (i == j) diagL = false;
+                        if (board.Length - i - 1 == j) diagR = false;
+                    }
+                }
+            }
+
+            for (int i = 0; i < 3; i++)
+            {
+                if (rows[i] || cols[i] || diagL || diagR) return true;
+            }
+
+            return false;
+        }
     }
 }
