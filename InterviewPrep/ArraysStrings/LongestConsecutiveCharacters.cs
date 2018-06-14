@@ -22,23 +22,22 @@ namespace InterviewPrep.ArraysStrings
 
             while (pointer < s.Length)
             {
-                c = s[pointer];
                 int count = 1;
 
                 scanner = pointer + 1;
                 while (scanner < s.Length)
                 {
-                    if (c == s[scanner])
-                    {
-                        count++;
-                        scanner++;
-                    } 
-                    else
-                        break;
+                    if (s[pointer] != s[scanner]) break;
+                    
+                    count++;
+                    scanner++; 
                 }
 
                 if (count > max)
+                {
                     max = count;
+                    c = s[pointer];
+                }
 
                 pointer = scanner;
             }
