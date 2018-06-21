@@ -84,6 +84,44 @@ namespace InterviewPrep
             */
         }
 
+        public void Flatten()
+        {
+            FNode current = Head;
+            FNode tail = Tail;
+
+            Queue<FNode> queue = new Queue<FNode>();
+
+            while (current != null)
+            {
+                if (current.Child != null)
+                {
+                    queue.Enqueue(current.Child);
+                    Flatten(queue);
+                    current.Child = null;
+                }
+
+                current = current.Next;
+            }
+
+            PrintList();
+        }
+
+        private void Flatten(Queue<FNode> queue)
+        {
+            while (queue.Count > 0)
+            {
+                FNode node = queue.Dequeue();
+                Tail = Tail.Next = node;
+
+                if (node.Child != null) queue.Enqueue(node.Child);
+                if (node.Next != null) queue.Enqueue(node.Next);
+
+                node.Child = null;
+                node.Next = null;
+            }
+        }
+
+        /*
         public void AddLast(int val)
         {
             FNode newNode = new FNode(val);
@@ -98,6 +136,7 @@ namespace InterviewPrep
                 Tail = Tail.Next = newNode;
             }
         }
+
         public void FlattenTheList()
         {
             FlattenTheLinkedList(Head);
@@ -148,7 +187,7 @@ namespace InterviewPrep
             if (root != null)
                 FlattenTheLinkedList(root.Next);
         }
-
+        */
         // Print the LinkedList
         public void PrintList()
         {

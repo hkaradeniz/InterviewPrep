@@ -26,26 +26,13 @@ namespace InterviewPrep.Yahoo
             {
                 int element = inputStack.Pop();
 
-                if (tempStack.Count == 0 || tempStack.Peek() < element)
-                    tempStack.Push(element);
-                else
-                {
-                    while (tempStack.Count != 0 && tempStack.Peek() > element)
-                    {
-                        int temp = tempStack.Pop();
-                        inputStack.Push(temp);
-                    }
+                while (tempStack.Count > 0 && tempStack.Peek() > element)
+                    inputStack.Push(tempStack.Pop());
 
-                    tempStack.Push(element);
-                }
+                tempStack.Push(element);
             }
 
-            while (tempStack.Count > 0)
-            {
-                inputStack.Push(tempStack.Pop());
-            }
-
-            return inputStack;
+            return tempStack;
         }
     }
 }

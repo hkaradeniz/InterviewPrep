@@ -8,8 +8,6 @@ namespace InterviewPrep
     {
         static void Main(string[] args)
         {
-            SearchRotatedArray sr = new SearchRotatedArray();
-            Console.WriteLine(sr.SolveSearchRotatedArray(new int[] {1,3},1));
             Console.Read();
         }
 

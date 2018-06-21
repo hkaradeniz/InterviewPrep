@@ -44,7 +44,7 @@ namespace InterviewPrep
             counter++;
 
             if (counter < A)
-                return countAndSay(newSequence.ToString(), counter, A);
+                newSequence = countAndSay(newSequence.ToString(), counter, A);
 
             return newSequence;
         }

@@ -36,5 +36,51 @@
 
             return newArray;
         }
+
+        // Assume the first array has enough space at the end to store both arrays..
+        // E.g: arr1 = [] {1, 5, 10, 12, -1, -1, -1}
+        //      arr2 = [] {3, 4, 6}
+        public int[] MergeArrays(int[] arr1, int p, int[] arr2)
+        {
+            // p is the last valid element in array 1
+            int pointer1 = p;
+            int pointer2 = arr2.Length-1;
+            int locator = arr1.Length-1;
+
+            while (pointer1 >= 0 && pointer2 >= 0)
+            {
+                if (arr1[pointer1] > arr2[pointer2])
+                {
+                    arr1[locator] = arr1[pointer1];
+                    pointer1--;
+                }
+                else
+                {
+                    arr1[locator] = arr2[pointer2];
+                    pointer2--;
+                }
+
+                locator--;
+            }
+
+            if (pointer2 >= 0)
+                while (pointer2 >= 0)
+                {
+                    arr1[locator] = arr2[pointer2];
+                    pointer2--;
+                    locator--;
+                }
+
+            PrintArray(arr1);
+            return arr1;
+        }
+
+        private void PrintArray(int[] arr)
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                System.Console.Write($"{arr[i]} ");
+            }
+        }
     }
 }

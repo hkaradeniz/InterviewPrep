@@ -4,8 +4,7 @@ namespace InterviewPrep
 {
     class MakeAnagram
     {
-        // Anagram Problem
-        /*
+        /* Anagram Problem
         Given two strings (lowercase a-z), how many characters do you need to remove (from either)
         to make them anagrams?
         EXAMPLE: hello, billion -> Answer 6 (he from hello and biin from billion)

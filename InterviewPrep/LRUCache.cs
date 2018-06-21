@@ -10,7 +10,7 @@ namespace InterviewPrep
         private LinkedListNode head;
         private LinkedListNode tail;
 
-        public String get(int key)
+        public string get(int key)
         {
             if (!map.ContainsKey(key)) return string.Empty;
 
@@ -25,7 +25,7 @@ namespace InterviewPrep
             return item.value;
         }
 
-        public void set(int key, String value)
+        public void set(int key, string value)
         {
             // if key exists
             remove(key);
@@ -76,14 +76,14 @@ namespace InterviewPrep
     class LinkedListNode
     {
         public int key;
-        public String value;
+        public string value;
         public LinkedListNode next;
         public LinkedListNode prev;
 
-        public LinkedListNode(int k, String v)
+        public LinkedListNode(int k, string v)
         {
-            this.key = k;
-            this.value = v;
+            key = k;
+            value = v;
         }
     }
 }

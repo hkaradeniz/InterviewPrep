@@ -7,16 +7,36 @@ namespace InterviewPrep
     class CustomStack
     {
         int[] items = null;
-        int capacity = 5;
+        int capacity;
         int size;
 
-        public CustomStack()
+        public CustomStack(int cap)
         {
+            capacity = cap;
             items = new int[capacity];
+        }
+
+        public void Push(int value)
+        {
+            if (size == capacity) Resize(capacity * 2);
+
+            items[size++] = value;
+        }
+
+        public int Pop()
+        {
+            if (size == 0) throw new Exception();
+            if (capacity == size / 3) Resize(capacity / 2);
+
+            int item = items[--size];
+
+            return item;
         }
 
         private void Resize(int newCapacity)
         {
+            capacity = newCapacity;
+
             int[] newArray = new int[capacity];
 
             for (int i = 0; i < size; i++)
@@ -27,47 +47,9 @@ namespace InterviewPrep
             items = newArray;
         }
 
-        private void EnsureExtraCapacity()
-        {
-            if (size == capacity)
-            {
-                capacity *= 2;
-                Resize(capacity);
-            }      
-        }
-
-        private void ReduceCapacity()
-        {
-            if (size == capacity / 3)
-            {
-                capacity /= 2;
-                Resize(capacity);
-            }
-        }
-        
         public int Count()
         {
             return size;
         }
-
-        public void Push(int value)
-        {
-            EnsureExtraCapacity();
-            items[size] = value;
-            size++;
-        }
-
-        public int Pop()
-        {
-            if (size == 0)
-                throw new Exception();
-
-            int item = items[size - 1];
-            size--;
-            ReduceCapacity();
-
-            return item;
-        }
-
     }
 }
