@@ -24,15 +24,13 @@ namespace InterviewPrep
             {
                 scanner = pointer + 1;
                 duplicate = false;
+
                 while (scanner < n)
                 {
-                    if (s[pointer] == s[scanner])
-                    {
-                        duplicate = true;
-                        scanner++;
-                    }
-                    else
-                        break;
+                    if (s[pointer] != s[scanner]) break;
+
+                    duplicate = true;
+                    scanner++;
                 }
 
                 if (!duplicate)
