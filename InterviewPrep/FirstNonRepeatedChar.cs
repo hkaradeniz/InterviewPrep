@@ -13,27 +13,21 @@ namespace InterviewPrep
         {
             // Solution
 
-            Dictionary<char, int> dictSolution = new Dictionary<char, int>();
+            //Dictionary<char, int> dictSolution = new Dictionary<char, int>();
+            int[] arr = new int[26];
 
             int length = s.Length;
 
             for (int i = 0; i < length; i++)
             {
-                if (dictSolution.ContainsKey(s[i]))
-                {
-                    dictSolution[s[i]]++;
-                }
-                else
-                {
-                    dictSolution.Add(s[i], 1);
-                }
+                arr[s[i] - 'a']++;
             }
 
-            foreach (var item in dictSolution)
+            for (int i = 0; i < arr.Length; i++)
             {
-                if (item.Value == 1)
+                if (arr[i] == 1)
                 {
-                    Console.WriteLine(item.Key);
+                    Console.WriteLine((char)(i+'a'));
                     break;
                 }
             }
