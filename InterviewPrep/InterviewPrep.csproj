@@ -162,6 +162,7 @@
     <Compile Include="Facebook\LongestIncreasingSubsequence.cs" />
     <Compile Include="Facebook\MultiplyLargeNumbers.cs" />
     <Compile Include="Facebook\RomanNumerals.cs" />
+    <Compile Include="Facebook\SpiralPrint.cs" />
     <Compile Include="Factorial.cs" />
     <Compile Include="FibonacciMemoization.cs" />
     <Compile Include="FirstNonRepeatedChar.cs" />

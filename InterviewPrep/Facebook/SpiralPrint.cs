@@ -3,20 +3,19 @@
 namespace InterviewPrep.Facebook
 {
     /*
-        Print matrix in spiral form. Print the 2-D array in spiral form.
-        
-        a  b  c  d  e
-        f  g  h  i  j
-        u  v  m  n  o
-        p  q  r  s  t
-        
-        a, b, c, d, j, o, t, s, r, q, p, u, f, g, h, i, n, m, v                    
-            
-        You will traverse
-        First Row -> Last Column -> Last Row -> First Column
-        
+      Print matrix in spiral form. Print the 2-D array in spiral form.
 
-    */
+      a  b  c  d  e
+      f  g  h  i  j
+      u  v  m  n  o
+      p  q  r  s  t
+
+      a, b, c, d, j, o, t, s, r, q, p, u, f, g, h, i, n, m, v                    
+
+      You will traverse
+      First Row -> Last Column -> Last Row -> First Column
+
+  */
     class SpiralPrint
     {
         public void PrintMatrix(int[,] matrix)
@@ -27,7 +26,7 @@ namespace InterviewPrep.Facebook
             int col = matrix.GetLength(1);
 
             int top = 0;
-            int bottom = row-1;
+            int bottom = row - 1;
             int left = 0;
             int right = col - 1;
 
@@ -41,7 +40,7 @@ namespace InterviewPrep.Facebook
 
                 // from top to bottom
                 for (int i = top; i <= bottom; i++)
-                    Console.Write(matrix[i,right] + " ");
+                    Console.Write(matrix[i, right] + " ");
                 right--;
                 if (left > right || top > bottom) return;
 
