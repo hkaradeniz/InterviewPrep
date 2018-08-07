@@ -17,7 +17,7 @@ namespace InterviewPrep.Facebook
         
 
     */
-    class SprialPrint
+    class SpiralPrint
     {
         public void PrintMatrix(int[,] matrix)
         {

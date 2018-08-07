@@ -28,7 +28,7 @@ namespace InterviewPrep.MyTree
                     if (stack.Count == 0) break;
                     root = stack.Pop();
                     Console.WriteLine(root.val);
-                    root = root.left;
+                    root = root.right;
                 }
             }
         }
