@@ -22,5 +22,18 @@
             else
                 return false;
         }
+
+        private bool IsValidBST(MyTree.TreeNode root, MyTree.TreeNode left, MyTree.TreeNode right)
+        {
+            if (root == null) return true;
+
+            if (left != null && left.ValueInt > root.ValueInt)
+                return false;
+
+            if (right != null && right.ValueInt < root.ValueInt)
+                return false;
+
+            return IsValidBST(root.LeftChild, left, root) && IsValidBST(root.RightChild, root, right);
+        }
     }
 }
