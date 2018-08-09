@@ -11,23 +11,29 @@ namespace InterviewPrep
          */
         public void FindFirstNonRepeatedChar(string s)
         {
-            // Solution
+            if (string.IsNullOrEmpty(s)) return;
 
-            //Dictionary<char, int> dictSolution = new Dictionary<char, int>();
-            int[] arr = new int[26];
+            Dictionary<char, int> dict = new Dictionary<char, int>();
+            List<char> list = new List<char>();
 
             int length = s.Length;
 
             for (int i = 0; i < length; i++)
             {
-                arr[s[i] - 'a']++;
+                if (dict.ContainsKey(s[i]))
+                    dict[s[i]]++;
+                else
+                {
+                    dict.Add(s[i], 1);
+                    list.Add(s[i]);
+                }
             }
 
-            for (int i = 0; i < arr.Length; i++)
+            for (int i = 0; i < list.Count; i++)
             {
-                if (arr[i] == 1)
+                if (dict[list[i]] == 1)
                 {
-                    Console.WriteLine((char)(i+'a'));
+                    Console.WriteLine(list[i]);
                     break;
                 }
             }
