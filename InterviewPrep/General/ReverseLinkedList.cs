@@ -15,42 +15,13 @@ namespace InterviewPrep.General
     */
     class ReverseLinkedList
     {
-        Node Head;
-        Node Pointer;
-
-        public ReverseLinkedList(MyLinkedList.MyLinkedList mList)
-        {
-            Head = mList.Head;
-        }
-
-        public void ReverseList()
-        {
-            ReverseLinkedListRecursively(Head);
-        }
-
-        private void ReverseLinkedListRecursively(Node node)
-        {
-            if (node == null)
-                return;
-
-            if (node.Next == null)
-            {
-                Head = Pointer = node; return;
-            }
-
-            ReverseLinkedListRecursively(node.Next);
-            Pointer.Next = node;
-            node.Next = null;
-            Pointer = Pointer.Next;
-        }
-
         // Reverse a Linked List - Iterative
         // Keep three pointers
-        public void ReverseLinkedListIteratively()
+        public Node ReverseLinkedListIteratively(Node head)
         {
             Node prev = null;
             Node current = null;
-            Node next = Head;
+            Node next = head;
 
             while (next != null)
             {
@@ -60,7 +31,7 @@ namespace InterviewPrep.General
                 current = next;
             }
 
-            Head = prev;
+            return head;
         }
     }
 }
