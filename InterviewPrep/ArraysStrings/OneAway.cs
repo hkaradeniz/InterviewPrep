@@ -21,41 +21,31 @@ namespace InterviewPrep.ArraysStrings
             int n1 = s1.Length;
             int n2 = s2.Length;
 
-            if (Math.Abs(n1 - n2) > 1)
-                return false;
+            if (Math.Abs(n1 - n2) > 1) return false;
 
-            int pointer1 = 0;
-            int pointer2 = 0;
-            int counter = 0;
+            int[] arr1 = StringToIntArray(s1);
+            int[] arr2 = StringToIntArray(s2);
 
-            while (pointer1 < n1 && pointer2 < n2)
+            int diff = 0;
+
+            for (int i = 0; i < arr1.Length; i++)
             {
-                if (s1[pointer1] != s2[pointer2])
-                {
-                    if (counter == 1)
-                        return false;
-
-                    if (n1 > n2)
-                        pointer1++;
-                    else if (n2 > n1)
-                        pointer2++;
-                    else
-                    {
-                        pointer1++;
-                        pointer2++;
-                    }
-
-                    counter++;
-                }
-                else
-                {
-                    pointer1++;
-                    pointer2++;
-                }
+                diff = Math.Abs(arr1[i] - arr2[i]);
             }
 
-            return true;
+            return diff > 1 ? false : true;
         }
 
+        private int[] StringToIntArray(string s)
+        {
+            int[] arr = new int[26];
+
+            for (int i = 0; i < s.Length; i++)
+            {
+                arr[s[i]]++;
+            }
+
+            return arr;
+        }
     }
 }
