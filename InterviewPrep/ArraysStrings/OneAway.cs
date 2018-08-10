@@ -42,7 +42,7 @@ namespace InterviewPrep.ArraysStrings
 
             for (int i = 0; i < s.Length; i++)
             {
-                arr[s[i]]++;
+                arr[s[i] - 'a']++;
             }
 
             return arr;
