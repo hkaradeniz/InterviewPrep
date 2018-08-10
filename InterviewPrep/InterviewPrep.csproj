@@ -49,7 +49,6 @@
     <Compile Include="3Sum.cs" />
     <Compile Include="ActivitySelectionProblem.cs" />
     <Compile Include="Adobe\LinkedListMiddleElement.cs" />
-    <Compile Include="Adobe\NonRepeatingCharacter.cs" />
     <Compile Include="Adobe\PrimeFactors.cs" />
     <Compile Include="Adobe\RemoveDuplicatesFromSortedArray.cs" />
     <Compile Include="Adobe\ReverseLinkedList.cs" />
