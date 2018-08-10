@@ -51,6 +51,7 @@ namespace InterviewPrep.MyTree
             return dict;
         }
 
+        // Recursive - DFS
         private void HorizontalDistance(TreeNode node, Dictionary<int, int> dict, int HDValue)
         {
             if (node == null)
@@ -63,6 +64,43 @@ namespace InterviewPrep.MyTree
 
             HorizontalDistance(node.LeftChild, dict, HDValue - 1);
             HorizontalDistance(node.RightChild, dict, HDValue + 1);
+        }
+
+        // BFS
+        public void LevelSum(TreeNode root)
+        {
+            if (root == null) return;
+
+            Queue<TreeNode> queue = new Queue<TreeNode>();
+            queue.Enqueue(root);
+
+            int levelNumber = 0;
+            int count = 0;
+            int total = 0;
+
+            while (queue.Count > 0)
+            {
+                count = queue.Count;
+
+                while (count > 0)
+                {
+                    TreeNode node = queue.Dequeue();
+                    total += node.ValueInt;
+
+                    if (node.LeftChild != null)
+                        queue.Enqueue(node.LeftChild);
+
+                    if (node.RightChild != null)
+                        queue.Enqueue(node.RightChild);
+
+                    count--;
+                }
+
+                System.Console.WriteLine(levelNumber + " = " + total);
+
+                total = 0;
+                levelNumber++;
+            }
         }
     }
 }
