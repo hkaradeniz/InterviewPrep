@@ -9,32 +9,22 @@ namespace InterviewPrep.Amazon
     {
         public void Print(TreeNode root)
         {
-            Print(root, new List<TreeNode>());
+            Print(root, string.Empty);
         }
 
-        private void Print(TreeNode node, List<TreeNode> list)
+        private void Print(TreeNode node, string path)
         {
-            if (node == null) return;
-
-            list.Add(node);
-
             if (node.LeftChild == null && node.RightChild == null)
-                PrintPath(list);
-            else
             {
-                Print(node.LeftChild, list);
-                Print(node.RightChild, list);
-            }
-        }
-
-        private void PrintPath(List<TreeNode> list)
-        {
-            for (int i = 0; i < list.Count; i++)
-            {
-                Console.Write($" { list[i].ValueInt } ");
+                Console.WriteLine(path + node.ValueInt);
+                return;
             }
 
-            Console.WriteLine();
+            if (node.LeftChild != null)
+                Print(node.LeftChild, path + node.ValueInt + " * ");
+
+            if (node.RightChild != null)
+                Print(node.RightChild, path + node.ValueInt + " * ");
         }
     }
 }
