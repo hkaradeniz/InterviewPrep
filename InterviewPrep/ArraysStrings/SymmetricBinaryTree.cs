@@ -26,12 +26,10 @@ namespace InterviewPrep.ArraysStrings
             if (node1 == null || node2 == null)
                 return false;
 
-            if (node1.ValueInt == node2.ValueInt)
-            {
-                if (IsBinaryTreeSymmetric(node1.LeftChild, node2.RightChild)
-                    && IsBinaryTreeSymmetric(node1.RightChild, node2.LeftChild))
-                    return true;
-            }
+            if (node1.ValueInt == node2.ValueInt
+                && IsBinaryTreeSymmetric(node1.LeftChild, node2.RightChild)
+                && IsBinaryTreeSymmetric(node1.RightChild, node2.LeftChild))
+                return true;
 
             return false;
         }
