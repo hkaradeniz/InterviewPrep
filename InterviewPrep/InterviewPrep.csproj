@@ -49,7 +49,6 @@
     <Compile Include="3Sum.cs" />
     <Compile Include="ActivitySelectionProblem.cs" />
     <Compile Include="Adobe\LinkedListMiddleElement.cs" />
-    <Compile Include="Adobe\NonRepeatingCharacter.cs" />
     <Compile Include="Adobe\PrimeFactors.cs" />
     <Compile Include="Adobe\RemoveDuplicatesFromSortedArray.cs" />
     <Compile Include="Adobe\ReverseLinkedList.cs" />
@@ -244,11 +243,13 @@
     <Compile Include="MyLinkedList\MyLinkedList.cs" />
     <Compile Include="MyLinkedList\Node.cs" />
     <Compile Include="MyLinkedList\SumList.cs" />
+    <Compile Include="MyTree\BinaryTreePaths.cs" />
     <Compile Include="MyTree\BSTNodesInRange.cs" />
     <Compile Include="MyTree\CreateBST.cs" />
     <Compile Include="MyTree\DiagonalSum.cs" />
     <Compile Include="MyTree\InOrderIterative.cs" />
     <Compile Include="MyTree\InorderSuccessor.cs" />
+    <Compile Include="MyTree\MaximumDepthNaryTree.cs" />
     <Compile Include="MyTree\MaximumWidth.cs" />
     <Compile Include="MyTree\MyTree.cs" />
     <Compile Include="MyTree\PostOrderIterative.cs" />

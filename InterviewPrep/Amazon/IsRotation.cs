@@ -8,7 +8,7 @@ namespace InterviewPrep.Amazon
     {
         public bool IsRotated(string word1, string word2)
         {
-            if (String.IsNullOrEmpty(word1) || String.IsNullOrEmpty(word1)) return false;
+            if (string.IsNullOrEmpty(word1) || string.IsNullOrEmpty(word2)) return false;
 
             if (word1.Length != word2.Length) return false;
 

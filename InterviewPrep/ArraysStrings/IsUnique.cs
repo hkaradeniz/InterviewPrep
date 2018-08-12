@@ -12,22 +12,18 @@ namespace InterviewPrep.ArraysStrings
 
         public bool IsUniqueWithBuffer(string str)
         {
-            if (!String.IsNullOrEmpty(str))
+            if (!string.IsNullOrEmpty(str)) return false;
+            
+            int[] arr = new int[26];
+
+            for (int i = 0; i < str.Length; i++)
             {
-                HashSet<char> hash = new HashSet<char>();
+                if (arr[str[i]] > 1) return false;
 
-                foreach (var item in str)
-                {
-                    if (hash.Contains(item))
-                        return false;
+                arr[str[i]]++;
+            } 
 
-                    hash.Add(item);
-                }
-
-                return true;              
-            }
-
-            return false;
+            return true;                
         }
 
         public bool IsUniqueWithoutBuffer(string str)

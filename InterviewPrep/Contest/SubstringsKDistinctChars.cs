@@ -10,8 +10,6 @@ namespace InterviewPrep.Contest
 
         public List<string> subStringsLessKDist(string inputString, int num)
         {
-            // WRITE YOUR CODE HERE
-
             List<string> list = new List<string>();
 
             for (int i = 0; i <= inputString.Length - num; i++)
