@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace InterviewPrep.Google
@@ -41,19 +42,42 @@ namespace InterviewPrep.Google
             dictionary.Add("mango");
         }
 
-        public bool IsWordBreak(string str)
+        // using hash for memoization
+        HashSet<string> set = new HashSet<string>();
+
+        public bool IsBreakable1(string str)
         {
-            int size = str.Length;
+            if (str.Length == 0) return true;
+            if (set.Contains(str)) return false;
 
-            if (size == 0) return true;
+            StringBuilder sb = new StringBuilder();
 
-            for (int i = 1; i <= size; i++)
+            for (int i = 0; i < str.Length; i++)
             {
-                if (dictionary.Contains(str.Substring(0, i))
-                    && IsWordBreak(str.Substring(i, size - i)))
+                sb.Append(str[i]);
+
+                if (dictionary.Contains(sb.ToString()) && IsBreakable1(str.Substring(i + 1)))
                     return true;
             }
 
+            set.Add(str);
+            return false;
+        }
+
+        // Second method
+        public bool IsBreakable2(string str)
+        {
+            if (dictionary.Contains(str)) return true;
+
+            if (set.Contains(str)) return false;
+
+            foreach (var word in dictionary)
+            {
+                if(str.StartsWith(word)
+                    && IsBreakable2(str.Substring(word.Length))) return true;
+            }
+
+            set.Add(str);
             return false;
         }
     }
