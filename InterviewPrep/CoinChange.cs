@@ -30,17 +30,14 @@ namespace InterviewPrep
         private long MakeChange(int[] coins, int money, int coinIndex, Dictionary<string, long> memoTable)
         {
             // Base Cases
-            if (money == 0)
-            { return 1; }
+            if (money == 0) return 1;
 
-            if (coinIndex >= coins.Length)
-            { return 0; }
+            if (coinIndex >= coins.Length) return 0;
 
             // For Memoization use a simple string 
             string key = money + "-" + coinIndex;
 
-            if (memoTable.ContainsKey(key))
-                return memoTable[key];
+            if (memoTable.ContainsKey(key)) return memoTable[key];
 
             int currentTotalWithCoins = 0;
             long numberOfWays = 0;
