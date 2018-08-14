@@ -564,15 +564,12 @@ namespace InterviewPrep.MyTree
     */
         public TreeNode FirstCommonAncestor(TreeNode root, TreeNode n1, TreeNode n2)
         {
-            if (root == null) { return null; }
-
-            if (root == n1 || root == n2) return root;
+            if (root == null || root == n1 || root == n2) { return root; }
 
             TreeNode left = FirstCommonAncestor(root.LeftChild, n1, n2);
             TreeNode right = FirstCommonAncestor(root.RightChild, n1, n2);
 
             if (left != null && right != null) return root;
-            if (left == null && right == null) return null;
 
             return left == null ? right : left;
         }
