@@ -253,6 +253,7 @@
     <Compile Include="MyTree\DiagonalSum.cs" />
     <Compile Include="MyTree\InOrderIterative.cs" />
     <Compile Include="MyTree\InorderSuccessor.cs" />
+    <Compile Include="MyTree\InvertBinaryTree.cs" />
     <Compile Include="MyTree\MaximumDepthNaryTree.cs" />
     <Compile Include="MyTree\MaximumWidth.cs" />
     <Compile Include="MyTree\MyTree.cs" />
