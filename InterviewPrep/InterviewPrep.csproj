@@ -228,6 +228,7 @@
     <Compile Include="Matrix\UniquePaths.cs" />
     <Compile Include="MergeKSortedLists.cs" />
     <Compile Include="MergeOverlappingIntervals\Interval.cs" />
+    <Compile Include="MergeOverlappingIntervals\MergeIntervals.cs" />
     <Compile Include="MergeOverlappingIntervals\MergeOverlappingIntervals.cs" />
     <Compile Include="MergeTwoSortedArrays.cs" />
     <Compile Include="Microsoft\CountingSort.cs" />
