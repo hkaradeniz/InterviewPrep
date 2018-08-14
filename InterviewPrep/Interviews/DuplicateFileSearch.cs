@@ -39,7 +39,7 @@ namespace InterviewPrep.Interviews
                     string key = getFileContent(directoryPath + "/" + file);
 
                     if (!map.ContainsKey(key))
-                        map.Add(key, new List<string>);
+                        map.Add(key, new List<string>());
 
                     map[key].Add(directoryPath + "/" + file);
                 }
