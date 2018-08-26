@@ -309,6 +309,7 @@
     <Compile Include="Trie\Trie.cs" />
     <Compile Include="Trie\TrieNode.cs" />
     <Compile Include="UnknownLengthArray.cs" />
+    <Compile Include="ValidPalindrome.cs" />
     <Compile Include="WeightedRandomNumbers.cs" />
     <Compile Include="WeightedUniformStrings.cs" />
     <Compile Include="WordSearch.cs" />
