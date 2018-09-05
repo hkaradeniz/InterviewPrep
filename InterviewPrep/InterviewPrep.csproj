@@ -131,6 +131,7 @@
     <Compile Include="CircularArray.cs" />
     <Compile Include="Cisco\KthLargestElement.cs" />
     <Compile Include="ClockAngleProblem.cs" />
+    <Compile Include="CloneGraph.cs" />
     <Compile Include="CoinChange.cs" />
     <Compile Include="Concordance\Concordance.cs" />
     <Compile Include="Contest\BuySellStocksII.cs" />
