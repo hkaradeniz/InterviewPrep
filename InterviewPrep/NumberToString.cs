@@ -11,10 +11,10 @@
 
         private static string[] bigs = { "", "Thousand", "Million", "Billion" };
 
-        public static string intToString(int n)
+        public static string IntToString(int n)
         {
             if (n == 0) return "Zero";
-            if (n < 0) return "Negative " + intToString(-n);
+            if (n < 0) return "Negative " + IntToString(n * -1);
             string ret = "";
             int i = 0;
             while (n > 0)
