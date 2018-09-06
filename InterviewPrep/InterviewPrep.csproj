@@ -196,6 +196,7 @@
     <Compile Include="General\TrappingRainWater.cs" />
     <Compile Include="General\TripletMaximumProduct.cs" />
     <Compile Include="General\UnsortedSubarray.cs" />
+    <Compile Include="GenerateParenthesis.cs" />
     <Compile Include="GetNextGreaterNumber.cs" />
     <Compile Include="Google\FindingTheNumbers.cs" />
     <Compile Include="Google\FindTriplets.cs" />
