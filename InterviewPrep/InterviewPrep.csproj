@@ -285,6 +285,7 @@
     <Compile Include="SampleInts\ReverseVowels.cs" />
     <Compile Include="SearchRotatedArray.cs" />
     <Compile Include="SeatingArrangement.cs" />
+    <Compile Include="SingleNumberII.cs" />
     <Compile Include="SmallestUniqueInt.cs" />
     <Compile Include="SortBigFile.cs" />
     <Compile Include="SortedMerge.cs" />
