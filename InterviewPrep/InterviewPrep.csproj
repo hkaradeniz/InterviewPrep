@@ -108,6 +108,7 @@
     <Compile Include="Amazon\UniqueCharacter.cs" />
     <Compile Include="Amazon\ZigZagArray.cs" />
     <Compile Include="ArrayPermutations.cs" />
+    <Compile Include="ArrayPermutationsII.cs" />
     <Compile Include="ArraysStrings\ArrayLeaders.cs" />
     <Compile Include="ArraysStrings\CheckPermutation.cs" />
     <Compile Include="ArraysStrings\CountFrequencies.cs" />
