@@ -135,6 +135,7 @@
     <Compile Include="ClockAngleProblem.cs" />
     <Compile Include="CloneGraph.cs" />
     <Compile Include="CoinChange.cs" />
+    <Compile Include="Combinations.cs" />
     <Compile Include="CombinationSum.cs" />
     <Compile Include="Concordance\Concordance.cs" />
     <Compile Include="Contest\BuySellStocksII.cs" />
