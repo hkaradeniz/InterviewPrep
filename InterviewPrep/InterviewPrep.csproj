@@ -278,6 +278,7 @@
     <Compile Include="Oracle\IntegerPalindrome.cs" />
     <Compile Include="Oracle\QueueWithLinkedList.cs" />
     <Compile Include="Palindrome.cs" />
+    <Compile Include="PreOrderIterative.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueueWithStacks.cs" />
