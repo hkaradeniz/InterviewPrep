@@ -582,6 +582,7 @@ namespace InterviewPrep.MyTree
             Complexity: O(N log N)
          */
         // Height of a tree
+        // Complexity:  O(n) 
         public int Height(TreeNode node)
         {
             if (node == null) return 0;
