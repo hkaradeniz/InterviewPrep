@@ -31,9 +31,9 @@ namespace InterviewPrep.Amazon
             int leftHeight = Height(node.LeftChild);
             int rightHeight = Height(node.RightChild);
 
-            diameter = Math.Max(diameter, 1 + leftHeight + rightHeight);
+            diameter = Math.Max(diameter, leftHeight + rightHeight);
 
-            return 1 + Math.Max(leftHeight, rightHeight);
+            return Math.Max(leftHeight, rightHeight) + 1;
         }
     }
 }
