@@ -44,6 +44,17 @@ namespace InterviewPrep.MyTree
             PrintTree(root);
         }
 
+        private TreeNode Invert(TreeNode root)
+        {
+            if (root == null) return null;
+
+            TreeNode temp = root.left;
+            root.left = Invert(root.right);
+            root.right = temp;
+
+            return root;
+        }
+
         private void Invert(TreeNode left, TreeNode right)
         {
             if (left == null || right == null) return;
