@@ -584,10 +584,12 @@ namespace InterviewPrep.MyTree
         // Height of a tree
         public int Height(TreeNode node)
         {
-            if (node == null)
-                return 0;
+            if (node == null) return 0;
 
-            return 1 + Math.Max(Height(node.LeftChild), Height(node.RightChild));
+            int leftHeight = Height(node.LeftChild);
+            int rightHeight = Height(node.RightChild);
+
+            return 1 + Math.Max(leftHeight, rightHeight);
         }
 
         // Is Binary tree balanced?
