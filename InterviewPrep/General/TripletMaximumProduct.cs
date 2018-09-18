@@ -41,7 +41,7 @@ namespace InterviewPrep.General
 
             for (int i = 0; i < arr.Length; i++)
             {
-                if (arr[i] > max3)
+                if (arr[i] > max1)
                 {
                     max3 = max2;
                     max2 = max1;
@@ -57,6 +57,7 @@ namespace InterviewPrep.General
                     max3 = arr[i];
                 }
 
+                // Min values
                 if (arr[i] < min1)
                 {
                     min2 = min1;
