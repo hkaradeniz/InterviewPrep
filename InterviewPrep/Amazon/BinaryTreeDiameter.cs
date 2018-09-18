@@ -25,8 +25,7 @@ namespace InterviewPrep.Amazon
 
         private int Height(TreeNode node)
         {
-            if (node == null)
-                return 0;
+            if (node == null) return 0;
 
             int leftHeight = Height(node.LeftChild);
             int rightHeight = Height(node.RightChild);
