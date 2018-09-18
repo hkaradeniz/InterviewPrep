@@ -125,6 +125,7 @@
     <Compile Include="AtoiClass.cs" />
     <Compile Include="BinarySearch.cs" />
     <Compile Include="BinaryTreeIterator.cs" />
+    <Compile Include="BinaryTreeZigzagLevelOrderTraversal.cs" />
     <Compile Include="BitManipulation\BinaryToString.cs" />
     <Compile Include="BitManipulation\Conversion.cs" />
     <Compile Include="BitManipulation\FlipBitToWin.cs" />
