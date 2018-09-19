@@ -34,6 +34,32 @@ namespace InterviewPrep
 
             }
         }
+
+        // Given a linked list, return the node where the cycle begins. If there is no cycle, return null.
+        public Node DetectCycle(Node head)
+        {
+            Node slow = head;
+            Node fast = head;
+
+            while (fast != null && fast.Next != null)
+            {
+                fast = fast.Next.Next;
+                slow = slow.Next;
+
+                if (slow == fast)
+                {
+                    while (head != slow)
+                    {
+                        head = head.Next;
+                        slow = slow.Next;
+                    }
+
+                    return head;
+                }
+            }
+
+            return null;
+        }
     }
 
     /*
