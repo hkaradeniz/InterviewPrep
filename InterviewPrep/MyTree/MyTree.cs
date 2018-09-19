@@ -92,28 +92,28 @@ namespace InterviewPrep.MyTree
             Root = DeleteElement(Root, value);
         }
 
-        private TreeNode DeleteElement(TreeNode node, int value)
+        private TreeNode DeleteElement(TreeNode root, int value)
         {
             /* Base Case: If the tree is empty */
-            if (node == null) return node;
+            if (root == null) return null;
 
             /* Otherwise, recur down the tree */
-            if (value < node.ValueInt) node.LeftChild = DeleteElement(node.LeftChild, value);
-            else if (value > node.ValueInt) node.RightChild = DeleteElement(node.RightChild, value);
+            if (value < root.ValueInt) root.LeftChild = DeleteElement(root.LeftChild, value);
+            else if (value > root.ValueInt) root.RightChild = DeleteElement(root.RightChild, value);
             // if key is same as node's key, then This is the node
             // to be deleted
             else
             {
                 // node with only one child or no child
-                if (node.LeftChild == null) return node.RightChild;
-                else if (node.RightChild == null) return node.LeftChild;
+                if (root.LeftChild == null) return root.RightChild;
+                else if (root.RightChild == null) return root.LeftChild;
                 else
                 {
                     // node with two children: Get the smallest in the right subtree
-                    node.ValueInt = MinValue(node.RightChild).ValueInt;
+                    root.ValueInt = MinValue(root.RightChild).ValueInt;
 
                     // Delete the smallest in the right subtree
-                    node.RightChild = DeleteElement(node.RightChild, node.ValueInt);
+                    root.RightChild = DeleteElement(root.RightChild, root.ValueInt);
                 }
             }
 
