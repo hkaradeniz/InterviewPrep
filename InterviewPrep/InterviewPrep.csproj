@@ -295,6 +295,7 @@
     <Compile Include="SearchRotatedArray.cs" />
     <Compile Include="SeatingArrangement.cs" />
     <Compile Include="SingleNumberII.cs" />
+    <Compile Include="SizeKWithKDistinctCharacters.cs" />
     <Compile Include="SmallestUniqueInt.cs" />
     <Compile Include="SortBigFile.cs" />
     <Compile Include="SortedMerge.cs" />
