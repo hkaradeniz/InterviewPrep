@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="3Sum.cs" />
+    <Compile Include="AColonyOfEightHouses.cs" />
     <Compile Include="ActivitySelectionProblem.cs" />
     <Compile Include="Adobe\LinkedListMiddleElement.cs" />
     <Compile Include="Adobe\PrimeFactors.cs" />
