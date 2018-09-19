@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace InterviewPrep.Interviews
 {
@@ -26,7 +22,9 @@ namespace InterviewPrep.Interviews
 
         Input:
         inputList = [a,b,a,b,c,b,a,c,a,d,e,f,e,g,d,e,h,i,j,h,k,l,i,j]
-    
+        // 'a','b','a','b','c','b','a','c','a','d','e','f','e','g','d','e','h','i','j','h','k','l','i','j'
+
+
         Output:
         [9, 7, 8]
     
@@ -55,22 +53,50 @@ namespace InterviewPrep.Interviews
         {
             List<int> result = new List<int>();
 
-            Interval[] intervals = new Interval[26];
+            List<Interval> list = new List<Interval>();
             Dictionary<char, int> dict = new Dictionary<char, int>();
+            int index = 0;
 
             for (int i = 0; i < arr.Length; i++)
             {
-                if (!dict.ContainsKey(arr[i])) dict.Add(arr[i], i);
-
-                int index = arr[i] - 'a';
-
-                if (intervals[index] == null)
-                    intervals[index] = new Interval() { Start = i };
+                if (dict.ContainsKey(arr[i]))
+                {
+                    list[dict[arr[i]]].End = i;
+                }
                 else
-                    intervals[index].End = i;
+                {
+                    dict.Add(arr[i], index);
+                    list.Add(new Interval() { Start = i });
+                    index++;
+                }
             }
 
-            //Interval prev = listP.get(0);
+            Interval previous = list[0];
+
+            for (int i = 1; i < list.Count; i++)
+            {
+                Interval current = list[i];
+
+                if (previous.End < current.Start)
+                {
+                    result.Add(previous.End - previous.Start + 1);
+                    previous.Start = current.Start;
+                    previous.End = current.End;
+                }
+                else
+                {
+                    if (previous.End > current.End)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        previous.End = current.End;
+                    }
+                }
+            }
+
+            result.Add(previous.End - previous.Start + 1);
 
             return result;
         }
