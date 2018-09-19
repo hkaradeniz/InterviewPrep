@@ -225,6 +225,7 @@
     <Compile Include="Graphs\NumberOfClusters.cs" />
     <Compile Include="GroupAnagrams.cs" />
     <Compile Include="HackerRank\CaesarCipherEncryption.cs" />
+    <Compile Include="Interviews\AmazonVideo.cs" />
     <Compile Include="Interviews\CheckersGame.cs" />
     <Compile Include="Interviews\DuplicateFileSearch.cs" />
     <Compile Include="Interviews\SpaceStation.cs" />
