@@ -1,6 +1,6 @@
 ﻿namespace InterviewPrep
 {
-    /*
+    /* 
     A colony of eight houses, represented as cells, are arranged in a straight line. 
     Each day every cell competes with its adjacent cells (neighbours). 
     An integer value of 1 represents an active cell and value of 0 represents an 
