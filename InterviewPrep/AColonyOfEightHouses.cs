@@ -22,15 +22,13 @@
 
             while (days > 0)
             {
-
                 // Finding next values 
                 // for corner cells
                 temp[0] = 0 ^ states[1];
                 temp[n - 1] = 0 ^ states[n - 2];
 
                 // Compute values of intermediate cells
-                // If both cells active or inactive, then 
-                // temp[i]=0 else temp[i] = 1.
+                // If both cells active or inactive
                 for (int i = 1; i <= n - 2; i++)
                     temp[i] = states[i - 1] ^ states[i + 1];
 
