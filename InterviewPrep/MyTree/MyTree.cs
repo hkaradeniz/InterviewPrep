@@ -117,7 +117,7 @@ namespace InterviewPrep.MyTree
                 }
             }
 
-            return node;
+            return root;
         }
 
         private TreeNode MinValue(TreeNode node)
