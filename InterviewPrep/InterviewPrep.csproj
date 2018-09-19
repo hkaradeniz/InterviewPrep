@@ -318,6 +318,7 @@
     <Compile Include="StringPermutations.cs" />
     <Compile Include="StringSearch\RabinKarp.cs" />
     <Compile Include="SubarrayWithGivenSum.cs" />
+    <Compile Include="SubsetsII.cs" />
     <Compile Include="Test.cs" />
     <Compile Include="TicTacToeWinner.cs" />
     <Compile Include="TopologicalSort.cs" />
