@@ -47,15 +47,6 @@ namespace InterviewPrep.Interviews
             MinDistance(matrix, rows, cols, i - 1, j, visited, distance + 1);
             MinDistance(matrix, rows, cols, i, j - 1, visited, distance + 1);
             MinDistance(matrix, rows, cols, i, j + 1, visited, distance + 1);
-            /*
-            for (int x = -1; x <= 1; x++)
-            {
-                for (int y = -1; y <= 1; y++)
-                {
-                    MinDistance(matrix, rows, cols, i + x, j + y, visited, distance + 1);
-                }
-            }
-            */
 
             visited[i, j] = false;
         }
