@@ -228,6 +228,7 @@
     <Compile Include="Interviews\AmazonVideo.cs" />
     <Compile Include="Interviews\CheckersGame.cs" />
     <Compile Include="Interviews\DuplicateFileSearch.cs" />
+    <Compile Include="Interviews\RemoveObstacle.cs" />
     <Compile Include="Interviews\SpaceStation.cs" />
     <Compile Include="LivingPeople.cs" />
     <Compile Include="LongestIncreasingSubarray.cs" />
