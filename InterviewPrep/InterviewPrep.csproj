@@ -278,6 +278,7 @@
     <Compile Include="MyTree\VerticalSum.cs" />
     <Compile Include="N3RepeatNumber.cs" />
     <Compile Include="NQueenProblem.cs" />
+    <Compile Include="NQueenProblemII.cs" />
     <Compile Include="NumberToString.cs" />
     <Compile Include="Operations.cs" />
     <Compile Include="Oracle\IntegerPalindrome.cs" />
