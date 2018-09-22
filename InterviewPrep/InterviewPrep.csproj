@@ -173,6 +173,7 @@
     <Compile Include="FibonacciMemoization.cs" />
     <Compile Include="FileOperations.cs" />
     <Compile Include="FindElementOrIndex.cs" />
+    <Compile Include="FindPeakElement.cs" />
     <Compile Include="FirstMissingPositive.cs" />
     <Compile Include="FirstNonRepeatedChar.cs" />
     <Compile Include="FirstNonRepeatedCharacter.cs" />
