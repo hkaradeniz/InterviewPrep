@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 
 namespace InterviewPrep
 {
@@ -155,6 +156,42 @@ namespace InterviewPrep
             if (target >= arr[left] && target <= arr[mid])
                 return SolveSearchRotatedArray(arr, mid + 1, right, target);
             return SolveSearchRotatedArray(arr, left, mid - 1, target);
+        }
+
+        //Search in Rotated Sorted Array II
+        // If array contains duplicates
+        public bool Search(int[] nums, int target)
+        {
+            if (nums == null || nums.Length == 0) return false;
+
+            int left = 0;
+            int right = nums.Length - 1;
+
+            while (left <= right)
+            {
+                int middle = left + (right - left) / 2;
+                Console.WriteLine($"Left:{left} ** Middle:{middle} ** Right:{right}");
+
+                if (nums[middle] == target) return true;
+                else if (nums[middle] < nums[right] || nums[middle] < nums[left])
+                {
+                    if (nums[middle] < target && nums[right] >= target)
+                        left = middle + 1;
+                    else
+                        right = middle - 1;
+                }
+                else if (nums[middle] > nums[left] || nums[middle] > nums[right])
+                {
+                    if (nums[middle] > target && nums[left] <= target)
+                        right = middle - 1;
+                    else
+                        left = middle + 1;
+                }
+                else
+                    right--;
+            }
+
+            return false;
         }
     }
 }
