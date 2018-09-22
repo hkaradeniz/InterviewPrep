@@ -13,8 +13,8 @@ namespace InterviewPrep
 
             bool[] rowKeeper = new bool[rows];
             bool[] colKeeper = new bool[rows];
-            bool[] diagTopKeeper = new bool[rows * 2]; // from top to right 14 squares
-            bool[] diagBottomKeeper = new bool[rows * 2];   // from left to bottom 14 squares
+            //bool[] diagTopKeeper = new bool[rows * 2]; // from top to right 14 squares
+            //bool[] diagBottomKeeper = new bool[rows * 2];   // from left to bottom 14 squares
 
             /*
                                 T
@@ -37,20 +37,29 @@ namespace InterviewPrep
                 {
                     if (board[i, j] == 1)
                     {
-                        Console.WriteLine($"Row: {i} ** Col: {j}");
+                        //Console.WriteLine($"Row: {i} ** Col: {j}");
 
                         if (rowKeeper[i]) return false;
                         if (colKeeper[j]) return false;
 
-                        int sum = i + j;
-                        int diff = Math.Abs(i - j);
+                        //int sum = i + j;
+                        //int diff = Math.Abs(i - j);
 
-                        if (diagTopKeeper[sum] || diagBottomKeeper[diff + sum]) return false;
+                        //if (diagTopKeeper[sum] || diagBottomKeeper[diff + sum]) return false;
+                        //Check if another queen is threatening diagonally from left
+                        for (int m = i - 1, n = j - 1; m >= 0 && n >= 0; m--, n--)
+                            if (board[m, n] == 1)
+                                return false;
+
+                        //Check if another queen is threatening diagonally from right
+                        for (int x = i - 1, y = j + 1; x >= 0 && y < rows; x--, y++)
+                            if (board[x, y] == 1)
+                                return false;
 
                         rowKeeper[i] = true;
                         colKeeper[j] = true;
-                        diagTopKeeper[sum] = true;
-                        diagBottomKeeper[diff + sum] = true;
+                        //diagTopKeeper[sum] = true;
+                        //diagBottomKeeper[diff + sum] = true;
                     }
                 }
             }
@@ -67,7 +76,7 @@ namespace InterviewPrep
                 {0,0,0,0,0,1,0,0 },
                 {0,0,1,0,0,0,0,0 },
                 {0,0,0,0,0,0,1,0 },
-                {0,1,0,1,0,0,0,0 },
+                {0,1,0,0,0,0,0,0 },
                 {0,0,0,1,0,0,0,0 }};
 
             int[,] board2 = new int[4, 4]
