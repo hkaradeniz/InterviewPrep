@@ -152,6 +152,7 @@
     <Compile Include="CountAndSay.cs" />
     <Compile Include="CustomQueue.cs" />
     <Compile Include="CustomStack.cs" />
+    <Compile Include="DecodeWays.cs" />
     <Compile Include="DelimiterMatching.cs" />
     <Compile Include="DesignPatterns\AbstractFactory.cs" />
     <Compile Include="DesignPatterns\Factory.cs" />
