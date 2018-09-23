@@ -48,7 +48,7 @@ namespace InterviewPrep.MyTree
         {
             if (root == null) return null;
 
-            TreeNode temp = root.left;
+            TreeNode temp = Invert(root.left);
             root.left = Invert(root.right);
             root.right = temp;
 
