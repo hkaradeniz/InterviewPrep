@@ -20,23 +20,22 @@ namespace InterviewPrep
 
         public int SolveWeightedRandomNumbers(int[] arr)
         {
-            int w = 0;
-            int r = 0;
+            int totalWeight = 0;
+            int randomWeight = 0;
             int sum = 0;
 
             foreach (var item in arr)
             {
-                w += item;
+                totalWeight += item;
             }
 
-            r = (new Random()).Next(0, w);
+            randomWeight = (new Random()).Next(0, totalWeight);
 
             for (int i = 0; i < arr.Length; i++)
             {
                 sum += arr[i];
 
-                if (sum > r)
-                    return i;
+                if (sum > randomWeight) return i;
             }
 
             return -1;
