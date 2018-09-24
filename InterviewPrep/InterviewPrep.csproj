@@ -327,6 +327,7 @@
     <Compile Include="Test.cs" />
     <Compile Include="TicTacToeWinner.cs" />
     <Compile Include="TopologicalSort.cs" />
+    <Compile Include="TreePathSumII.cs" />
     <Compile Include="TreePathSumIII.cs" />
     <Compile Include="TreesAndGraphs\BuildOrder.cs" />
     <Compile Include="TreesAndGraphs\MinimalTree.cs" />
